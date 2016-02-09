@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeadRotationTest.CSharp.Plugins", "HeadRotationTest.CSharp.Plugins.csproj", "{356E536D-83BD-7F0B-EDF6-91DB033A55FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeadRotationTest.CSharp", "HeadRotationTest.CSharp.csproj", "{458E690E-D5EE-29FB-F4A6-A9C656686481}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeadRotationTest.CSharp.Editor", "HeadRotationTest.CSharp.Editor.csproj", "{FE24D0B9-5889-2235-0F94-35E9CDC9C04F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{356E536D-83BD-7F0B-EDF6-91DB033A55FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{356E536D-83BD-7F0B-EDF6-91DB033A55FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{356E536D-83BD-7F0B-EDF6-91DB033A55FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{356E536D-83BD-7F0B-EDF6-91DB033A55FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{458E690E-D5EE-29FB-F4A6-A9C656686481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{458E690E-D5EE-29FB-F4A6-A9C656686481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{458E690E-D5EE-29FB-F4A6-A9C656686481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{458E690E-D5EE-29FB-F4A6-A9C656686481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE24D0B9-5889-2235-0F94-35E9CDC9C04F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE24D0B9-5889-2235-0F94-35E9CDC9C04F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE24D0B9-5889-2235-0F94-35E9CDC9C04F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE24D0B9-5889-2235-0F94-35E9CDC9C04F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

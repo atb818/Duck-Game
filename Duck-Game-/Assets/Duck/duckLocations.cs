@@ -4,6 +4,7 @@ using System.Collections;
 public class duckLocations : MonoBehaviour {
 
     public GameObject duck;
+    public GameObject target;
     public int location;
     static public int activeLocation;
   
@@ -13,6 +14,8 @@ public class duckLocations : MonoBehaviour {
 	
 	
 	void Update () {
+
+        transform.LookAt(target.transform);
 
         if (activeLocation == location) {
             duck.transform.SetParent(gameObject.transform);

@@ -5,10 +5,10 @@ public class TeacherCheck : MonoBehaviour {
 
 	public float leftRot;
 	public float rightRot;
-	public bool isSafe;
+	public static bool isSafe;
 
 	void Start () {
-	
+		isSafe = true;
 	}
 	
 	void Update () {

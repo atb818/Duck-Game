@@ -23,6 +23,12 @@ public class Teacher : MonoBehaviour {
 	void Update () {
 		curRot.eulerAngles = new Vector3 (0, transform.eulerAngles.y, 0);
         transform.rotation = Quaternion.Slerp(curRot, newRot, .05f);
+        /*if (looking && duckboy.isSafe){
+			print("SAFE");
+    	} else if (looking && duckboy.isSafe == false){
+			print("CAUGHT");
+    	}*/
+
         /*
 		looking = true
 		timer >= lookTime & looking = true
@@ -44,7 +50,7 @@ public class Teacher : MonoBehaviour {
 	}
 
 	IEnumerator Looking(){
-		duckboy.SendMessage("teacher");
+		//duckboy.SendMessage("teacher");
 		looking = true;
 		yield return new WaitForSeconds(lookTime);
 		StartCoroutine("Teaching");

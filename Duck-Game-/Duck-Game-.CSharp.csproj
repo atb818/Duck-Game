@@ -66,10 +66,10 @@
     <Compile Include="Assets\Duck\duckCollide.cs" />
     <Compile Include="Assets\Duck\duckLocations.cs" />
     <Compile Include="Assets\Duck\duckLogic.cs" />
+    <Compile Include="Assets\Prototype 1\bulletLogic.cs" />
+    <Compile Include="Assets\Prototype 1\shootBullet.cs" />
     <Compile Include="Assets\Rotate\HeadRotate.cs" />
     <Compile Include="Assets\Rotate\Raycast.cs" />
-    <Compile Include="Assets\Shooting\bulletLogic.cs" />
-    <Compile Include="Assets\Shooting\shootBullet.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

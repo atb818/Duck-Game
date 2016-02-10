@@ -63,13 +63,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Duck\duckCollide.cs" />
-    <Compile Include="Assets\Duck\duckLocations.cs" />
-    <Compile Include="Assets\Duck\duckLogic.cs" />
-    <Compile Include="Assets\Prototype 1\bulletLogic.cs" />
-    <Compile Include="Assets\Prototype 1\shootBullet.cs" />
-    <Compile Include="Assets\Rotate\HeadRotate.cs" />
-    <Compile Include="Assets\Rotate\Raycast.cs" />
+    <Compile Include="Assets\Scripts\Teacher.cs" />
+    <Compile Include="Assets\Scripts\TeacherCheck.cs" />
+    <Compile Include="Assets\[Scenes]\TESTS\Duck\duckCollide.cs" />
+    <Compile Include="Assets\[Scenes]\TESTS\Duck\duckLocations.cs" />
+    <Compile Include="Assets\[Scenes]\TESTS\Duck\duckLogic.cs" />
+    <Compile Include="Assets\[Scenes]\TESTS\Prototype 1\bulletLogic.cs" />
+    <Compile Include="Assets\[Scenes]\TESTS\Prototype 1\shootBullet.cs" />
+    <Compile Include="Assets\[Scenes]\TESTS\Rotate\HeadRotate.cs" />
+    <Compile Include="Assets\[Scenes]\TESTS\Rotate\Raycast.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

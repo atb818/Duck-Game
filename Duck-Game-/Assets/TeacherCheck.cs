@@ -19,7 +19,7 @@ public class TeacherCheck : MonoBehaviour {
 			isSafe = true;
 		}
 
-		print(transform.eulerAngles.y);
+		//print(transform.eulerAngles.y);
 	}
 
 	void teacher(){

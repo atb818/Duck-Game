@@ -21,16 +21,16 @@ public class NodeMovement : MonoBehaviour {
 	void Update () {
 		t = this.transform;
 
-		if (Input.GetKeyDown(KeyCode.UpArrow) && canMoveUp){
+		if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && canMoveUp){
 			t.position = new Vector3 (t.position.x, t.position.y, t.position.z + 1);
 		}
-		if (Input.GetKeyDown(KeyCode.DownArrow) && canMoveDown){
+		if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && canMoveDown){
 			t.position = new Vector3 (t.position.x, t.position.y, t.position.z - 1);
 		}
-		if (Input.GetKeyDown(KeyCode.LeftArrow) && canMoveLeft){
+		if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && canMoveLeft){
 			t.position = new Vector3 (t.position.x - 1, t.position.y, t.position.z);
 		}
-		if (Input.GetKeyDown(KeyCode.RightArrow) && canMoveRight){
+		if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && canMoveRight){
 			t.position = new Vector3 (t.position.x + 1, t.position.y, t.position.z);
 		}
 

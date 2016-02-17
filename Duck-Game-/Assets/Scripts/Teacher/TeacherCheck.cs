@@ -13,6 +13,14 @@ public class TeacherCheck : MonoBehaviour {
 	
 	void Update () {
 
+		if (Input.GetKeyDown(KeyCode.Mouse0)){
+			NodeMovement.isSafe = false;
+		}
+
+		if (Input.GetKeyUp(KeyCode.Mouse0)){
+			NodeMovement.isSafe = true;
+		}
+
 		if (Teacher.looking){
 			if (NodeMovement.isSafe){
 				print("Hidden from teacher!");

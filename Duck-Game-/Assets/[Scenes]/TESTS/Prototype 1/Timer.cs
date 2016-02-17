@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour {
 
 
-    int time = 6;
+    public int time = 6;
 
     public GameObject words;
     Text timeRemain;

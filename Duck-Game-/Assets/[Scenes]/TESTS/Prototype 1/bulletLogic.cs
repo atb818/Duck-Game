@@ -29,7 +29,7 @@ public class bulletLogic : MonoBehaviour
 
     void Update ()
     {        
-        if (count >= 2) {
+        if (count >= 3) {
             Destroy(gameObject);
         }
     }

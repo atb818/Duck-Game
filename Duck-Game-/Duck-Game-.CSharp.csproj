@@ -79,6 +79,7 @@
     <Compile Include="Assets\[Scenes]\TESTS\Duck\duckCollide.cs" />
     <Compile Include="Assets\[Scenes]\TESTS\Duck\duckLocations.cs" />
     <Compile Include="Assets\[Scenes]\TESTS\Duck\duckLogic.cs" />
+    <Compile Include="Assets\[Scenes]\TESTS\Prototype 1\Timer.cs" />
     <Compile Include="Assets\[Scenes]\TESTS\Prototype 1\bulletLogic.cs" />
     <Compile Include="Assets\[Scenes]\TESTS\Prototype 1\shootBullet.cs" />
     <Compile Include="Assets\[Scenes]\TESTS\Rotate\HeadRotate.cs" />

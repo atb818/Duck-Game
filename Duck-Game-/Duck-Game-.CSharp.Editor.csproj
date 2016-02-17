@@ -5,16 +5,16 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E59C641E-CE87-A514-4A5D-A88F004F7DC6}</ProjectGuid>
+    <ProjectGuid>{130B6D49-A99D-2B02-BFA9-9926CDA6D453}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
-    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityProjectType>Editor:5</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.3.2f1</UnityVersion>
     <RootNamespace></RootNamespace>
@@ -51,14 +51,50 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Advertisements.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>Library\UnityAssemblies\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.EditorTestsRunner">
+      <HintPath>Library\UnityAssemblies\UnityEditor.EditorTestsRunner.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\UnityAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor">
-      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    <Reference Include="UnityEditor.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.TreeEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.TreeEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WebGL.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.WebGL.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.OSXStandalone.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+      <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -68,22 +104,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\RaycastReflection.cs" />
-    <Compile Include="Assets\Scripts\Player\FreeMovement.cs" />
-    <Compile Include="Assets\Scripts\Player\NodeMovement.cs" />
-    <Compile Include="Assets\Scripts\Player\Raycast2.cs" />
-    <Compile Include="Assets\Scripts\Player\laser.cs" />
-    <Compile Include="Assets\Scripts\Teacher\SafeZone.cs" />
-    <Compile Include="Assets\Scripts\Teacher\Teacher.cs" />
-    <Compile Include="Assets\Scripts\Teacher\TeacherCheck.cs" />
-    <Compile Include="Assets\[Scenes]\TESTS\Duck\duckCollide.cs" />
-    <Compile Include="Assets\[Scenes]\TESTS\Duck\duckLocations.cs" />
-    <Compile Include="Assets\[Scenes]\TESTS\Duck\duckLogic.cs" />
-    <Compile Include="Assets\[Scenes]\TESTS\Prototype 1\bulletLogic.cs" />
-    <Compile Include="Assets\[Scenes]\TESTS\Prototype 1\shootBullet.cs" />
-    <Compile Include="Assets\[Scenes]\TESTS\Rotate\HeadRotate.cs" />
-    <Compile Include="Assets\[Scenes]\TESTS\Rotate\Raycast.cs" />
-    <Compile Include="Assets\waitAndDestroy.cs" />
+    <ProjectReference Include="Duck-Game-.CSharp.csproj">
+      <Project>{E59C641E-CE87-A514-4A5D-A88F004F7DC6}</Project>
+      <Name>Duck-Game-.CSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

@@ -16,7 +16,7 @@ public class bulletLogic : MonoBehaviour
 
     void Update ()
     {
-        if (count == 3)
+        if (count >= 3)
         {
             Destroy(gameObject);
         }
@@ -25,5 +25,9 @@ public class bulletLogic : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         count++;
+        if (collision.collider.CompareTag("Player") || collision.collider.CompareTag("Classmate") || collision.collider.CompareTag("Teacher"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

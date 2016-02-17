@@ -9,7 +9,7 @@ public class Teacher : MonoBehaviour {
 	public float teachTime;
 	public float lookTime;
 	public float turnTime;
-	public bool looking;
+	public static bool looking;
 	float teachRot = 180;
 	float lookRot = 0;
 	Quaternion curRot;
@@ -23,21 +23,6 @@ public class Teacher : MonoBehaviour {
 	void Update () {
 		curRot.eulerAngles = new Vector3 (0, transform.eulerAngles.y, 0);
         transform.rotation = Quaternion.Slerp(curRot, newRot, .05f);
-        /*if (looking && duckboy.isSafe){
-			print("SAFE");
-    	} else if (looking && duckboy.isSafe == false){
-			print("CAUGHT");
-    	}*/
-
-        /*
-		looking = true
-		timer >= lookTime & looking = true
-		newRot = teachRot
-		looking = false
-		timer >= teachTime & looking = false
-		newRot = lookRot
-        */
-        //transform.rotation = Quaternion.Slerp(curRot, newRot, .05f);
 	}
 
 	IEnumerator Teaching(){
@@ -50,7 +35,6 @@ public class Teacher : MonoBehaviour {
 	}
 
 	IEnumerator Looking(){
-		//duckboy.SendMessage("teacher");
 		looking = true;
 		yield return new WaitForSeconds(lookTime);
 		StartCoroutine("Teaching");

@@ -5,29 +5,43 @@ public class TeacherCheck : MonoBehaviour {
 
 	public float leftRot;
 	public float rightRot;
-	public static bool isSafe;
+	public static bool hidden;
 
 	void Start () {
-		isSafe = true;
+		hidden = true;
 	}
 	
 	void Update () {
-	
-		if (transform.eulerAngles.y >= rightRot && transform.eulerAngles.y <= leftRot){
-			isSafe = false;
-		} else {
-			isSafe = true;
-		}
 
-		//print(transform.eulerAngles.y);
+		if (Teacher.looking){
+			if (NodeMovement.isSafe){
+				print("Hidden from teacher!");
+			} else if (NodeMovement.isSafe == false){
+				print("Teacher caught you!");
+			}	
+		} else if (Teacher.looking == false){
+			print ("Teacher isn't looking...");
+		}
+	
+		/*
+		if (NodeMovement.isSafe){
+			hidden = true;
+		} else {
+			hidden = false;
+		}
+		*/
+
+		//teacher();
 	}
 
 	void teacher(){
-		if (isSafe){
-			print("SAFE");
-		} else if (isSafe == false){
-			print("CAUGHT");
-		}
+		if (Teacher.looking){
+			if (hidden){
+				print("SAFE");
+			} else if (hidden == false){
+				print("CAUGHT");
+			}
+		}	
 	}
 
 }

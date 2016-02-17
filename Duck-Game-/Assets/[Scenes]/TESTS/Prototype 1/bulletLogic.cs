@@ -20,8 +20,8 @@ public class bulletLogic : MonoBehaviour
     void Start()
     {
         sounds = GetComponents<AudioSource>();
-        ow = sounds[1];
         quack = sounds[0];
+        ow = sounds[1];
 
         rb = GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * speed);
@@ -29,9 +29,7 @@ public class bulletLogic : MonoBehaviour
 
     void Update ()
     {        
-        if (count >= 2)
-
-        {
+        if (count >= 2) {
             Destroy(gameObject);
         }
     }

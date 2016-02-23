@@ -11,7 +11,9 @@ public class shootBullet : MonoBehaviour {
 	void Update () {
 
         if (Input.GetMouseButtonDown(0))
-            Instantiate(bullet, transform.position, boy.transform.rotation);
-
+        {
+            GameObject newBullet = (GameObject)Instantiate(bullet, transform.position, boy.transform.rotation);
+            newBullet.GetComponent<bulletLogic>().player = boy;
+        }
     }
 }

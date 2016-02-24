@@ -45,31 +45,42 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\RaycastReflection.cs" />
+     <Compile Include="Assets\Rotation.cs" />
      <Compile Include="Assets\Scripts\Duck\QuackBack.cs" />
+     <Compile Include="Assets\Scripts\HeadRotate.cs" />
      <Compile Include="Assets\Scripts\Player\DuckCall.cs" />
      <Compile Include="Assets\Scripts\Player\FreeMovement.cs" />
+     <Compile Include="Assets\Scripts\Player\MouseLock.cs" />
      <Compile Include="Assets\Scripts\Player\NodeMovement.cs" />
      <Compile Include="Assets\Scripts\Player\Raycast2.cs" />
      <Compile Include="Assets\Scripts\Player\laser.cs" />
+     <Compile Include="Assets\Scripts\Raycast.cs" />
+     <Compile Include="Assets\Scripts\RaycastReflection.cs" />
      <Compile Include="Assets\Scripts\Teacher\SafeZone.cs" />
      <Compile Include="Assets\Scripts\Teacher\Teacher.cs" />
      <Compile Include="Assets\Scripts\Teacher\TeacherCheck.cs" />
-     <Compile Include="Assets\[Scenes]\TESTS\Duck\duckCollide.cs" />
-     <Compile Include="Assets\[Scenes]\TESTS\Duck\duckLocations.cs" />
-     <Compile Include="Assets\[Scenes]\TESTS\Duck\duckLogic.cs" />
-     <Compile Include="Assets\[Scenes]\TESTS\Prototype 1\Timer.cs" />
-     <Compile Include="Assets\[Scenes]\TESTS\Prototype 1\bulletLogic.cs" />
-     <Compile Include="Assets\[Scenes]\TESTS\Prototype 1\shootBullet.cs" />
-     <Compile Include="Assets\[Scenes]\TESTS\Rotate\HeadRotate.cs" />
-     <Compile Include="Assets\[Scenes]\TESTS\Rotate\Raycast.cs" />
-     <Compile Include="Assets\waitAndDestroy.cs" />
+     <Compile Include="Assets\Scripts\Timer.cs" />
+     <Compile Include="Assets\Scripts\bulletLogic.cs" />
+     <Compile Include="Assets\Scripts\duckCollide.cs" />
+     <Compile Include="Assets\Scripts\duckLocations.cs" />
+     <Compile Include="Assets\Scripts\duckLogic.cs" />
+     <Compile Include="Assets\Scripts\shootBullet.cs" />
+     <Compile Include="Assets\Scripts\smoothFollow.cs" />
+     <Compile Include="Assets\Scripts\waitAndDestroy.cs" />
+     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{4B9FBBC0-421A-2526-6C7C-447674B5DB26}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

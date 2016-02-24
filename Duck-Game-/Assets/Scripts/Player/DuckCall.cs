@@ -24,7 +24,7 @@ public class DuckCall : MonoBehaviour {
 		//testDist = Vector3.Distance(testStudent.transform.position, transform.position);
 		//print (testDist);
 		
-		if (Input.GetKeyDown(KeyCode.Mouse0) && isCalling == false){
+		if (Input.GetKeyDown(KeyCode.Mouse1) && isCalling == false){
 			StartCoroutine("DCall");
 			audio.Play();
 		}

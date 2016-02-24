@@ -10,6 +10,8 @@ public class DuckCall : MonoBehaviour {
 	public float maxDist = 10;
 	public float minDist = 1.25f;
 	float volD;
+
+	public GameObject hear1, hear2, hear3, hear4;
 	//public GameObject testStudent;
 	//public float testDist;
 
@@ -17,6 +19,11 @@ public class DuckCall : MonoBehaviour {
 		isCalling = false;
 		ducks = GameObject.FindGameObjectsWithTag("Duck");
 		audio = GetComponent<AudioSource>();
+
+		hear1.SetActive(false);
+		hear2.SetActive(false);
+		hear3.SetActive(false);
+		hear4.SetActive(false);
 	}
 	
 	void Update () {
@@ -38,46 +45,35 @@ public class DuckCall : MonoBehaviour {
 		foreach (GameObject duck in ducks) {
 			audioD = duck.GetComponent<AudioSource>();
 			dist = Vector3.Distance(duck.transform.position, transform.position);
-			/*
-			if (dist <= maxDist && dist > 9f){
-				audioD.volume = 0.2f;
-			} else if (dist <= 9f && dist > 8f){
-				audioD.volume = 0.3f;
-			} else if (dist <= 8f && dist > 7f){
-				audioD.volume = 0.4f;
-			} else if (dist <= 7f && dist > 6f){
-				audioD.volume = 0.5f;
-			} else if (dist <= 6f && dist > 5f){
-				audioD.volume = 0.6f;
-			} else if (dist <= 5f && dist > 4f){
-				audioD.volume = 0.7f;
-			} else if (dist <= 4f && dist > 3f){
-				audioD.volume = 0.8f;
-			} else if (dist <= 3f && dist > 2f){
-				audioD.volume = 0.9f;
-			} else if (dist <= 2f && dist > 1f){
-				audioD.volume = 1f;
-			} else if (dist > maxDist){
-				audioD.volume = 0;
-			} 
-			*/
+
 			if (dist <= maxDist && dist > 7.5f){
 				audioD.volume = 0.025f;
+				hear1.SetActive(true);
 			} else if (dist <= 7.5f && dist > 5f){
 				audioD.volume = 0.125f;
+				hear2.SetActive(true);
 			} else if (dist <= 5f && dist > 2.5f){
 				audioD.volume = 0.5f;
+				hear3.SetActive(true);
 			} else if (dist <= 2.5f && dist > 1f){
 				audioD.volume = 1f;
+				hear4.SetActive(true);
 			} else if (dist < 1f){
 				audioD.volume = 0;
 			} else if (dist > maxDist){
 				audioD.volume = 0;
 			} 			
 			duck.SendMessage("quackback");
+
 		}
-		yield return new WaitForSeconds(.75f);
+		yield return new WaitForSeconds(.25f);
+		hear1.SetActive(false);
+		hear2.SetActive(false);
+		hear3.SetActive(false);
+		hear4.SetActive(false);
+		yield return new WaitForSeconds(.5f);
 		isCalling = false;
+
 	}	
 
 	void checkDist () {

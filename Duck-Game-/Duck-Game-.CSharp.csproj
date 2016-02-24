@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Rotation.cs" />
     <Compile Include="Assets\Scripts\Duck\QuackBack.cs" />
     <Compile Include="Assets\Scripts\HeadRotate.cs" />
     <Compile Include="Assets\Scripts\Player\DuckCall.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\Scripts\duckLocations.cs" />
     <Compile Include="Assets\Scripts\duckLogic.cs" />
     <Compile Include="Assets\Scripts\shootBullet.cs" />
+    <Compile Include="Assets\Scripts\smoothFollow.cs" />
     <Compile Include="Assets\Scripts\waitAndDestroy.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />

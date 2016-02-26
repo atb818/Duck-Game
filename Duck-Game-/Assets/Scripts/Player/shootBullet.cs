@@ -5,15 +5,25 @@ public class shootBullet : MonoBehaviour {
 
 
     public GameObject bullet;
-    public GameObject boy;
-	
+    public float fireRate = 0.5f;
+    private float nextFire = 0.0F;
+    public float power = 100.0F;
 
-	void Update () {
-
-        if (Input.GetMouseButtonDown(0))
+    void FixedUpdate()
+    {
+        if (Input.GetButton("Fire1"))
         {
-            GameObject newBullet = (GameObject)Instantiate(bullet, transform.position, boy.transform.rotation);
-            newBullet.GetComponent<bulletLogic>().player = boy;
+            power += Time.deltaTime;
+        }
+
+        if (Input.GetButtonUp("Fire1"))
+        {
+            nextFire = Time.time + fireRate;
+            GameObject newBullet = Instantiate(bullet, transform.position, transform.rotation) as GameObject;
+            newBullet.GetComponent<Rigidbody>().AddForce(transform.up * power * 400);
+            newBullet.GetComponent<Rigidbody>().AddForce(transform.forward * power * 500);
+
+            power = 0;
         }
     }
 }

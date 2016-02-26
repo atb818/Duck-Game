@@ -11,7 +11,7 @@ public class DuckFOV : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter(Collision player){
+	void OnTriggerEnter(Collider player){
 		if (player.CompareTag("Player")){
 			//GET IT
 		}

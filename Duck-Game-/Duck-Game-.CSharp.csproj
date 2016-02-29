@@ -74,30 +74,30 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Rotation.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckFOV.cs" />
-    <Compile Include="Assets\Scripts\Duck\QuackBack.cs" />
-    <Compile Include="Assets\Scripts\Duck\duckCollide.cs" />
-    <Compile Include="Assets\Scripts\Duck\duckLocations.cs" />
-    <Compile Include="Assets\Scripts\Duck\duckLogic.cs" />
-    <Compile Include="Assets\Scripts\Player\DuckCall.cs" />
+    <Compile Include="Assets\Scripts\Duck\Old\QuackBack.cs" />
+    <Compile Include="Assets\Scripts\Duck\Old\duckCollide.cs" />
+    <Compile Include="Assets\Scripts\Duck\Old\duckLocations.cs" />
+    <Compile Include="Assets\Scripts\Duck\Old\duckLogic.cs" />
     <Compile Include="Assets\Scripts\Player\FreeMovement.cs" />
     <Compile Include="Assets\Scripts\Player\HeadRotate.cs" />
     <Compile Include="Assets\Scripts\Player\MouseLock.cs" />
-    <Compile Include="Assets\Scripts\Player\NodeMovement.cs" />
-    <Compile Include="Assets\Scripts\Player\Raycast.cs" />
-    <Compile Include="Assets\Scripts\Player\Raycast2.cs" />
-    <Compile Include="Assets\Scripts\Player\RaycastReflection.cs" />
+    <Compile Include="Assets\Scripts\Player\Old\DuckCall.cs" />
+    <Compile Include="Assets\Scripts\Player\Old\NodeMovement.cs" />
+    <Compile Include="Assets\Scripts\Player\Old\Raycast.cs" />
+    <Compile Include="Assets\Scripts\Player\Old\Raycast2.cs" />
+    <Compile Include="Assets\Scripts\Player\Old\RaycastReflection.cs" />
+    <Compile Include="Assets\Scripts\Player\Old\laser.cs" />
     <Compile Include="Assets\Scripts\Player\bulletLogic.cs" />
-    <Compile Include="Assets\Scripts\Player\laser.cs" />
     <Compile Include="Assets\Scripts\Player\shootBullet.cs" />
     <Compile Include="Assets\Scripts\Player\smoothFollow.cs" />
+    <Compile Include="Assets\Scripts\Rotation.cs" />
     <Compile Include="Assets\Scripts\Teacher\SafeZone.cs" />
     <Compile Include="Assets\Scripts\Teacher\Teacher.cs" />
     <Compile Include="Assets\Scripts\Teacher\TeacherCheck.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
+    <Compile Include="Assets\Scripts\projector.cs" />
     <Compile Include="Assets\Scripts\waitAndDestroy.cs" />
-    <Compile Include="Assets\projector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />

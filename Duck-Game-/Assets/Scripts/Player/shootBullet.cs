@@ -7,12 +7,24 @@ public class shootBullet : MonoBehaviour {
     public GameObject bullet;
     public float fireRate = 0.5f;
     private float nextFire = 0.0F;
-    public float power = 100.0F;
+    public float power = 0f;
+ 
+
+
+    void Update() {
+
+        
+
+    }
 
     void FixedUpdate()
     {
+
+        power = Mathf.Clamp(power, .25f, 1f);
+
         if (Input.GetButton("Fire1"))
         {
+            
             power += Time.deltaTime;
         }
 

@@ -69,7 +69,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Hover.cs" />
     <Compile Include="Assets\Scripts\Bread\AttractDuck.cs" />
     <Compile Include="Assets\Scripts\Bread\AttractDuck2.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckEat.cs" />
@@ -78,6 +77,7 @@
     <Compile Include="Assets\Scripts\Duck\Old\duckCollide.cs" />
     <Compile Include="Assets\Scripts\Duck\Old\duckLocations.cs" />
     <Compile Include="Assets\Scripts\Duck\Old\duckLogic.cs" />
+    <Compile Include="Assets\Scripts\Hover.cs" />
     <Compile Include="Assets\Scripts\Player\FreeMovement.cs" />
     <Compile Include="Assets\Scripts\Player\HeadRotate.cs" />
     <Compile Include="Assets\Scripts\Player\MouseLock.cs" />
@@ -95,10 +95,10 @@
     <Compile Include="Assets\Scripts\Teacher\Teacher.cs" />
     <Compile Include="Assets\Scripts\Teacher\TeacherCheck.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
+    <Compile Include="Assets\Scripts\ammoCheck.cs" />
     <Compile Include="Assets\Scripts\projector.cs" />
+    <Compile Include="Assets\Scripts\refillBread.cs" />
     <Compile Include="Assets\Scripts\waitAndDestroy.cs" />
-    <Compile Include="Assets\ammoCheck.cs" />
-    <Compile Include="Assets\refillBread.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />

@@ -3,13 +3,26 @@ using System.Collections;
 
 public class CamSwap : MonoBehaviour {
 
-	// Use this for initialization
+	public GameObject camR, camL;
+	bool camRight = true;
+
 	void Start () {
-	
+		camR.SetActive(true);
+		camL.SetActive(false);
 	}
 	
-	// Update is called once per frame
 	void Update () {
+		if (camRight){
+			camR.SetActive(true);
+			camL.SetActive(false);
+		} else {
+			camR.SetActive(false);
+			camL.SetActive(true);
+		}
+
+		if (Input.GetKeyDown(KeyCode.C)){
+			camRight = !camRight;
+		}
 	
 	}
 }

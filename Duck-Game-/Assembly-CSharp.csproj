@@ -45,6 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Bread\AttractDuck.cs" />
+     <Compile Include="Assets\Scripts\Bread\AttractDuck2.cs" />
+     <Compile Include="Assets\Scripts\Duck\DuckEat.cs" />
      <Compile Include="Assets\Scripts\Duck\DuckFOV.cs" />
      <Compile Include="Assets\Scripts\Duck\Old\QuackBack.cs" />
      <Compile Include="Assets\Scripts\Duck\Old\duckCollide.cs" />

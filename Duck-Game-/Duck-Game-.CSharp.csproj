@@ -18,6 +18,7 @@
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.3.2f1</UnityVersion>
     <RootNamespace></RootNamespace>
+    <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -60,12 +61,6 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Duck-Game-.CSharp.Plugins.csproj">
@@ -74,6 +69,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Hover.cs" />
+    <Compile Include="Assets\Scripts\Bread\AttractDuck.cs" />
+    <Compile Include="Assets\Scripts\Bread\AttractDuck2.cs" />
+    <Compile Include="Assets\Scripts\Duck\DuckEat.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckFOV.cs" />
     <Compile Include="Assets\Scripts\Duck\Old\QuackBack.cs" />
     <Compile Include="Assets\Scripts\Duck\Old\duckCollide.cs" />
@@ -98,6 +97,7 @@
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\projector.cs" />
     <Compile Include="Assets\Scripts\waitAndDestroy.cs" />
+    <Compile Include="Assets\refillBread.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />

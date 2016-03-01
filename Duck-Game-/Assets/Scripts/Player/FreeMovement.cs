@@ -20,19 +20,19 @@ public class FreeMovement : MonoBehaviour
     {
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
-            rb.AddForce(Vector3.left * -speed);
+            rb.AddRelativeForce(Vector3.left * -speed);
         }
         if (Input.GetAxisRaw("Horizontal") < 0)
         {
-            rb.AddForce(Vector3.left * speed);
+            rb.AddRelativeForce(Vector3.left * speed);
         }
         if (Input.GetAxisRaw("Vertical") > 0)
         {
-            rb.AddForce(Vector3.forward * speed);
+            rb.AddRelativeForce(Vector3.forward * speed);
         }
         if (Input.GetAxisRaw("Vertical") < 0)
         {
-            rb.AddForce(Vector3.forward * -speed);
+            rb.AddRelativeForce(Vector3.forward * -speed);
         }
         //if (Input.GetAxisRaw("Vertical") == 0 && Input.GetAxisRaw("Horizontal") == 0)
         //{

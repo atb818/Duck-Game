@@ -42,4 +42,12 @@ public class DuckEat : MonoBehaviour {
 		getBread = true;
 		print ("Duck wants bread");
 	}
+
+	void OnCollisionEnter (Collision bread){
+		if (bread.gameObject.CompareTag("Bread")){
+			hasEaten = true;
+			transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
+			Destroy(bread.gameObject);
+		}
+	}
 }

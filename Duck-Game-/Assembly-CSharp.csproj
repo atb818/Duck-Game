@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Bread\AttractDuck2.cs" />
      <Compile Include="Assets\Scripts\Bread\Hover.cs" />
      <Compile Include="Assets\Scripts\Bread\refillBread.cs" />
+     <Compile Include="Assets\Scripts\Duck\DuckCharacterController.cs" />
      <Compile Include="Assets\Scripts\Duck\DuckEat.cs" />
      <Compile Include="Assets\Scripts\Duck\DuckFOV.cs" />
      <Compile Include="Assets\Scripts\Duck\Old\QuackBack.cs" />

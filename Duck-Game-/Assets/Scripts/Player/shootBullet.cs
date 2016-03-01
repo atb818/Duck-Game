@@ -8,12 +8,12 @@ public class shootBullet : MonoBehaviour {
     public float fireRate = 0.5f;
     private float nextFire = 0.0F;
     public float power = 0f;
-
+    float torquePower;
     public static int ammo = 0;
 
     void Update()
     {
-        print(ammo);
+        torquePower = Random.Range(50, 500);
     }
 
     void FixedUpdate()
@@ -31,6 +31,7 @@ public class shootBullet : MonoBehaviour {
         {
             nextFire = Time.time + fireRate;
             GameObject newBullet = Instantiate(bullet, transform.position, transform.rotation) as GameObject;
+            newBullet.GetComponent<Rigidbody>().AddTorque(transform.up * torquePower);
             newBullet.GetComponent<Rigidbody>().AddForce(transform.up * power * 400);
             newBullet.GetComponent<Rigidbody>().AddForce(transform.forward * power * 500);
 

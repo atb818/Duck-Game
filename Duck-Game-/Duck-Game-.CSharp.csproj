@@ -97,6 +97,7 @@
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\projector.cs" />
     <Compile Include="Assets\Scripts\waitAndDestroy.cs" />
+    <Compile Include="Assets\ammoCheck.cs" />
     <Compile Include="Assets\refillBread.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -11,7 +11,7 @@ public class refillBread : MonoBehaviour {
 	// Update is called once per frame
 	void OnTriggerEnter (Collider other) {
 
-        if(other.gameObject.tag == "Bread")
+        if(other.gameObject.tag == "Bread" || other.gameObject.tag == "BreadPickup")
         {
             shootBullet.ammo++;
             Destroy(other.gameObject);

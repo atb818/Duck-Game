@@ -13,7 +13,7 @@ public class AttractDuck : MonoBehaviour {
 
 
 	void OnCollisionEnter (Collision ground){
-		if (ground.gameObject.CompareTag("Ground")){
+		if (ground.gameObject.CompareTag("Ground") && trigger != null){
 			trigger.SetActive(true);
 		}
 	}

@@ -74,15 +74,22 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Hover.cs" />
     <Compile Include="Assets\Scripts\Bread\AttractDuck.cs" />
     <Compile Include="Assets\Scripts\Bread\AttractDuck2.cs" />
+    <Compile Include="Assets\Scripts\Bread\Hover.cs" />
+    <Compile Include="Assets\Scripts\Bread\ammoCheck.cs" />
+    <Compile Include="Assets\Scripts\Bread\projector.cs" />
+    <Compile Include="Assets\Scripts\Bread\refillBread.cs" />
+    <Compile Include="Assets\Scripts\Duck\DuckCharacterController.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckEat.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckFOV.cs" />
     <Compile Include="Assets\Scripts\Duck\Old\QuackBack.cs" />
     <Compile Include="Assets\Scripts\Duck\Old\duckCollide.cs" />
     <Compile Include="Assets\Scripts\Duck\Old\duckLocations.cs" />
     <Compile Include="Assets\Scripts\Duck\Old\duckLogic.cs" />
+    <Compile Include="Assets\Scripts\Old\Timer.cs" />
+    <Compile Include="Assets\Scripts\Old\waitAndDestroy.cs" />
+    <Compile Include="Assets\Scripts\Player\CamSwap.cs" />
     <Compile Include="Assets\Scripts\Player\FreeMovement.cs" />
     <Compile Include="Assets\Scripts\Player\HeadRotate.cs" />
     <Compile Include="Assets\Scripts\Player\MouseLock.cs" />
@@ -99,10 +106,6 @@
     <Compile Include="Assets\Scripts\Teacher\SafeZone.cs" />
     <Compile Include="Assets\Scripts\Teacher\Teacher.cs" />
     <Compile Include="Assets\Scripts\Teacher\TeacherCheck.cs" />
-    <Compile Include="Assets\Scripts\Timer.cs" />
-    <Compile Include="Assets\Scripts\projector.cs" />
-    <Compile Include="Assets\Scripts\waitAndDestroy.cs" />
-    <Compile Include="Assets\refillBread.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />

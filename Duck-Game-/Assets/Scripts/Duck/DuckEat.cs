@@ -19,10 +19,14 @@ public class DuckEat : MonoBehaviour {
 	
 	void Update () {
 		if (getBread && !hasEaten){
+			/*
 			smoothRotate.eulerAngles = new Vector3 (0, transform.eulerAngles.y, 0); 
             var newRotation = Quaternion.LookRotation(posB.position - transform.position);
             transform.rotation = Quaternion.Slerp(smoothRotate, newRotation, .05f);
 
+            rb.AddForce(transform.forward * speed);
+            */
+            transform.LookAt(posB);
             rb.AddForce(transform.forward * speed);
 		}
 

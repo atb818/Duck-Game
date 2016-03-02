@@ -6,21 +6,23 @@ public class DuckCharacterController : MonoBehaviour {
 	CharacterController cc;
 	bool getBread = false;
 	bool hasEaten = false;
-	//Transform posA, posB;
 	GameObject target;
 	public float dist;
 	public float eatDist;
 	public GameObject FOV;
+	public float restTime;
+	float yPos;
 
 	void Start () {
 		cc = GetComponent<CharacterController>();
 		cc.detectCollisions = true;
 		target = null;
-		//posA = this.transform;
-		//posB = this.transform;
+		yPos = transform.position.y;
 	}
 	
 	void Update () {
+
+		transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
 
 		if (target != null){
 
@@ -35,15 +37,10 @@ public class DuckCharacterController : MonoBehaviour {
             	transform.LookAt(target.transform);
             	//dist = Vector3.Distance(target.transform.position, transform.position);
             	cc.Move(transform.forward * Time.deltaTime);
+            	FOV.SetActive(false);
 			}
 			if (dist <= eatDist){
-				hasEaten = true;
-				transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
-				Destroy (target.gameObject);
-				target = null;
-				print ("duck has eaten");
-				//Below is just for testing -- MUST be changed when reticle aiming is implemented!!!!
-				FOV.SetActive(false);
+				StartCoroutine("Resting");				
 			}
 		}
 	
@@ -55,16 +52,15 @@ public class DuckCharacterController : MonoBehaviour {
 		//print ("Duck wants bread"); -- CONFIRMED
 	}
 
-	/*
-	void OnTriggerEnter (Collider bread){
-		if (hasEaten == false){
-			if (bread.gameObject.CompareTag("Bread")){
-				hasEaten = true;
-				print ("hasEaten = true");
-				transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
-				Destroy(bread.gameObject);
-			}
-		}
+	IEnumerator Resting () {
+		Destroy (target.gameObject);
+		hasEaten = true;
+		transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
+		target = null;
+		FOV.SetActive(false);
+		yield return new WaitForSeconds(restTime);
+		FOV.SetActive(true);
+		hasEaten = false;
 	}
-	*/
+
 }

@@ -4,47 +4,55 @@ using System.Collections;
 public class DuckCharacterController : MonoBehaviour {
 
 	CharacterController cc;
-	//Vector3 moveDirection = Vector3.zero;
-
 	bool getBread = false;
 	bool hasEaten = false;
-	Transform posA, posB;
+	//Transform posA, posB;
 	GameObject target;
 	public float dist;
 	public float eatDist;
+	public GameObject FOV;
 
 	void Start () {
 		cc = GetComponent<CharacterController>();
 		cc.detectCollisions = true;
-		posA = this.transform;
-		posB = this.transform;
 		target = null;
+		//posA = this.transform;
+		//posB = this.transform;
 	}
 	
 	void Update () {
+
 		if (target != null){
-		dist = Vector3.Distance(target.transform.position, transform.position);
-		if (getBread && !hasEaten){
-            transform.LookAt(target.transform);
-            //dist = Vector3.Distance(target.transform.position, transform.position);
-            cc.Move(transform.forward * Time.deltaTime);
-		}
-		if (dist <= eatDist){
-			hasEaten = true;
-			transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
-			Destroy (target.gameObject);
-			target = null;
-			print ("duck has eaten");
-		}
+
+			/*
+			if (target.CompareTag("Bread")){
+				print("target = bread"); -- CONFIRMED
+			}
+			*/
+
+			dist = Vector3.Distance(target.transform.position, transform.position);
+			if (getBread && !hasEaten){
+            	transform.LookAt(target.transform);
+            	//dist = Vector3.Distance(target.transform.position, transform.position);
+            	cc.Move(transform.forward * Time.deltaTime);
+			}
+			if (dist <= eatDist){
+				hasEaten = true;
+				transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
+				Destroy (target.gameObject);
+				target = null;
+				print ("duck has eaten");
+				//Below is just for testing -- MUST be changed when reticle aiming is implemented!!!!
+				FOV.SetActive(false);
+			}
 		}
 	
 	}
 
 	void EatBread (GameObject bread){
-		//posB = bread.transform;
-		target = bread;
+		target = bread.gameObject;
 		getBread = true;
-		print ("Duck wants bread");
+		//print ("Duck wants bread"); -- CONFIRMED
 	}
 
 	/*

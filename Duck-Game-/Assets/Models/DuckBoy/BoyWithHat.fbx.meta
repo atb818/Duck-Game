@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 7c96f9c0d906fd14693377f2f49943a7
 timeCreated: 1456945516
+=======
+guid: a36495ab71889444d9c5bddad7ac2e37
+timeCreated: 1456943056
+>>>>>>> 5a6ef42760032041ee7fdca4f3b0ad24a12408b7
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -140,6 +145,10 @@ ModelImporter:
     2300000: polySurface6
     3300000: polySurface6
     4300000: polySurface6
+<<<<<<< HEAD
+=======
+    6400000: polySurface6
+>>>>>>> 5a6ef42760032041ee7fdca4f3b0ad24a12408b7
   materials:
     importMaterials: 1
     materialName: 0
@@ -164,12 +173,21 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
+<<<<<<< HEAD
     globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
+=======
+    globalScale: 100
+    meshCompression: 3
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+>>>>>>> 5a6ef42760032041ee7fdca4f3b0ad24a12408b7
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -181,7 +199,11 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
+<<<<<<< HEAD
     normalImportMode: 0
+=======
+    normalImportMode: 1
+>>>>>>> 5a6ef42760032041ee7fdca4f3b0ad24a12408b7
     tangentImportMode: 3
   importAnimation: 1
   copyAvatar: 0

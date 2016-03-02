@@ -8,7 +8,7 @@ public class AttractDuck2 : MonoBehaviour {
 	void OnTriggerEnter(Collider duck){
 		if (duck.CompareTag("Duck")){
 			duck.SendMessage("EatBread", bread.gameObject);
-			print("duck wants bread");
+			//print("duck wants bread");
 		}
 	}
 }

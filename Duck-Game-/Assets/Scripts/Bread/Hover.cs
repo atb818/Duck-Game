@@ -14,7 +14,8 @@ public class Hover : MonoBehaviour {
 	}
 	void Update()
 	{
-		if(Move)
+        transform.Rotate(0, 0, 50 * Time.deltaTime);
+        if (Move)
 			transform.position = startPosition + MoveVector * (MoveRange * Mathf.Sin(Time.time * MoveSpeed));
 	
 	}

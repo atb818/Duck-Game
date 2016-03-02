@@ -61,7 +61,8 @@
      <Compile Include="Assets\Scripts\Gameplay\Victory1.cs" />
      <Compile Include="Assets\Scripts\Old\Timer.cs" />
      <Compile Include="Assets\Scripts\Old\waitAndDestroy.cs" />
-     <Compile Include="Assets\Scripts\Player\CamSwap.cs" />
+     <Compile Include="Assets\Scripts\Player\Camera\CamSwap.cs" />
+     <Compile Include="Assets\Scripts\Player\Camera\CamTrigger.cs" />
      <Compile Include="Assets\Scripts\Player\FreeMovement.cs" />
      <Compile Include="Assets\Scripts\Player\HeadRotate.cs" />
      <Compile Include="Assets\Scripts\Player\MouseLock.cs" />

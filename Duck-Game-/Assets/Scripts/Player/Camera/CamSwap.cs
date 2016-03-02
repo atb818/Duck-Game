@@ -4,7 +4,7 @@ using System.Collections;
 public class CamSwap : MonoBehaviour {
 
 	public GameObject camR, camL;
-	bool camRight = true;
+	public static bool camRight = true;
 
 	void Start () {
 		camR.SetActive(true);
@@ -21,8 +21,12 @@ public class CamSwap : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown(KeyCode.C)){
-			camRight = !camRight;
+			Swap();
 		}
 	
+	}
+
+	void Swap () {
+		camRight = !camRight;
 	}
 }

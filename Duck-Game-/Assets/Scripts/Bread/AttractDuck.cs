@@ -10,7 +10,8 @@ public class AttractDuck : MonoBehaviour {
 	public GameObject trigger;
 
 	void Start () {
-		trigger.SetActive(false);
+		//trigger.SetActive(false);
+		trigger.SetActive(true);
 	}
 
 	void OnCollisionEnter (Collision ground){

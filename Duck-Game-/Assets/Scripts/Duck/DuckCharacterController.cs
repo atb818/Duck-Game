@@ -11,14 +11,18 @@ public class DuckCharacterController : MonoBehaviour {
 	public float eatDist;
 	public GameObject FOV;
 	public float restTime;
+	float yPos;
 
 	void Start () {
 		cc = GetComponent<CharacterController>();
 		cc.detectCollisions = true;
 		target = null;
+		yPos = transform.position.y;
 	}
 	
 	void Update () {
+
+		transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
 
 		if (target != null){
 

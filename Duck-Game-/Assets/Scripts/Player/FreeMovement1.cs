@@ -21,11 +21,11 @@ public class FreeMovement1 : MonoBehaviour
     {
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
-            transform.Rotate(Vector3.left *spin* Time.DeltaTime);
+            transform.Rotate(Vector3.left *spin* Time.deltaTime);
         }
         if (Input.GetAxisRaw("Horizontal") < 0)
         {
-            transform.Rotate(Vector3.left *spin* Time.DeltaTime);
+            transform.Rotate(Vector3.left *spin* Time.deltaTime);
         }
         if (Input.GetAxisRaw("Vertical") > 0)
         {

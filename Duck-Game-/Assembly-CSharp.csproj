@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\Player\Camera\CamSwap.cs" />
      <Compile Include="Assets\Scripts\Player\Camera\CamTrigger.cs" />
      <Compile Include="Assets\Scripts\Player\FreeMovement.cs" />
+     <Compile Include="Assets\Scripts\Player\FreeMovement1.cs" />
      <Compile Include="Assets\Scripts\Player\HeadRotate.cs" />
      <Compile Include="Assets\Scripts\Player\MouseLock.cs" />
      <Compile Include="Assets\Scripts\Player\Old\DuckCall.cs" />
@@ -80,6 +81,7 @@
      <Compile Include="Assets\Scripts\Teacher\SafeZone.cs" />
      <Compile Include="Assets\Scripts\Teacher\Teacher.cs" />
      <Compile Include="Assets\Scripts\Teacher\TeacherCheck.cs" />
+     <Compile Include="Assets\Scripts\Testing\testHealth.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

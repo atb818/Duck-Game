@@ -106,6 +106,7 @@
     <Compile Include="Assets\Scripts\Teacher\Teacher.cs" />
     <Compile Include="Assets\Scripts\Teacher\TeacherCheck.cs" />
     <Compile Include="Assets\Scripts\Testing\testHealth.cs" />
+    <Compile Include="Assets\lockerDoor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />

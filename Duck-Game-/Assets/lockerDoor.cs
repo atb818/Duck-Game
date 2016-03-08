@@ -29,7 +29,7 @@ public class lockerDoor : MonoBehaviour {
 
         if (opened == true)
             {
-                newRotation = Quaternion.AngleAxis(180, Vector3.up);
+                newRotation = Quaternion.AngleAxis(-120, Vector3.up);
             }
 
         else if (opened == false)

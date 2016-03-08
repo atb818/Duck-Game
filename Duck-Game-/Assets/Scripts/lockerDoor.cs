@@ -58,4 +58,15 @@ public class lockerDoor : MonoBehaviour {
         }
     }
 
+    public void changeDoor()
+    {
+        if (!opened)
+        {
+            opened = true;
+        }
+        else {
+            opened = false;
+        }
+    }
+
 }

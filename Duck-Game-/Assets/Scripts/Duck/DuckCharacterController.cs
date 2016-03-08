@@ -4,14 +4,22 @@ using System.Collections;
 public class DuckCharacterController : MonoBehaviour {
 
 	CharacterController cc;
+	float yPos;
+	public GameObject DB;
+
+	//See Bread
+	GameObject target;
+	float breadDist;
+	public float eatDist;
+	public float restTime;
 	bool getBread = false;
 	bool hasEaten = false;
-	GameObject target;
-	public float dist;
-	public float eatDist;
+
+	//See Player
+	float playerDist;
+	public float fovDist;
+	bool getPlayer = false;
 	public GameObject FOV;
-	public float restTime;
-	float yPos;
 
 	void Start () {
 		cc = GetComponent<CharacterController>();
@@ -24,23 +32,32 @@ public class DuckCharacterController : MonoBehaviour {
 
 		transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
 
+		playerDist = Vector3.Distance(DB.transform.position, transform.position);
+
+		if (playerDist <= fovDist){
+			getPlayer = true;
+			print ("duck sees player");
+    		//transform.LookAt(DB.transform);
+    		//cc.Move(transform.forward * Time.deltaTime);
+		}
+
+		if (getPlayer){
+    		transform.LookAt(DB.transform);
+    		cc.Move(transform.forward * Time.deltaTime * 2);
+		}
+
 		if (target != null){
-
-			/*
+			getPlayer = false;
+			breadDist = Vector3.Distance(target.transform.position, transform.position);
 			if (target.CompareTag("Bread")){
-				print("target = bread"); -- CONFIRMED
-			}
-			*/
-
-			dist = Vector3.Distance(target.transform.position, transform.position);
-			if (getBread && !hasEaten){
-            	transform.LookAt(target.transform);
-            	//dist = Vector3.Distance(target.transform.position, transform.position);
-            	cc.Move(transform.forward * Time.deltaTime);
-            	FOV.SetActive(false);
-			}
-			if (dist <= eatDist){
-				StartCoroutine("Resting");				
+				if (getBread && !hasEaten){
+            		transform.LookAt(target.transform);
+            		cc.Move(transform.forward * Time.deltaTime);
+            		FOV.SetActive(false);
+				}
+				if (breadDist <= eatDist){
+					StartCoroutine("Resting");				
+				}
 			}
 		}
 	

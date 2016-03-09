@@ -4,8 +4,15 @@ using System.Collections;
 public class lockerDoor : MonoBehaviour {
 
     bool doorOpen = false;
-    bool opened = false;
+    bool opened = true;
     Quaternion newRotation;
+
+    Vector3 startRot;
+
+
+    void Start() {
+        startRot = transform.eulerAngles;
+    }
 
 	void Update () {
 
@@ -28,13 +35,14 @@ public class lockerDoor : MonoBehaviour {
  
 
         if (opened == true)
-            {
-                newRotation = Quaternion.AngleAxis(-120, Vector3.up);
-            }
+        {
+            newRotation = Quaternion.AngleAxis(startRot.y - 120, Vector3.up);
+        }
 
         else if (opened == false)
         {
-            newRotation = Quaternion.AngleAxis(0, Vector3.up);
+
+            newRotation = Quaternion.AngleAxis(startRot.y - 0, Vector3.up);
         }
      
                 

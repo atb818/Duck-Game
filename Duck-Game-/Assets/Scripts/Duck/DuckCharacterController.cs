@@ -29,13 +29,22 @@ public class DuckCharacterController : MonoBehaviour {
 	bool playerInAngle = false;
 	public GameObject FOV;
 
+	//DUCKS RETURN
+	Vector3 startPos;
+	Vector3 startRot;
+
 	void Start () {
+		startPos = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
+		startRot = transform.eulerAngles;
+		transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
+
 		cc = GetComponent<CharacterController>();
 		cc.detectCollisions = true;
 		target = null;
 		yPos = transform.position.y;
 
 		ducks = GameObject.FindGameObjectsWithTag("Duck");
+		FOV.SetActive(false);
 	}
 	
 	void Update () {
@@ -57,15 +66,24 @@ public class DuckCharacterController : MonoBehaviour {
 				if (getBread && !isResting){
             		transform.LookAt(target.transform);
             		cc.Move(transform.forward * Time.deltaTime * speed);
-            		FOV.SetActive(false);
+            		//FOV.SetActive(false);
 				}
 				if (breadDist <= eatDist){
 					StartCoroutine("Resting");				
 				}
 			}
-		} else if (target == null && !isResting){
-			FOV.SetActive(true);
+		} else if (target == null && !isResting && !playerInDist){
+			float returnDist = Vector3.Distance(startPos, transform.position);
+
+			//FOV.SetActive(true);
 			transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
+			transform.LookAt(startPos);
+			if (returnDist > 0.5f){
+				cc.Move(transform.forward * Time.deltaTime * speed);
+			} else {
+				//Quaternion.slerp current rot --> startRot
+				transform.eulerAngles = startRot;
+			}
 		}
 
 		//NEW BREAD SCRIPT
@@ -109,13 +127,13 @@ public class DuckCharacterController : MonoBehaviour {
 		isResting = true;
 		transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
 		target = null;
-		FOV.SetActive(false);
+		//FOV.SetActive(false);
 		//to other ducks:
 		foreach (GameObject d in ducks) {
 			d.GetComponent<DuckCharacterController>().ClearTarget();
         }
 		yield return new WaitForSeconds(restTime);
-		FOV.SetActive(true);
+		//FOV.SetActive(true);
 		isResting = false;
 	}
 

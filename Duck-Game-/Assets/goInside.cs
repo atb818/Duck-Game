@@ -9,6 +9,9 @@ public class goInside : MonoBehaviour {
     public GameObject player;
 
 	void Update () {
+
+        print(insideLocker);
+        print(insideLockerGlobal);
 	
         if(insideLocker == true )
         {
@@ -23,19 +26,27 @@ public class goInside : MonoBehaviour {
 
 	}
 
-    void OnTriggerStay(Collider other) {
+    void OnTriggerEnter(Collider other) {
+
         if(other.gameObject.tag == "Player")
         {
-            if (!insideLocker)
-            {
+            
                 insideLocker = true;
                 insideLockerGlobal = true;
-            } else if (insideLocker)
-            {
-                insideLocker = false;
-                insideLockerGlobal = false;
-            }
         }
  
     }
+
+    void OnTriggerExit(Collider other)
+    {
+
+        if (other.gameObject.tag == "Player")
+        {
+
+            insideLocker = false;
+            insideLockerGlobal = false;
+        }
+
+    }
+
 }

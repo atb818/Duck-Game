@@ -3,7 +3,8 @@ using System.Collections;
 
 public class goInside : MonoBehaviour {
 
-    bool insideLocker;
+    public static bool insideLockerGlobal = false;
+    bool insideLocker = false;
     public lockerDoor script;
     public GameObject player;
 
@@ -12,6 +13,7 @@ public class goInside : MonoBehaviour {
         if(insideLocker == true )
         {
             if (Input.GetKeyDown(KeyCode.E)){
+
                 script.changeDoor();
 
                 player.transform.position = new Vector3 (this.transform.position.x, player.transform.position.y, this.transform.position.z);
@@ -24,8 +26,16 @@ public class goInside : MonoBehaviour {
     void OnTriggerStay(Collider other) {
         if(other.gameObject.tag == "Player")
         {
-            insideLocker = true;
-
+            if (!insideLocker)
+            {
+                insideLocker = true;
+                insideLockerGlobal = true;
+            } else if (insideLocker)
+            {
+                insideLocker = false;
+                insideLockerGlobal = false;
+            }
         }
+ 
     }
 }

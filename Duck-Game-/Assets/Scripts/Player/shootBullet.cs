@@ -23,35 +23,40 @@ public class shootBullet : MonoBehaviour {
 
         torquePower = Random.Range(50, 500);
 
-        if (Input.GetMouseButton(0))
+        if(goInside.insideLockerGlobal == false)
         {
-
-            if (power <= .20f)
+            if (Input.GetMouseButton(0))
             {
-                power = .20f;
+
+                if (power <= .20f)
+                {
+                    power = .20f;
+                }
+
+                if (ammo > 0)
+                {
+                    power += Time.deltaTime * .85f;
+                }
+
             }
 
-            if (ammo > 0)
+            if (Input.GetMouseButtonUp(0))
             {
-                power += Time.deltaTime * .85f;
+
+                if (ammo > 0)
+                {
+                    GameObject newBullet = Instantiate(bullet, transform.position, transform.rotation) as GameObject;
+                    newBullet.GetComponent<Rigidbody>().AddTorque(transform.up * torquePower);
+                    newBullet.GetComponent<Rigidbody>().AddForce(transform.up * power * 400);
+                    newBullet.GetComponent<Rigidbody>().AddForce(transform.forward * power * 500);
+                    ammo--;
+                }
+
+                power = 0;
+
             }
-            
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-
-            if(ammo > 0)
-            {
-                GameObject newBullet = Instantiate(bullet, transform.position, transform.rotation) as GameObject;
-                newBullet.GetComponent<Rigidbody>().AddTorque(transform.up * torquePower);
-                newBullet.GetComponent<Rigidbody>().AddForce(transform.up * power * 400);
-                newBullet.GetComponent<Rigidbody>().AddForce(transform.forward * power * 500);
-                ammo--;
-            }
-
-            power = 0;
-            
         }
     }
+
+      
 }

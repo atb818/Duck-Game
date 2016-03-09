@@ -10,7 +10,9 @@ public class shootBullet : MonoBehaviour {
     public static int ammo = 0;
 
     void Start() {
-        ammo = 0;
+        //ammo = 0;
+        //Below is for testing purposes:
+        ammo = 10;
     }
 
     void Update()

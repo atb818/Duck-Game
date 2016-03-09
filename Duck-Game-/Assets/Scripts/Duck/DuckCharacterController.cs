@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class DuckCharacterController : MonoBehaviour {
@@ -7,18 +7,19 @@ public class DuckCharacterController : MonoBehaviour {
 	float yPos;
 	public GameObject DB;
 
-	//See Bread
+	//SEE BREAD
 	GameObject target;
 	float breadDist;
 	public float eatDist;
 	public float restTime;
 	bool getBread = false;
-	bool hasEaten = false;
+	bool isResting = false;
 
-	//See Player
+	//SEE PLAYER
 	float playerDist;
 	public float fovDist;
-	bool getPlayer = false;
+	bool playerInDist = false;
+	bool playerInAngle = false;
 	public GameObject FOV;
 
 	void Start () {
@@ -34,23 +35,24 @@ public class DuckCharacterController : MonoBehaviour {
 
 		playerDist = Vector3.Distance(DB.transform.position, transform.position);
 
-		if (playerDist <= fovDist){
-			getPlayer = true;
-			print ("duck sees player");
-    		//transform.LookAt(DB.transform);
-    		//cc.Move(transform.forward * Time.deltaTime);
-		}
+		if (isResting == false){
+			
+			if (playerDist <= fovDist){
+				playerInDist = true;
+				print ("duck sees player");
+			}
 
-		if (getPlayer){
-    		transform.LookAt(DB.transform);
-    		cc.Move(transform.forward * Time.deltaTime * 2);
+			if (playerInDist){
+    			transform.LookAt(DB.transform);
+    			cc.Move(transform.forward * Time.deltaTime * 2	);
+			}
 		}
 
 		if (target != null){
-			getPlayer = false;
+			playerInDist = false;
 			breadDist = Vector3.Distance(target.transform.position, transform.position);
 			if (target.CompareTag("Bread")){
-				if (getBread && !hasEaten){
+				if (getBread && !isResting){
             		transform.LookAt(target.transform);
             		cc.Move(transform.forward * Time.deltaTime);
             		FOV.SetActive(false);
@@ -60,10 +62,13 @@ public class DuckCharacterController : MonoBehaviour {
 				}
 			}
 		}
+
+		//NEW BREAD SCRIPT
+
 	
 	}
 
-	void EatBread (GameObject bread){
+	public void EatBread (GameObject bread){
 		target = bread.gameObject;
 		getBread = true;
 		//print ("Duck wants bread"); -- CONFIRMED
@@ -71,13 +76,13 @@ public class DuckCharacterController : MonoBehaviour {
 
 	IEnumerator Resting () {
 		Destroy (target.gameObject);
-		hasEaten = true;
+		isResting = true;
 		transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
 		target = null;
 		FOV.SetActive(false);
 		yield return new WaitForSeconds(restTime);
 		FOV.SetActive(true);
-		hasEaten = false;
+		isResting = false;
 	}
 
 }

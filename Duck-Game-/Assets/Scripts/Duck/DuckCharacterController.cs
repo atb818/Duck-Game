@@ -7,6 +7,8 @@ public class DuckCharacterController : MonoBehaviour {
 	float yPos;
 	public GameObject DB;
 
+	public float speed;
+
 	//SEE BREAD
 	GameObject target;
 	float breadDist;
@@ -14,6 +16,7 @@ public class DuckCharacterController : MonoBehaviour {
 	public float restTime;
 	bool getBread = false;
 	bool isResting = false;
+	public GameObject[] ducks;
 
 	//SEE PLAYER
 	//Distance
@@ -31,6 +34,8 @@ public class DuckCharacterController : MonoBehaviour {
 		cc.detectCollisions = true;
 		target = null;
 		yPos = transform.position.y;
+
+		ducks = GameObject.FindGameObjectsWithTag("Duck");
 	}
 	
 	void Update () {
@@ -51,13 +56,16 @@ public class DuckCharacterController : MonoBehaviour {
 			if (target.CompareTag("Bread")){
 				if (getBread && !isResting){
             		transform.LookAt(target.transform);
-            		cc.Move(transform.forward * Time.deltaTime);
+            		cc.Move(transform.forward * Time.deltaTime * speed);
             		FOV.SetActive(false);
 				}
 				if (breadDist <= eatDist){
 					StartCoroutine("Resting");				
 				}
 			}
+		} else if (target == null && !isResting){
+			FOV.SetActive(true);
+			transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
 		}
 
 		//NEW BREAD SCRIPT
@@ -79,7 +87,7 @@ public class DuckCharacterController : MonoBehaviour {
 
 			if (playerInDist && playerInAngle){
 				transform.LookAt(DB.transform);
-				cc.Move(transform.forward * Time.deltaTime * 2	);
+				cc.Move(transform.forward * Time.deltaTime * speed);
 			}
 		}
 	}
@@ -90,12 +98,22 @@ public class DuckCharacterController : MonoBehaviour {
 		//print ("Duck wants bread"); -- CONFIRMED
 	}
 
+	public void ClearTarget (){
+		target = null;
+		transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
+		//FOV.SetActive(true);
+	}
+
 	IEnumerator Resting () {
 		Destroy (target.gameObject);
 		isResting = true;
 		transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
 		target = null;
 		FOV.SetActive(false);
+		//to other ducks:
+		foreach (GameObject d in ducks) {
+			d.GetComponent<DuckCharacterController>().ClearTarget();
+        }
 		yield return new WaitForSeconds(restTime);
 		FOV.SetActive(true);
 		isResting = false;

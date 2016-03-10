@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class DuckCharacterController : MonoBehaviour {
@@ -102,10 +103,14 @@ public class DuckCharacterController : MonoBehaviour {
 			if (playerAngle <= fovAngle){
 				playerInAngle = true;
 			}
-
+			//Get player
 			if (playerInDist && playerInAngle){
 				transform.LookAt(DB.transform);
 				cc.Move(transform.forward * Time.deltaTime * speed);
+			}
+			//Eat player
+			if (playerDist <= eatDist){
+				SceneManager.LoadScene(0);
 			}
 		}
 	}

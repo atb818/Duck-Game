@@ -101,7 +101,7 @@ public class DuckCharacterController : MonoBehaviour {
 		ReturnToPost();
 	}
 	*/
-	
+
 	public void SearchForPlayer () {
 		searching = true;
 	}

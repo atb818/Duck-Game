@@ -25,7 +25,7 @@ public class shootBullet : MonoBehaviour {
 
         if(goInside.insideLockerGlobal == false)
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetKey(KeyCode.Space))
             {
 
                 if (power <= .20f)
@@ -40,7 +40,7 @@ public class shootBullet : MonoBehaviour {
 
             }
 
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetKeyUp(KeyCode.Space))
             {
 
                 if (ammo > 0)

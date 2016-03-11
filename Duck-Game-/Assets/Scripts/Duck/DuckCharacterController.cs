@@ -22,8 +22,10 @@ public class DuckCharacterController : MonoBehaviour {
 	//SEE PLAYER
 	//Distance
 	float playerDist;
+	public float detectDist;
 	public float fovDist;
 	bool playerInDist = false;
+	bool playerDetected = false;
 	//Angle
 	float playerAngle;
 	public float fovAngle;
@@ -64,6 +66,7 @@ public class DuckCharacterController : MonoBehaviour {
 		if (target != null){
 			playerInDist = false;
 			playerInAngle = false;
+			playerDetected = false;
 			breadDist = Vector3.Distance(target.transform.position, transform.position);
 			if (target.CompareTag("Bread")){
 				if (getBread && !isResting){
@@ -80,27 +83,7 @@ public class DuckCharacterController : MonoBehaviour {
 			ReturnToPost();
 		}
 
-		/*
-		//Locker
-		if (goInside.insideLockerGlobal && searching) {
-			playerInDist = false;
-			StartCoroutine("LostPlayer");
-		}
-		*/
-
 	}
-
-	/*
-	IEnumerator LostPlayer () {
-		float defaultSpeed = speed;
-		speed = 0;
-		yield return new WaitForSeconds(4);
-		speed = defaultSpeed;
-		searching = false;
-		playerInDist = false;
-		ReturnToPost();
-	}
-	*/
 
 	public void SearchForPlayer () {
 		searching = true;
@@ -119,6 +102,10 @@ public class DuckCharacterController : MonoBehaviour {
 			//Quaternion.slerp current rot --> startRot
 			transform.eulerAngles = startRot;
 		}
+
+		playerInDist = false;
+		playerInAngle = false;
+		playerDetected = false;
 	}
 
 	void GetPlayer () {
@@ -129,12 +116,15 @@ public class DuckCharacterController : MonoBehaviour {
 					playerInDist = true;
 					//print ("duck sees player");
 				}
+				if (playerDist <= detectDist){
+					playerDetected = true;
+				}
 				//Get angle to player
 				if (playerAngle <= fovAngle){
 					playerInAngle = true;
 				}
 				//Get player
-				if (playerInDist && playerInAngle){
+				if ((playerInDist && playerInAngle) || playerDetected){
 					transform.LookAt(DB.transform);
 					cc.Move(transform.forward * Time.deltaTime * speed);
 				}

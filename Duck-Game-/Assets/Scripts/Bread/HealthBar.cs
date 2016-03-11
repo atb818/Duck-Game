@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+
 
 public class HealthBar : MonoBehaviour {
 
@@ -9,7 +10,7 @@ public class HealthBar : MonoBehaviour {
     public static float hitPoints = 1f;
 
     void Start () {
-
+        hitPoints = 1;
         health = GetComponent<Image>();
 
     }
@@ -17,7 +18,7 @@ public class HealthBar : MonoBehaviour {
 	
 	void Update () {
 
-        print(hitPoints);
+        //print(hitPoints);
 
         if(hitPoints <= 0)
         {

@@ -4,6 +4,7 @@ using System.Collections;
 public class goInside : MonoBehaviour {
 
     public static bool insideLockerGlobal = false;
+    public static bool canShoot = true;
     bool insideLocker = false;
     //GameObject hinge;
 
@@ -31,6 +32,7 @@ public class goInside : MonoBehaviour {
                 //hinge.GetComponent<lockerDoor>().changeDoor();
 
                 player.transform.position = new Vector3 (this.transform.position.x, player.transform.position.y, this.transform.position.z);
+
                 if (insideLockerGlobal){
                     insideLockerGlobal = false;
                 } else {
@@ -46,7 +48,8 @@ public class goInside : MonoBehaviour {
         if (other.gameObject.tag == "Player") {
             
                 insideLocker = true;
-                //insideLockerGlobal = true;
+            // insideLockerGlobal = true;
+            canShoot = false;
         }
  
     }
@@ -56,7 +59,8 @@ public class goInside : MonoBehaviour {
         if (other.gameObject.tag == "Player") {
 
             insideLocker = false;
-            //insideLockerGlobal = false;
+            // insideLockerGlobal = false;
+            canShoot = true;
         }
 
     }

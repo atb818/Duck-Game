@@ -23,7 +23,7 @@ public class shootBullet : MonoBehaviour {
 
         torquePower = Random.Range(50, 500);
 
-        if(goInside.insideLockerGlobal == false)
+        if(goInside.canShoot == true)
         {
             if (Input.GetKey(KeyCode.Space))
             {

@@ -130,7 +130,7 @@ public class DuckCharacterController : MonoBehaviour {
 				}
 				//Eat player
 				if (playerDist <= eatDist){
-					SceneManager.LoadScene(0);
+                    HealthBar.hitPoints -= .005f;
 				}
 			}
 		} else {

@@ -14,6 +14,7 @@ public class testHealth : MonoBehaviour {
 	
 	void Update () {
 
+
         if(shootBullet.ammo == 0)
         {
             health.fillAmount = 0;

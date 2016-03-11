@@ -5,8 +5,20 @@ public class goInside : MonoBehaviour {
 
     public static bool insideLockerGlobal = false;
     bool insideLocker = false;
+    //GameObject hinge;
+
     public lockerDoor script;
-    public GameObject player;
+    GameObject player;
+
+
+    void Start()
+    {
+       player = GameObject.FindGameObjectWithTag("Player");
+       //hinge = GameObject.Find("DoorHingeJoint");
+
+        
+    
+    }
 
 	void Update () {
 
@@ -16,6 +28,7 @@ public class goInside : MonoBehaviour {
         if (insideLocker == true ) {
             if (Input.GetKeyDown(KeyCode.E)){
                 script.changeDoor();
+                //hinge.GetComponent<lockerDoor>().changeDoor();
 
                 player.transform.position = new Vector3 (this.transform.position.x, player.transform.position.y, this.transform.position.z);
                 if (insideLockerGlobal){

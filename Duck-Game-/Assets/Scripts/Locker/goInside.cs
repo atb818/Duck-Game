@@ -10,17 +10,19 @@ public class goInside : MonoBehaviour {
 
 	void Update () {
 
-        print(insideLocker);
-        print(insideLockerGlobal);
+        //print(insideLocker);
+        //print(insideLockerGlobal);
 	
-        if(insideLocker == true )
-        {
+        if (insideLocker == true ) {
             if (Input.GetKeyDown(KeyCode.E)){
-
                 script.changeDoor();
 
                 player.transform.position = new Vector3 (this.transform.position.x, player.transform.position.y, this.transform.position.z);
-
+                if (insideLockerGlobal){
+                    insideLockerGlobal = false;
+                } else {
+                    insideLockerGlobal = true;
+                }
             }
         }
 
@@ -28,23 +30,20 @@ public class goInside : MonoBehaviour {
 
     void OnTriggerEnter(Collider other) {
 
-        if(other.gameObject.tag == "Player")
-        {
+        if (other.gameObject.tag == "Player") {
             
                 insideLocker = true;
-                insideLockerGlobal = true;
+                //insideLockerGlobal = true;
         }
  
     }
 
-    void OnTriggerExit(Collider other)
-    {
+    void OnTriggerExit(Collider other) {
 
-        if (other.gameObject.tag == "Player")
-        {
+        if (other.gameObject.tag == "Player") {
 
             insideLocker = false;
-            insideLockerGlobal = false;
+            //insideLockerGlobal = false;
         }
 
     }

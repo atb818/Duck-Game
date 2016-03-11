@@ -29,6 +29,8 @@ public class DuckCharacterController : MonoBehaviour {
 	public float fovAngle;
 	bool playerInAngle = false;
 	public GameObject FOV;
+	bool playerHiding = false;
+	bool searching = false;
 
 	//DUCKS RETURN
 	Vector3 startPos;
@@ -74,51 +76,81 @@ public class DuckCharacterController : MonoBehaviour {
 				}
 			}
 		} else if (target == null && !isResting && !playerInDist){
-			float returnDist = Vector3.Distance(startPos, transform.position);
-
 			//FOV.SetActive(true);
-			transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
-			transform.LookAt(startPos);
-			if (returnDist > 0.5f){
-				cc.Move(transform.forward * Time.deltaTime * speed);
-			} else {
-				//Quaternion.slerp current rot --> startRot
-				transform.eulerAngles = startRot;
-			}
+			ReturnToPost();
 		}
 
-		//NEW BREAD SCRIPT
+		/*
+		//Locker
+		if (goInside.insideLockerGlobal && searching) {
+			playerInDist = false;
+			StartCoroutine("LostPlayer");
+		}
+		*/
 
-	
+	}
+
+	/*
+	IEnumerator LostPlayer () {
+		float defaultSpeed = speed;
+		speed = 0;
+		yield return new WaitForSeconds(4);
+		speed = defaultSpeed;
+		searching = false;
+		playerInDist = false;
+		ReturnToPost();
+	}
+	*/
+
+	public void SearchForPlayer () {
+		searching = true;
+	}
+
+
+	void ReturnToPost () {
+		float returnDist = Vector3.Distance(startPos, transform.position);
+
+		transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
+		transform.LookAt(startPos);
+
+		if (returnDist > 0.5f){
+			cc.Move(transform.forward * Time.deltaTime * speed);
+		} else {
+			//Quaternion.slerp current rot --> startRot
+			transform.eulerAngles = startRot;
+		}
 	}
 
 	void GetPlayer () {
-		if (isResting == false){
-			//Get distance to player
-			if (playerDist <= fovDist){
-				playerInDist = true;
-				//print ("duck sees player");
+		if (goInside.insideLockerGlobal == false){
+			if (isResting == false){
+				//Get distance to player
+				if (playerDist <= fovDist){
+					playerInDist = true;
+					//print ("duck sees player");
+				}
+				//Get angle to player
+				if (playerAngle <= fovAngle){
+					playerInAngle = true;
+				}
+				//Get player
+				if (playerInDist && playerInAngle){
+					transform.LookAt(DB.transform);
+					cc.Move(transform.forward * Time.deltaTime * speed);
+				}
+				//Eat player
+				if (playerDist <= eatDist){
+					SceneManager.LoadScene(0);
+				}
 			}
-			//Get angle to player
-			if (playerAngle <= fovAngle){
-				playerInAngle = true;
-			}
-			//Get player
-			if (playerInDist && playerInAngle){
-				transform.LookAt(DB.transform);
-				cc.Move(transform.forward * Time.deltaTime * speed);
-			}
-			//Eat player
-			if (playerDist <= eatDist){
-				SceneManager.LoadScene(0);
-			}
+		} else {
+			ReturnToPost();
 		}
 	}
 
 	public void EatBread (GameObject bread){
 		target = bread.gameObject;
 		getBread = true;
-		//print ("Duck wants bread"); -- CONFIRMED
 	}
 
 	public void ClearTarget (){

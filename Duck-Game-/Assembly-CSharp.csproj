@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\Bread\ammoCheck.cs" />
      <Compile Include="Assets\Scripts\Bread\projector.cs" />
      <Compile Include="Assets\Scripts\Bread\refillBread.cs" />
+     <Compile Include="Assets\Scripts\Cameras\CameraController.cs" />
      <Compile Include="Assets\Scripts\Duck\DuckCharacterController.cs" />
      <Compile Include="Assets\Scripts\Duck\DuckEat.cs" />
      <Compile Include="Assets\Scripts\Duck\DuckFOV.cs" />
@@ -60,6 +61,7 @@
      <Compile Include="Assets\Scripts\Duck\Old\duckLogic.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Victory1.cs" />
+     <Compile Include="Assets\Scripts\Locker\DuckStop.cs" />
      <Compile Include="Assets\Scripts\Locker\goInside.cs" />
      <Compile Include="Assets\Scripts\Locker\lockerDoor.cs" />
      <Compile Include="Assets\Scripts\Old\Timer.cs" />

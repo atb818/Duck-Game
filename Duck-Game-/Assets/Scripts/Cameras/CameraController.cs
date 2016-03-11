@@ -3,12 +3,19 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour {
 
-	public GameObject Camera;
-	public GameObject[] cameras;
+	public GameObject CurrentCam;
+	GameObject[] cameras;
 
 	void Start () {
 		//Camera.SetActive(false);
 		cameras = GameObject.FindGameObjectsWithTag("MainCamera");
+	}
+
+	void OnDrawGizmos (){
+		Gizmos.color = new Color(1,0,0,0.5f);
+		Gizmos.DrawWireCube(transform.position, transform.localScale);
+		Gizmos.color = new Color(0,1,0,0.5f);
+		Gizmos.DrawLine(transform.position, CurrentCam.transform.position);
 	}
 	
 	void OnTriggerEnter (Collider player) {
@@ -16,7 +23,7 @@ public class CameraController : MonoBehaviour {
 			foreach (GameObject cam in cameras) {
 				cam.SetActive(false);
         	}
-			Camera.SetActive(true);
+			CurrentCam.SetActive(true);
 		}
 	}
 

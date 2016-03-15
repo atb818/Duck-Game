@@ -89,6 +89,7 @@
      <Compile Include="Assets\Scripts\Teacher\Teacher.cs" />
      <Compile Include="Assets\Scripts\Teacher\TeacherCheck.cs" />
      <Compile Include="Assets\Scripts\Testing\testHealth.cs" />
+     <Compile Include="Assets\checkpoint.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

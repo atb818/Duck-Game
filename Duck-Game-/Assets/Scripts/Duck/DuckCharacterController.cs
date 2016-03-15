@@ -84,33 +84,21 @@ public class DuckCharacterController : MonoBehaviour {
 		Vector3 duckDir = transform.forward;
 		playerAngle = Vector3.Angle(playerDir, duckDir);
 
-		if (isBasicDuck){
+		if (isBasicDuck && !getBread){
 			GetPlayer();
 		} else if (isPatrolDuck){
-			GetPlayer();
-			if (!chasingPlayer){
+			if (!getBread){
+				GetPlayer();
+			}
+			if (!chasingPlayer && !getBread){
 				Patrolling();
 				//gameObject.GetComponent<PatrolDuck>().PatrolUpdate();
 			} 
 		}
 
-		if (target != null){
-			playerInDist = false;
-			playerInAngle = false;
-			playerDetected = false;
-			breadDist = Vector3.Distance(target.transform.position, transform.position);
-			if (target.CompareTag("Bread")){
-				if (getBread && !isResting){
-            		//transform.LookAt(target.transform);
-            		LookAtTarget(target);
-            		cc.Move(transform.forward * Time.deltaTime * speed);
-            		//FOV.SetActive(false);
-				}
-				if (breadDist <= eatDist){
-					StartCoroutine("Resting");				
-				}
-			}
-		} else if (target == null && !isResting && !playerInDist && chasingPlayer){
+		if (target != null && target.CompareTag("Bread")){
+			EatBread2();
+		} else if (target == null && !isResting && !playerInDist && !chasingPlayer){
 			//FOV.SetActive(true);
 			ReturnToPost();
 		}
@@ -177,14 +165,20 @@ public class DuckCharacterController : MonoBehaviour {
 				if (chasingPlayer){
 					LookAtTarget(DB);
 					cc.Move(transform.forward * Time.deltaTime * speed);
+				} else {
+					ReturnToPost();
 				}
 				//Eat player
 				if (playerDist <= eatDist){
                     HealthBar.hitPoints -= .005f;
 				}
 			}
+			/*if (!playerInDist && !playerDetected){
+				ReturnToPost();
+			}*/
 		} else {
 			ReturnToPost();
+			chasingPlayer = false;
 		}
 	}
 
@@ -193,25 +187,51 @@ public class DuckCharacterController : MonoBehaviour {
 		getBread = true;
 	}
 
+	void EatBread2 () {
+		playerInDist = false;
+		playerInAngle = false;
+		playerDetected = false;
+		breadDist = Vector3.Distance(target.transform.position, transform.position);
+		if (getBread && !isResting){
+    		//transform.LookAt(target.transform);
+    		LookAtTarget(target);
+    		cc.Move(transform.forward * Time.deltaTime * speed);
+    		//FOV.SetActive(false);
+		}
+		if (breadDist <= eatDist){
+			StartCoroutine("Resting");				
+		}
+	}
+
 	public void ClearTarget (){
 		target = null;
+		getBread = false;
 		transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
 		//FOV.SetActive(true);
 	}
 
+	//ISSUE COMES AFTER RESTING
+	//looks at player as target, doesn't move correctly
+
 	IEnumerator Resting () {
 		Destroy (target.gameObject);
+
+		playerInDist = false;
+		playerInAngle = false;
+		playerDetected = false;
 		isResting = true;
 		transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
 		target = null;
 		//FOV.SetActive(false);
 		//to other ducks:
+		yield return new WaitForSeconds(restTime);
 		foreach (GameObject d in ducks) {
 			d.GetComponent<DuckCharacterController>().ClearTarget();
         }
-		yield return new WaitForSeconds(restTime);
+		//yield return new WaitForSeconds(restTime);
 		//FOV.SetActive(true);
 		isResting = false;
+		getBread = false;
 	}
 
 	void Patrolling () {
@@ -219,8 +239,6 @@ public class DuckCharacterController : MonoBehaviour {
 		target = Nodes[currentNode];
 
 		float nodeDist = Vector3.Distance(target.transform.position, transform.position);
-
-		//transform.LookAt(target);
 
 		if (nodeDist <= .5f) {
 			if (!returning){

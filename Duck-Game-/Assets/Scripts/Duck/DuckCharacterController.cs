@@ -12,6 +12,9 @@ public class DuckCharacterController : MonoBehaviour {
 	Quaternion smoothRotate;
 	Quaternion startRot;
 
+	public GameObject[] Nodes;
+	public GameObject StartNode;
+
 	//SEE BREAD
 	GameObject target;
 	float breadDist;
@@ -38,13 +41,27 @@ public class DuckCharacterController : MonoBehaviour {
 
 	//DUCKS RETURN
 	Vector3 startPos;
+	GameObject start;
 	//Vector3 startRot;
 
 	//DUCK TYPE
 	public bool isBasicDuck;
 	public bool isPatrolDuck;
 
+	//PATROL DUCK
+	int currentNode;
+	bool returning = false;
+
+
 	void Start () {
+		currentNode = 0;
+		if (isBasicDuck){
+			start = (GameObject) Instantiate (StartNode, transform.position, Quaternion.identity);
+		}
+		if (isPatrolDuck){
+			start = null;
+			transform.position = new Vector3 (Nodes[currentNode].transform.position.x, Nodes[currentNode].transform.position.y, Nodes[currentNode].transform.position.z);
+		}
 		startPos = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
 		transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
 		startRot.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z);
@@ -72,7 +89,8 @@ public class DuckCharacterController : MonoBehaviour {
 		} else if (isPatrolDuck){
 			GetPlayer();
 			if (!chasingPlayer){
-				gameObject.GetComponent<PatrolDuck>().PatrolUpdate();
+				Patrolling();
+				//gameObject.GetComponent<PatrolDuck>().PatrolUpdate();
 			} 
 		}
 
@@ -92,7 +110,7 @@ public class DuckCharacterController : MonoBehaviour {
 					StartCoroutine("Resting");				
 				}
 			}
-		} else if (target == null && !isResting && !playerInDist){
+		} else if (target == null && !isResting && !playerInDist && chasingPlayer){
 			//FOV.SetActive(true);
 			ReturnToPost();
 		}
@@ -107,21 +125,29 @@ public class DuckCharacterController : MonoBehaviour {
 
 	void ReturnToPost () {
 		chasingPlayer = false;
+		float returnDist;
 
-		float returnDist = Vector3.Distance(startPos, transform.position);
-
-		transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
-		transform.LookAt(startPos);
-
-		if (returnDist > 0.5f){
-			cc.Move(transform.forward * Time.deltaTime * speed);
-		} else {
-			//Quaternion.slerp current rot --> startRot
-			//transform.eulerAngles = startRot;
-			transform.rotation = startRot;
-			//smoothRotate.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
-			//transform.rotation = Quaternion.Slerp(smoothRotate, startRot, .05f);
+		if (isBasicDuck){
+			returnDist = Vector3.Distance(start.transform.position, transform.position);
+			LookAtTarget(start);
+			//transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
+			//transform.LookAt(startPos);
+			if (returnDist > 0.5f){
+				cc.Move(transform.forward * Time.deltaTime * speed);
+			} else {
+				transform.rotation = startRot;
+			}
+		} else if (isPatrolDuck){
+			returnDist = Vector3.Distance(Nodes[currentNode].transform.position, transform.position);
+			LookAtTarget(Nodes[currentNode]);
+			if (returnDist > 0.5f){
+				cc.Move(transform.forward * Time.deltaTime * speed);
+			} else {
+				transform.rotation = startRot;
+			}
 		}
+
+		
 
 		playerInDist = false;
 		playerInAngle = false;
@@ -186,6 +212,40 @@ public class DuckCharacterController : MonoBehaviour {
 		yield return new WaitForSeconds(restTime);
 		//FOV.SetActive(true);
 		isResting = false;
+	}
+
+	void Patrolling () {
+		//GameObject nextNode;
+		target = Nodes[currentNode];
+
+		float nodeDist = Vector3.Distance(target.transform.position, transform.position);
+
+		//transform.LookAt(target);
+
+		if (nodeDist <= .5f) {
+			if (!returning){
+				print ("not returning");
+				if (currentNode >= Nodes.Length-1){
+					currentNode--;
+					returning = true;
+				} else {
+					currentNode++;
+				}
+			} else {
+				print("returning");
+				if (currentNode <= 0 && returning){
+					currentNode++;
+					returning = false;
+				} else {
+					currentNode--;
+				}
+			}
+		}
+
+		LookAtTarget(target);
+		//transform.LookAt(target.transform);
+		cc.Move(transform.forward * Time.deltaTime * speed);
+
 	}
 
 }

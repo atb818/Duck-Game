@@ -58,14 +58,17 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>Library\UnityAssemblies\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +84,7 @@
     <Compile Include="Assets\Scripts\Bread\ammoCheck.cs" />
     <Compile Include="Assets\Scripts\Bread\projector.cs" />
     <Compile Include="Assets\Scripts\Bread\refillBread.cs" />
+    <Compile Include="Assets\Scripts\Cameras\CameraController.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckCharacterController.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckEat.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckFOV.cs" />
@@ -90,6 +94,7 @@
     <Compile Include="Assets\Scripts\Duck\Old\duckLogic.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Victory1.cs" />
+    <Compile Include="Assets\Scripts\Locker\DuckStop.cs" />
     <Compile Include="Assets\Scripts\Locker\goInside.cs" />
     <Compile Include="Assets\Scripts\Locker\lockerDoor.cs" />
     <Compile Include="Assets\Scripts\Old\Timer.cs" />

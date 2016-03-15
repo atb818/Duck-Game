@@ -9,6 +9,11 @@ public class DuckCharacterController : MonoBehaviour {
 	public GameObject DB;
 
 	public float speed;
+	Quaternion smoothRotate;
+	Quaternion startRot;
+
+	public GameObject[] Nodes;
+	public GameObject StartNode;
 
 	//SEE BREAD
 	GameObject target;
@@ -20,26 +25,46 @@ public class DuckCharacterController : MonoBehaviour {
 	public GameObject[] ducks;
 
 	//SEE PLAYER
+	bool chasingPlayer = false;
 	//Distance
 	float playerDist;
+	public float detectDist;
 	public float fovDist;
 	bool playerInDist = false;
+	bool playerDetected = false;
 	//Angle
 	float playerAngle;
 	public float fovAngle;
 	bool playerInAngle = false;
 	public GameObject FOV;
 	bool playerHiding = false;
-	bool searching = false;
 
 	//DUCKS RETURN
 	Vector3 startPos;
-	Vector3 startRot;
+	GameObject start;
+	//Vector3 startRot;
+
+	//DUCK TYPE
+	public bool isBasicDuck;
+	public bool isPatrolDuck;
+
+	//PATROL DUCK
+	int currentNode;
+	bool returning = false;
+
 
 	void Start () {
+		currentNode = 0;
+		if (isBasicDuck){
+			start = (GameObject) Instantiate (StartNode, transform.position, Quaternion.identity);
+		}
+		if (isPatrolDuck){
+			start = null;
+			transform.position = new Vector3 (Nodes[currentNode].transform.position.x, Nodes[currentNode].transform.position.y, Nodes[currentNode].transform.position.z);
+		}
 		startPos = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
-		startRot = transform.eulerAngles;
 		transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
+		startRot.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z);
 
 		cc = GetComponent<CharacterController>();
 		cc.detectCollisions = true;
@@ -59,15 +84,25 @@ public class DuckCharacterController : MonoBehaviour {
 		Vector3 duckDir = transform.forward;
 		playerAngle = Vector3.Angle(playerDir, duckDir);
 
-		GetPlayer();
+		if (isBasicDuck){
+			GetPlayer();
+		} else if (isPatrolDuck){
+			GetPlayer();
+			if (!chasingPlayer){
+				Patrolling();
+				//gameObject.GetComponent<PatrolDuck>().PatrolUpdate();
+			} 
+		}
 
 		if (target != null){
 			playerInDist = false;
 			playerInAngle = false;
+			playerDetected = false;
 			breadDist = Vector3.Distance(target.transform.position, transform.position);
 			if (target.CompareTag("Bread")){
 				if (getBread && !isResting){
-            		transform.LookAt(target.transform);
+            		//transform.LookAt(target.transform);
+            		LookAtTarget(target);
             		cc.Move(transform.forward * Time.deltaTime * speed);
             		//FOV.SetActive(false);
 				}
@@ -75,53 +110,51 @@ public class DuckCharacterController : MonoBehaviour {
 					StartCoroutine("Resting");				
 				}
 			}
-		} else if (target == null && !isResting && !playerInDist){
+		} else if (target == null && !isResting && !playerInDist && chasingPlayer){
 			//FOV.SetActive(true);
 			ReturnToPost();
 		}
 
-		/*
-		//Locker
-		if (goInside.insideLockerGlobal && searching) {
-			playerInDist = false;
-			StartCoroutine("LostPlayer");
-		}
-		*/
-
 	}
 
-	/*
-	IEnumerator LostPlayer () {
-		float defaultSpeed = speed;
-		speed = 0;
-		yield return new WaitForSeconds(4);
-		speed = defaultSpeed;
-		searching = false;
-		playerInDist = false;
-		ReturnToPost();
+	void LookAtTarget(GameObject t){
+		smoothRotate.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+		var newRotation = Quaternion.LookRotation(t.transform.position - transform.position);
+		transform.rotation = Quaternion.Slerp(smoothRotate, newRotation, .05f);
 	}
-	*/
-
-	public void SearchForPlayer () {
-		searching = true;
-	}
-
 
 	void ReturnToPost () {
-		float returnDist = Vector3.Distance(startPos, transform.position);
+		chasingPlayer = false;
+		float returnDist;
 
-		transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
-		transform.LookAt(startPos);
-
-		if (returnDist > 0.5f){
-			cc.Move(transform.forward * Time.deltaTime * speed);
-		} else {
-			//Quaternion.slerp current rot --> startRot
-			transform.eulerAngles = startRot;
+		if (isBasicDuck){
+			returnDist = Vector3.Distance(start.transform.position, transform.position);
+			LookAtTarget(start);
+			//transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
+			//transform.LookAt(startPos);
+			if (returnDist > 0.5f){
+				cc.Move(transform.forward * Time.deltaTime * speed);
+			} else {
+				transform.rotation = startRot;
+			}
+		} else if (isPatrolDuck){
+			returnDist = Vector3.Distance(Nodes[currentNode].transform.position, transform.position);
+			LookAtTarget(Nodes[currentNode]);
+			if (returnDist > 0.5f){
+				cc.Move(transform.forward * Time.deltaTime * speed);
+			} else {
+				transform.rotation = startRot;
+			}
 		}
+
+		
+
+		playerInDist = false;
+		playerInAngle = false;
+		playerDetected = false;
 	}
 
-	void GetPlayer () {
+	public void GetPlayer () {
 		if (goInside.insideLockerGlobal == false){
 			if (isResting == false){
 				//Get distance to player
@@ -129,18 +162,25 @@ public class DuckCharacterController : MonoBehaviour {
 					playerInDist = true;
 					//print ("duck sees player");
 				}
+				if (playerDist <= detectDist){
+					playerDetected = true;
+				}
 				//Get angle to player
 				if (playerAngle <= fovAngle){
 					playerInAngle = true;
 				}
 				//Get player
-				if (playerInDist && playerInAngle){
-					transform.LookAt(DB.transform);
+				if ((playerInDist && playerInAngle) || playerDetected){
+					//transform.LookAt(DB.transform);
+					chasingPlayer = true;
+				}
+				if (chasingPlayer){
+					LookAtTarget(DB);
 					cc.Move(transform.forward * Time.deltaTime * speed);
 				}
 				//Eat player
 				if (playerDist <= eatDist){
-					SceneManager.LoadScene(0);
+                    HealthBar.hitPoints -= .005f;
 				}
 			}
 		} else {
@@ -172,6 +212,40 @@ public class DuckCharacterController : MonoBehaviour {
 		yield return new WaitForSeconds(restTime);
 		//FOV.SetActive(true);
 		isResting = false;
+	}
+
+	void Patrolling () {
+		//GameObject nextNode;
+		target = Nodes[currentNode];
+
+		float nodeDist = Vector3.Distance(target.transform.position, transform.position);
+
+		//transform.LookAt(target);
+
+		if (nodeDist <= .5f) {
+			if (!returning){
+				print ("not returning");
+				if (currentNode >= Nodes.Length-1){
+					currentNode--;
+					returning = true;
+				} else {
+					currentNode++;
+				}
+			} else {
+				print("returning");
+				if (currentNode <= 0 && returning){
+					currentNode++;
+					returning = false;
+				} else {
+					currentNode--;
+				}
+			}
+		}
+
+		LookAtTarget(target);
+		//transform.LookAt(target.transform);
+		cc.Move(transform.forward * Time.deltaTime * speed);
+
 	}
 
 }

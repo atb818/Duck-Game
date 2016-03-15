@@ -9,39 +9,43 @@ public class shootBullet : MonoBehaviour {
     float torquePower;
     public static int ammo = 0;
 
+    float counter = 0;
+
+
     void Start() {
+
+        power = 0;
+
         //ammo = 0;
         //Below is for testing purposes:
         ammo = 10;
     }
 
     void Update()
+
     {
-
-
+      
         power = Mathf.Clamp(power, 0f, 1f);
 
         torquePower = Random.Range(50, 500);
 
-        if(goInside.insideLockerGlobal == false)
+        if(goInside.canShoot == true)
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetKey(KeyCode.Space))
             {
+                counter += .025f;
 
                 if (power <= .20f)
                 {
                     power = .20f;
                 }
 
-                if (ammo > 0)
-                {
-                    power += Time.deltaTime * .85f;
-                }
-
+                power = Mathf.PingPong(counter, 1f);
             }
 
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetKeyUp(KeyCode.Space))
             {
+                
 
                 if (ammo > 0)
                 {
@@ -49,13 +53,19 @@ public class shootBullet : MonoBehaviour {
                     newBullet.GetComponent<Rigidbody>().AddTorque(transform.up * torquePower);
                     newBullet.GetComponent<Rigidbody>().AddForce(transform.up * power * 400);
                     newBullet.GetComponent<Rigidbody>().AddForce(transform.forward * power * 500);
+                 
                     ammo--;
+                    
                 }
-
+                counter = 0;
                 power = 0;
+
+
 
             }
         }
+
+
     }
 
       

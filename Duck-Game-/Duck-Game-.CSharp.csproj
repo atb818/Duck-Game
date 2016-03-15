@@ -84,8 +84,8 @@
     <Compile Include="Assets\Scripts\Duck\Old\duckCollide.cs" />
     <Compile Include="Assets\Scripts\Duck\Old\duckLocations.cs" />
     <Compile Include="Assets\Scripts\Duck\Old\duckLogic.cs" />
+    <Compile Include="Assets\Scripts\Duck\PatrolDuck.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Victory1.cs" />
-    <Compile Include="Assets\Scripts\Locker\DuckStop.cs" />
     <Compile Include="Assets\Scripts\Locker\goInside.cs" />
     <Compile Include="Assets\Scripts\Locker\lockerDoor.cs" />
     <Compile Include="Assets\Scripts\Old\Timer.cs" />
@@ -113,6 +113,7 @@
     <Compile Include="Assets\Scripts\Teacher\Teacher.cs" />
     <Compile Include="Assets\Scripts\Teacher\TeacherCheck.cs" />
     <Compile Include="Assets\Scripts\Testing\testHealth.cs" />
+    <Compile Include="Assets\checkpoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />

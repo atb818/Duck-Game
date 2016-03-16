@@ -22,7 +22,6 @@ public class CameraController : MonoBehaviour {
 	
 	void OnTriggerEnter (Collider player) {
 		if (player.CompareTag("Player")){
-			//print ("player in cam");
 			foreach (GameObject cam in cameras) {
 				cam.SetActive(false);
         	}

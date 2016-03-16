@@ -26,6 +26,7 @@ public class DuckCharacterController : MonoBehaviour {
 
 	//SEE PLAYER
 	bool chasingPlayer = false;
+	bool targetIsPlayer = false;
 	//Distance
 	float playerDist;
 	public float detectDist;
@@ -83,6 +84,8 @@ public class DuckCharacterController : MonoBehaviour {
 		Vector3 playerDir = DB.transform.position - transform.position;
 		Vector3 duckDir = transform.forward;
 		playerAngle = Vector3.Angle(playerDir, duckDir);
+
+		RayCheck();
 
 		if (isBasicDuck && !getBread){
 			GetPlayer();
@@ -160,7 +163,9 @@ public class DuckCharacterController : MonoBehaviour {
 				//Get player
 				if ((playerInDist && playerInAngle) || playerDetected){
 					//transform.LookAt(DB.transform);
-					chasingPlayer = true;
+					if (targetIsPlayer) {
+						chasingPlayer = true;
+					}
 				}
 				if (chasingPlayer){
 					LookAtTarget(DB);
@@ -180,6 +185,20 @@ public class DuckCharacterController : MonoBehaviour {
 			ReturnToPost();
 			chasingPlayer = false;
 		}
+	}
+
+	void RayCheck () {
+		//Raycast to Check if Player is hidden behind obstacle
+		Vector3 ray = transform.forward;
+		RaycastHit rayHit = new RaycastHit();
+		Debug.DrawRay(transform.position, ray * 100f, Color.yellow);
+		if (Physics.Raycast(transform.position, ray, out rayHit)){
+			if (rayHit.collider.CompareTag("Player")){
+				targetIsPlayer = true;
+			} else {
+				targetIsPlayer = false;
+			}
+		}	
 	}
 
 	public void EatBread (GameObject bread){
@@ -242,7 +261,7 @@ public class DuckCharacterController : MonoBehaviour {
 
 		if (nodeDist <= .5f) {
 			if (!returning){
-				print ("not returning");
+				//print ("not returning");
 				if (currentNode >= Nodes.Length-1){
 					currentNode--;
 					returning = true;
@@ -250,7 +269,7 @@ public class DuckCharacterController : MonoBehaviour {
 					currentNode++;
 				}
 			} else {
-				print("returning");
+				//print("returning");
 				if (currentNode <= 0 && returning){
 					currentNode++;
 					returning = false;

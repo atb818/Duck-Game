@@ -4,6 +4,8 @@ using System.Collections;
 public class CameraController : MonoBehaviour {
 
 	public GameObject CurrentCam;
+	//public GameObject DB;
+	GameObject PreviousCam;
 	GameObject[] cameras;
 
 	void Start () {
@@ -20,10 +22,18 @@ public class CameraController : MonoBehaviour {
 	
 	void OnTriggerEnter (Collider player) {
 		if (player.CompareTag("Player")){
+			//print ("player in cam");
 			foreach (GameObject cam in cameras) {
 				cam.SetActive(false);
         	}
 			CurrentCam.SetActive(true);
+			player.gameObject.GetComponent<PreviousCam>().SetCurrentCam(CurrentCam);
+		}
+	}
+
+	void OnTriggerExit (Collider player) {
+		if (player.CompareTag("Player")){
+			player.gameObject.GetComponent<PreviousCam>().SetPreviousCam(CurrentCam);
 		}
 	}
 

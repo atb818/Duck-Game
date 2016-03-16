@@ -4,19 +4,22 @@ using System.Collections;
 public class checkpoint : MonoBehaviour {
 
     public static int check;
-    public int numberCheck;
+    public int numberCheck = 0;
 
     public GameObject check1;
-    public GameObject check2;
-    public GameObject check3;
+    //public GameObject check2;
+   // public GameObject check3;
 
     public GameObject player;
+
+    public GameObject closedBook;
+    public GameObject openBook;
 
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            Application.LoadLevel(1);
+            Application.LoadLevel(0);
         }
     }
 
@@ -25,16 +28,18 @@ public class checkpoint : MonoBehaviour {
         if(check == 1)
         {
             player.transform.position = check1.transform.position;
+            closedBook.gameObject.SetActive(false);
+            openBook.gameObject.SetActive(true);
         }
 
         if (check == 2)
         {
-            player.transform.position = check2.transform.position;
+            //player.transform.position = check2.transform.position;
         }
 
         if (check == 3)
         {
-            player.transform.position = check3.transform.position;
+            //player.transform.position = check3.transform.position;
         }
 
 
@@ -44,8 +49,14 @@ public class checkpoint : MonoBehaviour {
     {
         if(other.gameObject.tag == "Player")
         {
-            // do checkpoint stuff...
-            check = numberCheck;
+            if (check != numberCheck)
+            {
+                closedBook.gameObject.SetActive(false);
+                openBook.gameObject.SetActive(true);
+                check = numberCheck;
+            }
+                
+            
 
 
         }

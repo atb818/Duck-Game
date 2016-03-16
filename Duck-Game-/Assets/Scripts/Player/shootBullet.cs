@@ -16,9 +16,9 @@ public class shootBullet : MonoBehaviour {
 
         power = 0;
 
-        //ammo = 0;
+        ammo = 0;
         //Below is for testing purposes:
-        ammo = 10;
+        //ammo = 10;
     }
 
     void Update()

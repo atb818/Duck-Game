@@ -193,12 +193,14 @@ public class DuckCharacterController : MonoBehaviour {
 		RaycastHit rayHit = new RaycastHit();
 		Debug.DrawRay(transform.position, ray * 100f, Color.yellow);
 		if (Physics.Raycast(transform.position, ray, out rayHit)){
-			if (rayHit.collider.CompareTag("Player")){
+			if (rayHit.collider.CompareTag("Player") || playerDetected){
 				targetIsPlayer = true;
 			} else {
 				targetIsPlayer = false;
 			}
 		}	
+		//Change to rays in future:
+
 	}
 
 	public void EatBread (GameObject bread){

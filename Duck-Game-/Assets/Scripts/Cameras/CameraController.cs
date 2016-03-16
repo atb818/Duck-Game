@@ -26,14 +26,17 @@ public class CameraController : MonoBehaviour {
 				cam.SetActive(false);
         	}
 			CurrentCam.SetActive(true);
-			player.gameObject.GetComponent<PreviousCam>().SetCurrentCam(CurrentCam);
+			//player.gameObject.GetComponent<PreviousCam>().SetCurrentCam(CurrentCam);
 		}
 	}
 
+	/*
 	void OnTriggerExit (Collider player) {
 		if (player.CompareTag("Player")){
 			player.gameObject.GetComponent<PreviousCam>().SetPreviousCam(CurrentCam);
+			//CurrentCam.SetActive(false);
 		}
 	}
+	*/
 
 }

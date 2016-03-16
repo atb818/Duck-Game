@@ -7,13 +7,16 @@ public class checkpoint : MonoBehaviour {
     public int numberCheck = 0;
 
     public GameObject check1;
-    //public GameObject check2;
+    public GameObject check2;
    // public GameObject check3;
 
     public GameObject player;
 
     public GameObject closedBook;
     public GameObject openBook;
+
+    int ammoCheck;
+
 
 
     void Update() {
@@ -30,11 +33,13 @@ public class checkpoint : MonoBehaviour {
             player.transform.position = check1.transform.position;
             closedBook.gameObject.SetActive(false);
             openBook.gameObject.SetActive(true);
+            shootBullet.ammo = ammoCheck;
+
         }
 
         if (check == 2)
         {
-            //player.transform.position = check2.transform.position;
+            player.transform.position = check2.transform.position;
         }
 
         if (check == 3)
@@ -54,14 +59,24 @@ public class checkpoint : MonoBehaviour {
                 closedBook.gameObject.SetActive(false);
                 openBook.gameObject.SetActive(true);
                 check = numberCheck;
+                ammoCheck = shootBullet.ammo;
             }
-                
             
-
+            /* //ACTIVATE UNIVERSAL SET CHECKPOINT?
+            public GameObject CPManager;
+            CPManager.GetComponent<scriptname>().SetCheckpoint(this.transform, shootBullet.ammo);
 
         }
-
     }
+
+    /* //UNIVERSAL SET CHECKPOINT?
+    public void SetCheckpoint(Transform cp, int ammo){
+        closedBook.gameObject.SetActive(false);
+        openBook.gameObject.SetActive(true);
+        check = numberCheck;
+        ammoCheck = shootBullet.ammo;
+    }
+    */
 
     void OnDrawGizmos()
     {

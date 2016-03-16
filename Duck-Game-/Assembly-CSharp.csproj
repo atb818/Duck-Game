@@ -82,6 +82,7 @@
      <Compile Include="Assets\Scripts\Player\Old\RaycastReflection.cs" />
      <Compile Include="Assets\Scripts\Player\Old\laser.cs" />
      <Compile Include="Assets\Scripts\Player\Rotation.cs" />
+     <Compile Include="Assets\Scripts\Player\StayWithPlayer.cs" />
      <Compile Include="Assets\Scripts\Player\bulletLogic.cs" />
      <Compile Include="Assets\Scripts\Player\shootBullet.cs" />
      <Compile Include="Assets\Scripts\Player\smoothFollow.cs" />

@@ -65,7 +65,7 @@ public class checkpoint : MonoBehaviour {
             /* //ACTIVATE UNIVERSAL SET CHECKPOINT?
             public GameObject CPManager;
             CPManager.GetComponent<scriptname>().SetCheckpoint(this.transform, shootBullet.ammo);
-
+            */
         }
     }
 

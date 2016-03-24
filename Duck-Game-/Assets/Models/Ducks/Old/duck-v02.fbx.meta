@@ -1,15 +1,68 @@
 fileFormatVersion: 2
-guid: 6b5517132ebf5e446aaa20d969213dbb
-timeCreated: 1458153570
+guid: 2e553d339ba642f4295afc4258107a68
+timeCreated: 1458420203
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pasted__pCube19
+    100000: BILL_BOTTOM
+    100002: BILL_TOP
+    100004: BODY
+    100006: //RootNode
+    100008: L_EYE
+    100010: L_FOOT
+    100012: L_LEG
+    100014: L_WING
+    100016: R_EYE
+    100018: R_FOOT
+    100020: R_LEG
+    100022: R_WING
+    400000: BILL_BOTTOM
+    400002: BILL_TOP
+    400004: BODY
+    400006: //RootNode
+    400008: L_EYE
+    400010: L_FOOT
+    400012: L_LEG
+    400014: L_WING
+    400016: R_EYE
+    400018: R_FOOT
+    400020: R_LEG
+    400022: R_WING
+    2300000: BILL_BOTTOM
+    2300002: BILL_TOP
+    2300004: BODY
+    2300006: L_EYE
+    2300008: L_FOOT
+    2300010: L_LEG
+    2300012: L_WING
+    2300014: R_EYE
+    2300016: R_FOOT
+    2300018: R_LEG
+    2300020: R_WING
+    3300000: BILL_BOTTOM
+    3300002: BILL_TOP
+    3300004: BODY
+    3300006: L_EYE
+    3300008: L_FOOT
+    3300010: L_LEG
+    3300012: L_WING
+    3300014: R_EYE
+    3300016: R_FOOT
+    3300018: R_LEG
+    3300020: R_WING
+    4300000: L_EYE
+    4300002: BODY
+    4300004: L_WING
+    4300006: R_WING
+    4300008: R_EYE
+    4300010: BILL_TOP
+    4300012: BILL_BOTTOM
+    4300014: L_LEG
+    4300016: R_LEG
+    4300018: L_FOOT
+    4300020: R_FOOT
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -34,15 +87,15 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 80
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
-    keepQuads: 0
+    keepQuads: 1
     weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
@@ -50,9 +103,9 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
+    normalSmoothAngle: 180
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -68,7 +121,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

@@ -111,7 +111,7 @@ public class DuckCharacterController : MonoBehaviour {
 	void LookAtTarget(GameObject t){
 		smoothRotate.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
 		var newRotation = Quaternion.LookRotation(t.transform.position - transform.position);
-		transform.rotation = Quaternion.Slerp(smoothRotate, newRotation, .05f);
+		transform.rotation = Quaternion.Slerp(smoothRotate, newRotation, .85f);
 	}
 
 	void ReturnToPost () {

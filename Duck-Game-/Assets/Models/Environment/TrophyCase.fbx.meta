@@ -1,0 +1,425 @@
+fileFormatVersion: 2
+guid: 4583a9445327aae41909704456d82571
+timeCreated: 1459368259
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: C
+    100002: cFlag
+    100004: D
+    100006: dFlag
+    100008: directionalLight2
+    100010: Flag
+    100012: G
+    100014: gFlag
+    100016: GoDucks_
+    100018: GoDucks__MeshPart0
+    100020: GoDucks__MeshPart1
+    100022: group10
+    100024: group11
+    100026: group6
+    100028: group7
+    100030: group8
+    100032: K
+    100034: kFLag
+    100036: O
+    100038: oFlag
+    100040: pasted__pCube39
+    100042: pasted__pCube39 1
+    100044: pasted__pCube40
+    100046: pasted__pCube40 1
+    100048: pasted__pCube41
+    100050: pasted__pCube41 1
+    100052: pasted__pCube42
+    100054: pasted__pCube42 1
+    100056: pasted__pCube43
+    100058: pasted__pCube43 1
+    100060: pasted__pCube44
+    100062: pasted__pCube44 1
+    100064: pasted__pCube45
+    100066: pasted__pCube45 1
+    100068: pasted__pCube46
+    100070: pasted__pCube46 1
+    100072: pasted__pCube47
+    100074: pCube38
+    100076: pCube39
+    100078: pCube40
+    100080: pCube41
+    100082: pCube42
+    100084: pCube43
+    100086: pCube44
+    100088: pCube45
+    100090: pCube45 1
+    100092: pCube46
+    100094: pCube47
+    100096: pCube49
+    100098: pCube50
+    100100: pCube51
+    100102: pCube52
+    100104: pCube53
+    100106: pCube54
+    100108: pCube55
+    100110: pCube56
+    100112: pCylinder1
+    100114: pCylinder2
+    100116: pCylinder3
+    100118: polySurface109
+    100120: polySurface110
+    100122: polySurface110 1
+    100124: polySurface36
+    100126: polySurface36 1
+    100128: polySurface37
+    100130: polySurface38
+    100132: polySurface39
+    100134: polySurface40
+    100136: polySurface41
+    100138: polySurface45
+    100140: polySurface64
+    100142: polySurface84
+    100144: polySurface85
+    100146: polySurface86
+    100148: polySurface87
+    100150: polySurface88
+    100152: polySurface89
+    100154: polySurface90
+    100156: polySurface91
+    100158: polySurface91 1
+    100160: polySurface92
+    100162: S
+    100164: sFlag
+    100166: spotLight2
+    100168: spotLight2 1
+    100170: spotLight3
+    100172: String
+    100174: transform100
+    100176: transform101
+    100178: transform102
+    100180: transform103
+    100182: transform104
+    100184: transform105
+    100186: transform106
+    100188: transform107
+    100190: transform108
+    100192: transform109
+    100194: transform110
+    100196: transform111
+    100198: transform112
+    100200: transform113
+    100202: transform114
+    100204: transform115
+    100206: transform116
+    100208: transform117
+    100210: transform118
+    100212: transform56
+    100214: transform57
+    100216: transform58
+    100218: transform59
+    100220: transform60
+    100222: transform61
+    100224: transform62
+    100226: transform63
+    100228: transform64
+    100230: transform65
+    100232: transform66
+    100234: transform67
+    100236: transform68
+    100238: transform69
+    100240: transform70
+    100242: transform71
+    100244: transform72
+    100246: transform73
+    100248: transform74
+    100250: transform75
+    100252: transform76
+    100254: transform77
+    100256: transform78
+    100258: transform79
+    100260: transform80
+    100262: transform81
+    100264: transform82
+    100266: transform83
+    100268: transform84
+    100270: transform85
+    100272: transform86
+    100274: transform87
+    100276: transform88
+    100278: transform89
+    100280: transform90
+    100282: transform91
+    100284: transform92
+    100286: transform93
+    100288: transform94
+    100290: transform95
+    100292: transform96
+    100294: transform97
+    100296: transform98
+    100298: transform99
+    100300: //RootNode
+    100302: U
+    100304: uflag
+    400000: C
+    400002: cFlag
+    400004: D
+    400006: dFlag
+    400008: directionalLight2
+    400010: Flag
+    400012: G
+    400014: gFlag
+    400016: GoDucks_
+    400018: GoDucks__MeshPart0
+    400020: GoDucks__MeshPart1
+    400022: group10
+    400024: group11
+    400026: group6
+    400028: group7
+    400030: group8
+    400032: K
+    400034: kFLag
+    400036: O
+    400038: oFlag
+    400040: pasted__pCube39
+    400042: pasted__pCube39 1
+    400044: pasted__pCube40
+    400046: pasted__pCube40 1
+    400048: pasted__pCube41
+    400050: pasted__pCube41 1
+    400052: pasted__pCube42
+    400054: pasted__pCube42 1
+    400056: pasted__pCube43
+    400058: pasted__pCube43 1
+    400060: pasted__pCube44
+    400062: pasted__pCube44 1
+    400064: pasted__pCube45
+    400066: pasted__pCube45 1
+    400068: pasted__pCube46
+    400070: pasted__pCube46 1
+    400072: pasted__pCube47
+    400074: pCube38
+    400076: pCube39
+    400078: pCube40
+    400080: pCube41
+    400082: pCube42
+    400084: pCube43
+    400086: pCube44
+    400088: pCube45
+    400090: pCube45 1
+    400092: pCube46
+    400094: pCube47
+    400096: pCube49
+    400098: pCube50
+    400100: pCube51
+    400102: pCube52
+    400104: pCube53
+    400106: pCube54
+    400108: pCube55
+    400110: pCube56
+    400112: pCylinder1
+    400114: pCylinder2
+    400116: pCylinder3
+    400118: polySurface109
+    400120: polySurface110
+    400122: polySurface110 1
+    400124: polySurface36
+    400126: polySurface36 1
+    400128: polySurface37
+    400130: polySurface38
+    400132: polySurface39
+    400134: polySurface40
+    400136: polySurface41
+    400138: polySurface45
+    400140: polySurface64
+    400142: polySurface84
+    400144: polySurface85
+    400146: polySurface86
+    400148: polySurface87
+    400150: polySurface88
+    400152: polySurface89
+    400154: polySurface90
+    400156: polySurface91
+    400158: polySurface91 1
+    400160: polySurface92
+    400162: S
+    400164: sFlag
+    400166: spotLight2
+    400168: spotLight2 1
+    400170: spotLight3
+    400172: String
+    400174: transform100
+    400176: transform101
+    400178: transform102
+    400180: transform103
+    400182: transform104
+    400184: transform105
+    400186: transform106
+    400188: transform107
+    400190: transform108
+    400192: transform109
+    400194: transform110
+    400196: transform111
+    400198: transform112
+    400200: transform113
+    400202: transform114
+    400204: transform115
+    400206: transform116
+    400208: transform117
+    400210: transform118
+    400212: transform56
+    400214: transform57
+    400216: transform58
+    400218: transform59
+    400220: transform60
+    400222: transform61
+    400224: transform62
+    400226: transform63
+    400228: transform64
+    400230: transform65
+    400232: transform66
+    400234: transform67
+    400236: transform68
+    400238: transform69
+    400240: transform70
+    400242: transform71
+    400244: transform72
+    400246: transform73
+    400248: transform74
+    400250: transform75
+    400252: transform76
+    400254: transform77
+    400256: transform78
+    400258: transform79
+    400260: transform80
+    400262: transform81
+    400264: transform82
+    400266: transform83
+    400268: transform84
+    400270: transform85
+    400272: transform86
+    400274: transform87
+    400276: transform88
+    400278: transform89
+    400280: transform90
+    400282: transform91
+    400284: transform92
+    400286: transform93
+    400288: transform94
+    400290: transform95
+    400292: transform96
+    400294: transform97
+    400296: transform98
+    400298: transform99
+    400300: //RootNode
+    400302: U
+    400304: uflag
+    2300000: GoDucks__MeshPart0
+    2300002: GoDucks__MeshPart1
+    2300004: pCube38
+    2300006: pCube44
+    2300008: pCube45
+    2300010: pCube45 1
+    2300012: pCube46
+    2300014: pCube47
+    2300016: pCube49
+    2300018: pCube50
+    2300020: pCube51
+    2300022: pCube52
+    2300024: pCube53
+    2300026: pCube54
+    2300028: pCube55
+    2300030: pCube56
+    3300000: GoDucks__MeshPart0
+    3300002: GoDucks__MeshPart1
+    3300004: pCube38
+    3300006: pCube44
+    3300008: pCube45
+    3300010: pCube45 1
+    3300012: pCube46
+    3300014: pCube47
+    3300016: pCube49
+    3300018: pCube50
+    3300020: pCube51
+    3300022: pCube52
+    3300024: pCube53
+    3300026: pCube54
+    3300028: pCube55
+    3300030: pCube56
+    4300000: pCube38
+    4300002: GoDucks__MeshPart0
+    4300004: GoDucks__MeshPart1
+    4300006: pCube44
+    4300008: pCube45
+    4300010: pCube46
+    4300012: pCube45
+    4300014: pCube47
+    4300016: pCube49
+    4300018: pCube50
+    4300020: pCube51
+    4300022: pCube52
+    4300024: pCube53
+    4300026: pCube54
+    4300028: pCube55
+    4300030: pCube56
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 140
+    meshCompression: 2
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

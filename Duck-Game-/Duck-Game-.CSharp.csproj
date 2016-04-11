@@ -75,6 +75,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BreadStatus.cs" />
+    <Compile Include="Assets\BreadTrigger.cs" />
     <Compile Include="Assets\Scripts\Bread\AttractDuck2.cs" />
     <Compile Include="Assets\Scripts\Bread\HealthBar.cs" />
     <Compile Include="Assets\Scripts\Bread\Hover.cs" />
@@ -123,6 +125,7 @@
     <Compile Include="Assets\Scripts\Testing\testHealth.cs" />
     <Compile Include="Assets\Scripts\checkpoint.cs" />
     <Compile Include="Assets\Scripts\secondsRotate.cs" />
+    <Compile Include="Assets\StickyBomb.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\test1.shader" />

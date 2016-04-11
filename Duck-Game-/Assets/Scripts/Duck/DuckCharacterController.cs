@@ -53,6 +53,9 @@ public class DuckCharacterController : MonoBehaviour {
 	int currentNode;
 	bool returning = false;
 
+	//DEBUG SPEED CHECK
+	Vector3 lastPos;
+
 
 	void Start () {
 		currentNode = 0;
@@ -70,7 +73,7 @@ public class DuckCharacterController : MonoBehaviour {
 		cc = GetComponent<CharacterController>();
 		cc.detectCollisions = true;
 		target = null;
-		yPos = transform.position.y;
+		yPos = transform.position.y + 0.1f;
 
 		ducks = GameObject.FindGameObjectsWithTag("Duck");
 		FOV.SetActive(false);
@@ -87,6 +90,8 @@ public class DuckCharacterController : MonoBehaviour {
 
 		RayCheck();
 
+		bool isPatrolling = false;
+
 		if (isBasicDuck && !getBread){
 			GetPlayer();
 		} else if (isPatrolDuck){
@@ -95,16 +100,20 @@ public class DuckCharacterController : MonoBehaviour {
 			}
 			if (!chasingPlayer && !getBread){
 				Patrolling();
-				//gameObject.GetComponent<PatrolDuck>().PatrolUpdate();
+				isPatrolling = true;
 			} 
 		}
 
 		if (target != null && target.CompareTag("Bread")){
 			EatBread2();
-		} else if (target == null && !isResting && !playerInDist && !chasingPlayer){
-			//FOV.SetActive(true);
+		} else if (target == null && !isResting && !playerInDist && !chasingPlayer && !isPatrolling){
 			ReturnToPost();
 		}
+
+		//DEBUG measure speed
+		float velocity = Vector3.Distance(lastPos, transform.position) / Time.deltaTime;
+		print(velocity);
+		lastPos = transform.position;
 
 	}
 
@@ -112,6 +121,7 @@ public class DuckCharacterController : MonoBehaviour {
 		smoothRotate.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
 		var newRotation = Quaternion.LookRotation(t.transform.position - transform.position);
 		transform.rotation = Quaternion.Slerp(smoothRotate, newRotation, .85f);
+		transform.eulerAngles = new Vector3 (0, transform.eulerAngles.y, 0);
 	}
 
 	void ReturnToPost () {
@@ -132,6 +142,7 @@ public class DuckCharacterController : MonoBehaviour {
 			returnDist = Vector3.Distance(Nodes[currentNode].transform.position, transform.position);
 			LookAtTarget(Nodes[currentNode]);
 			if (returnDist > 0.5f){
+				print ("returning to post");
 				cc.Move(transform.forward * Time.deltaTime * speed);
 			} else {
 				transform.rotation = startRot;
@@ -161,20 +172,23 @@ public class DuckCharacterController : MonoBehaviour {
 					playerInAngle = true;
 				}
 				//Get player
-				if ((playerInDist && playerInAngle) || playerDetected){
+				if ((playerInDist && playerInAngle && targetIsPlayer) || playerDetected){
 					//transform.LookAt(DB.transform);
-					if (targetIsPlayer) {
-						chasingPlayer = true;
-					}
+					chasingPlayer = true;
 				}
 				if (chasingPlayer){
+					print ("chasing player");
 					LookAtTarget(DB);
-					cc.Move(transform.forward * Time.deltaTime * speed);
-				} else {
-					ReturnToPost();
-				}
+					//cc.Move(transform.forward * Time.deltaTime * speed);
+					Vector3 moveVector = DB.transform.position - transform.position;
+					moveVector.y = 0;
+					moveVector = Vector3.Normalize(moveVector); //Normalizing a vector always standardizes it back to a length of 1
+					cc.Move(moveVector * Time.deltaTime * speed); 
+				} //else {
+					//ReturnToPost();
+				//}
 				//Eat player
-				if (playerDist <= eatDist){
+				if (playerDist <= eatDist && chasingPlayer){
                     HealthBar.hitPoints -= .005f;
 				}
 			}
@@ -182,7 +196,7 @@ public class DuckCharacterController : MonoBehaviour {
 				ReturnToPost();
 			}*/
 		} else {
-			ReturnToPost();
+			//ReturnToPost();
 			chasingPlayer = false;
 		}
 	}

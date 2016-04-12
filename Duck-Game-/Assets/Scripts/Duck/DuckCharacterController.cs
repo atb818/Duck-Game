@@ -43,7 +43,6 @@ public class DuckCharacterController : MonoBehaviour {
 	//DUCKS RETURN
 	Vector3 startPos;
 	GameObject start;
-	//Vector3 startRot;
 
 	//DUCK TYPE
 	public bool isBasicDuck;
@@ -111,9 +110,11 @@ public class DuckCharacterController : MonoBehaviour {
 		}
 
 		//DEBUG measure speed
+		/*
 		float velocity = Vector3.Distance(lastPos, transform.position) / Time.deltaTime;
 		print(velocity);
 		lastPos = transform.position;
+		*/
 
 	}
 
@@ -131,8 +132,6 @@ public class DuckCharacterController : MonoBehaviour {
 		if (isBasicDuck){
 			returnDist = Vector3.Distance(start.transform.position, transform.position);
 			LookAtTarget(start);
-			//transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
-			//transform.LookAt(startPos);
 			if (returnDist > 0.5f){
 				cc.Move(transform.forward * Time.deltaTime * speed);
 			} else {
@@ -148,8 +147,6 @@ public class DuckCharacterController : MonoBehaviour {
 				transform.rotation = startRot;
 			}
 		}
-
-		
 
 		playerInDist = false;
 		playerInAngle = false;
@@ -184,20 +181,18 @@ public class DuckCharacterController : MonoBehaviour {
 					moveVector.y = 0;
 					moveVector = Vector3.Normalize(moveVector); //Normalizing a vector always standardizes it back to a length of 1
 					cc.Move(moveVector * Time.deltaTime * speed); 
-				} //else {
-					//ReturnToPost();
-				//}
+				} 
 				//Eat player
 				if (playerDist <= eatDist && chasingPlayer){
                     HealthBar.hitPoints -= .005f;
 				}
 			}
-			/*if (!playerInDist && !playerDetected){
-				ReturnToPost();
-			}*/
 		} else {
-			//ReturnToPost();
 			chasingPlayer = false;
+			playerInDist = false;
+			playerInAngle = false;
+			playerDetected = false;
+			targetIsPlayer = false;
 		}
 	}
 
@@ -213,8 +208,6 @@ public class DuckCharacterController : MonoBehaviour {
 				targetIsPlayer = false;
 			}
 		}	
-		//Change to rays in future:
-
 	}
 
 	public void EatBread (GameObject bread){
@@ -228,10 +221,8 @@ public class DuckCharacterController : MonoBehaviour {
 		playerDetected = false;
 		breadDist = Vector3.Distance(target.transform.position, transform.position);
 		if (getBread && !isResting){
-    		//transform.LookAt(target.transform);
     		LookAtTarget(target);
     		cc.Move(transform.forward * Time.deltaTime * speed);
-    		//FOV.SetActive(false);
 		}
 		if (breadDist <= eatDist){
 			StartCoroutine("Resting");				
@@ -242,11 +233,7 @@ public class DuckCharacterController : MonoBehaviour {
 		target = null;
 		getBread = false;
 		transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
-		//FOV.SetActive(true);
 	}
-
-	//ISSUE COMES AFTER RESTING
-	//looks at player as target, doesn't move correctly
 
 	IEnumerator Resting () {
 		Destroy (target.gameObject);
@@ -257,27 +244,26 @@ public class DuckCharacterController : MonoBehaviour {
 		isResting = true;
 		transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
 		target = null;
-		//FOV.SetActive(false);
-		//to other ducks:
 		yield return new WaitForSeconds(restTime);
 		foreach (GameObject d in ducks) {
 			d.GetComponent<DuckCharacterController>().ClearTarget();
         }
-		//yield return new WaitForSeconds(restTime);
-		//FOV.SetActive(true);
+		chasingPlayer = false;
+		playerInDist = false;
+		playerInAngle = false;
+		playerDetected = false;
+		targetIsPlayer = false;
 		isResting = false;
 		getBread = false;
 	}
 
 	void Patrolling () {
-		//GameObject nextNode;
 		target = Nodes[currentNode];
 
 		float nodeDist = Vector3.Distance(target.transform.position, transform.position);
 
 		if (nodeDist <= .5f) {
 			if (!returning){
-				//print ("not returning");
 				if (currentNode >= Nodes.Length-1){
 					currentNode--;
 					returning = true;
@@ -285,7 +271,6 @@ public class DuckCharacterController : MonoBehaviour {
 					currentNode++;
 				}
 			} else {
-				//print("returning");
 				if (currentNode <= 0 && returning){
 					currentNode++;
 					returning = false;
@@ -296,7 +281,6 @@ public class DuckCharacterController : MonoBehaviour {
 		}
 
 		LookAtTarget(target);
-		//transform.LookAt(target.transform);
 		cc.Move(transform.forward * Time.deltaTime * speed);
 
 	}

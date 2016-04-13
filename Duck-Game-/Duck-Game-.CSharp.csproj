@@ -69,6 +69,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\MoltenMetalStudios\LightFlickerPulse\LightFlickerPulse.cs" />
+    <Compile Include="Assets\MoltenMetalStudios\LightFlickerPulse\_Demo\SceneScripts\BenchLighting.cs" />
+    <Compile Include="Assets\MoltenMetalStudios\LightFlickerPulse\_Demo\SceneScripts\CameraAngles.cs" />
     <Compile Include="Assets\Scripts\Bread\AttractDuck2.cs" />
     <Compile Include="Assets\Scripts\Bread\BreadStatus.cs" />
     <Compile Include="Assets\Scripts\Bread\BreadTrigger.cs" />
@@ -90,6 +93,7 @@
     <Compile Include="Assets\Scripts\Duck\Old\duckLocations.cs" />
     <Compile Include="Assets\Scripts\Duck\Old\duckLogic.cs" />
     <Compile Include="Assets\Scripts\Duck\PatrolDuck.cs" />
+    <Compile Include="Assets\Scripts\Environment\LightFlicker.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Victory1.cs" />
     <Compile Include="Assets\Scripts\Locker\goInside.cs" />
     <Compile Include="Assets\Scripts\Locker\lockerDoor.cs" />

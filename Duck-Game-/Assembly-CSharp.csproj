@@ -45,12 +45,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BreadStatus.cs" />
-     <Compile Include="Assets\BreadTrigger.cs" />
+     <Compile Include="Assets\MoltenMetalStudios\LightFlickerPulse\LightFlickerPulse.cs" />
+     <Compile Include="Assets\MoltenMetalStudios\LightFlickerPulse\_Demo\SceneScripts\BenchLighting.cs" />
+     <Compile Include="Assets\MoltenMetalStudios\LightFlickerPulse\_Demo\SceneScripts\CameraAngles.cs" />
      <Compile Include="Assets\Scripts\Bread\AttractDuck2.cs" />
+     <Compile Include="Assets\Scripts\Bread\BreadStatus.cs" />
+     <Compile Include="Assets\Scripts\Bread\BreadTrigger.cs" />
      <Compile Include="Assets\Scripts\Bread\HealthBar.cs" />
      <Compile Include="Assets\Scripts\Bread\Hover.cs" />
      <Compile Include="Assets\Scripts\Bread\Old\AttractDuck.cs" />
+     <Compile Include="Assets\Scripts\Bread\StickyBomb.cs" />
      <Compile Include="Assets\Scripts\Bread\ammoCheck.cs" />
      <Compile Include="Assets\Scripts\Bread\projector.cs" />
      <Compile Include="Assets\Scripts\Bread\refillBread.cs" />
@@ -65,6 +69,7 @@
      <Compile Include="Assets\Scripts\Duck\Old\duckLocations.cs" />
      <Compile Include="Assets\Scripts\Duck\Old\duckLogic.cs" />
      <Compile Include="Assets\Scripts\Duck\PatrolDuck.cs" />
+     <Compile Include="Assets\Scripts\Environment\LightFlicker.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Victory1.cs" />
      <Compile Include="Assets\Scripts\Locker\goInside.cs" />
      <Compile Include="Assets\Scripts\Locker\lockerDoor.cs" />
@@ -96,7 +101,6 @@
      <Compile Include="Assets\Scripts\Testing\testHealth.cs" />
      <Compile Include="Assets\Scripts\checkpoint.cs" />
      <Compile Include="Assets\Scripts\secondsRotate.cs" />
-     <Compile Include="Assets\StickyBomb.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

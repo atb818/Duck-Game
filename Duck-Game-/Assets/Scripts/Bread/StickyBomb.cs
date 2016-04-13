@@ -16,5 +16,12 @@ public class StickyBomb : MonoBehaviour {
     void OnCollisionEnter (Collision collision)
     {
         this.GetComponent<Rigidbody>().isKinematic = true;
+        Invoke("UseGravity", 8);
+    }
+
+    void UseGravity() {
+        this.GetComponent<Rigidbody>().useGravity = true;
+        this.GetComponent<Rigidbody>().isKinematic = false;
+
     }
 }

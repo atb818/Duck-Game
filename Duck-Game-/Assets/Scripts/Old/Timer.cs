@@ -1,41 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 public class Timer : MonoBehaviour {
 
+    public float time = 600;
+    public string timeText;
+    public Text timerText;
 
-    public int time = 6;
-
-    public GameObject words;
-    Text timeRemain;
-
-    public AudioSource bell;
-
-    bool soundPlayed;
-
-    void Start () {
-        soundPlayed = false;
-        InvokeRepeating("Countdown", 0f, 1f);
-        timeRemain = words.GetComponent<Text>();
+    void Start() {
+        InvokeRepeating("Countdown", 1, 1);
     }
-	
-	
+
 	void Update () {
-        timeRemain.text = " " + time;
-        if(time == 0)
-        {
-            if (!soundPlayed)
-            {
-                bell.Play();
-                soundPlayed = true;
-            }
-            CancelInvoke();
-        }
+
+        TimeSpan timeSpan = TimeSpan.FromSeconds(time);
+        timeText = string.Format("{0:D2}:{1:D2}:{2:D2}", timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
+        
+        timerText.text = timeText;
+
+        
+
+
+
     }
 
-    void Countdown()
-    {
+    void Countdown() {
         time--;
     }
 }

@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: 487aa98ca23b7b940a60f1af1f4541e9
+timeCreated: 1460565483
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: group
+    100004: group1
+    100006: pasted__pCube26
+    100008: pasted__pCube26 1
+    100010: pasted__pCube27
+    100012: pasted__pCube27 1
+    100014: pasted__pCube28
+    100016: pCube13
+    100018: pCube14
+    100020: pCube15
+    100022: pCube18
+    100024: pCube19
+    100026: pCube20
+    100028: pCube21
+    100030: pCube22
+    100032: pCube23
+    100034: pCube24
+    100036: pCube25
+    100038: transform1
+    100040: transform10
+    100042: transform2
+    100044: transform3
+    100046: transform4
+    100048: transform5
+    100050: transform6
+    100052: transform7
+    100054: transform8
+    100056: transform9
+    400000: //RootNode
+    400002: group
+    400004: group1
+    400006: pasted__pCube26
+    400008: pasted__pCube26 1
+    400010: pasted__pCube27
+    400012: pasted__pCube27 1
+    400014: pasted__pCube28
+    400016: pCube13
+    400018: pCube14
+    400020: pCube15
+    400022: pCube18
+    400024: pCube19
+    400026: pCube20
+    400028: pCube21
+    400030: pCube22
+    400032: pCube23
+    400034: pCube24
+    400036: pCube25
+    400038: transform1
+    400040: transform10
+    400042: transform2
+    400044: transform3
+    400046: transform4
+    400048: transform5
+    400050: transform6
+    400052: transform7
+    400054: transform8
+    400056: transform9
+    2300000: pasted__pCube26
+    2300002: pasted__pCube26 1
+    2300004: pasted__pCube27
+    2300006: pasted__pCube27 1
+    2300008: pasted__pCube28
+    2300010: pCube25
+    3300000: pasted__pCube26
+    3300002: pasted__pCube26 1
+    3300004: pasted__pCube27
+    3300006: pasted__pCube27 1
+    3300008: pasted__pCube28
+    3300010: pCube25
+    4300000: pCube25
+    4300002: pasted__pCube26
+    4300004: pasted__pCube27
+    4300006: pasted__pCube28
+    4300008: pasted__pCube26
+    4300010: pasted__pCube27
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 150
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

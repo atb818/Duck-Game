@@ -4,9 +4,9 @@ using System.Collections;
 public class CameraController : MonoBehaviour {
 
 	public GameObject CurrentCam;
-	//public GameObject DB;
 	GameObject PreviousCam;
 	GameObject[] cameras;
+
 
 	void Start () {
 		//Camera.SetActive(false);

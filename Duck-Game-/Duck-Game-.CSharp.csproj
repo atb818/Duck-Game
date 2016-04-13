@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\Bread\ammoCheck.cs" />
     <Compile Include="Assets\Scripts\Bread\projector.cs" />
     <Compile Include="Assets\Scripts\Bread\refillBread.cs" />
+    <Compile Include="Assets\Scripts\Cameras\CamFollow.cs" />
     <Compile Include="Assets\Scripts\Cameras\CameraController.cs" />
     <Compile Include="Assets\Scripts\Cameras\PreviousCam.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckCharacterController.cs" />

@@ -3,11 +3,11 @@ using System.Collections;
 
 public class LightFlicker : MonoBehaviour {
 
-	/*
+	
 	Light light;
 	float random;
-	public float minIntensity = 0.25f;
-	public float maxIntensity = 3f;
+	public float minIntensity = 3f;
+	public float maxIntensity = 8f;
 
 	void Start () {
 		light = gameObject.GetComponent<Light>();
@@ -18,8 +18,8 @@ public class LightFlicker : MonoBehaviour {
 		float noise = Mathf.PerlinNoise(random, Time.time);
 		light.intensity = Mathf.Lerp(minIntensity, maxIntensity, noise);
 	}
-	*/
-
+	
+	/*
 	Light light;
 	public float timeOn = 0.05f;
 	public float timeOff = 0.5f;
@@ -39,4 +39,5 @@ public class LightFlicker : MonoBehaviour {
 			}
 		}
 	}
+	*/
 }

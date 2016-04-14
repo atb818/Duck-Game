@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Cameras\CamFollow.cs" />
      <Compile Include="Assets\Scripts\Cameras\CameraController.cs" />
      <Compile Include="Assets\Scripts\Cameras\PreviousCam.cs" />
+     <Compile Include="Assets\Scripts\Duck\Activate1stDuck.cs" />
      <Compile Include="Assets\Scripts\Duck\DuckCharacterController.cs" />
      <Compile Include="Assets\Scripts\Duck\DuckEat.cs" />
      <Compile Include="Assets\Scripts\Duck\DuckFOV.cs" />
@@ -69,6 +70,8 @@
      <Compile Include="Assets\Scripts\Duck\Old\duckLocations.cs" />
      <Compile Include="Assets\Scripts\Duck\Old\duckLogic.cs" />
      <Compile Include="Assets\Scripts\Duck\PatrolDuck.cs" />
+     <Compile Include="Assets\Scripts\Environment\DoorClose.cs" />
+     <Compile Include="Assets\Scripts\Environment\DoorCloseMessage.cs" />
      <Compile Include="Assets\Scripts\Environment\LightFlicker.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Victory1.cs" />
      <Compile Include="Assets\Scripts\Locker\goInside.cs" />

@@ -16,6 +16,28 @@ public class refillBread : MonoBehaviour {
             shootBullet.ammo++;
             Destroy(other.gameObject);
         }
-	
-	}
+
+        if (other.gameObject.tag == "Moldy")
+        {
+            BreadStatus.BStatus = "moldy";
+            shootBullet.ammo++;
+            Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.tag == "Soggy")
+        {
+            BreadStatus.BStatus = "soggy";
+            shootBullet.ammo++;
+            Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.tag == "Toasty")
+        {
+            BreadStatus.BStatus = "toasty";
+            shootBullet.ammo++;
+            Destroy(other.gameObject);
+        }
+
+
+    }
 }

@@ -28,6 +28,5 @@ public class GymDoorClose : MonoBehaviour {
     public void ClosingTime(){
     	closeDoor = true;
     	doorOpen = false;
-    	print("door closing");
     }
 }

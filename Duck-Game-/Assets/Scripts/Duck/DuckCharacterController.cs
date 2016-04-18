@@ -47,10 +47,14 @@ public class DuckCharacterController : MonoBehaviour {
 	//DUCK TYPE
 	public bool isBasicDuck;
 	public bool isPatrolDuck;
+	public bool isGymDuck;
 
 	//PATROL DUCK
 	int currentNode;
 	bool returning = false;
+
+	//GYM DUCK
+	public GameObject spot;
 
 	//DEBUG SPEED CHECK
 	Vector3 lastPos;
@@ -76,6 +80,10 @@ public class DuckCharacterController : MonoBehaviour {
 
 		ducks = GameObject.FindGameObjectsWithTag("Duck");
 		FOV.SetActive(false);
+
+		if (isGymDuck == false){
+			spot = null;
+		}
 	}
 	
 	void Update () {
@@ -118,7 +126,7 @@ public class DuckCharacterController : MonoBehaviour {
 
 	}
 
-	void LookAtTarget(GameObject t){
+	public void LookAtTarget(GameObject t){
 		smoothRotate.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
 		var newRotation = Quaternion.LookRotation(t.transform.position - transform.position);
 		transform.rotation = Quaternion.Slerp(smoothRotate, newRotation, .85f);
@@ -141,7 +149,6 @@ public class DuckCharacterController : MonoBehaviour {
 			returnDist = Vector3.Distance(Nodes[currentNode].transform.position, transform.position);
 			LookAtTarget(Nodes[currentNode]);
 			if (returnDist > 0.5f){
-				print ("returning to post");
 				cc.Move(transform.forward * Time.deltaTime * speed);
 			} else {
 				transform.rotation = startRot;
@@ -174,7 +181,6 @@ public class DuckCharacterController : MonoBehaviour {
 					chasingPlayer = true;
 				}
 				if (chasingPlayer){
-					print ("chasing player");
 					LookAtTarget(DB);
 					//cc.Move(transform.forward * Time.deltaTime * speed);
 					Vector3 moveVector = DB.transform.position - transform.position;
@@ -283,6 +289,22 @@ public class DuckCharacterController : MonoBehaviour {
 		LookAtTarget(target);
 		cc.Move(transform.forward * Time.deltaTime * speed);
 
+	}
+
+	void OnCollisionEnter (Collision other) {
+		if (other.gameObject.CompareTag("Basketball") && isGymDuck){
+			spot.SetActive(true);
+			foreach (GameObject d in ducks){
+				if (d.GetComponent<DuckCharacterController>().isGymDuck){
+					d.GetComponent<DuckCharacterController>().LookAtTarget(DB);
+					d.GetComponent<DuckCharacterController>().PlayerInGym();
+				}
+			}
+		}
+	}
+
+	public void PlayerInGym (){
+		playerDetected = true;
 	}
 
 }

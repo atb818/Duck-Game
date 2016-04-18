@@ -70,8 +70,11 @@
      <Compile Include="Assets\Scripts\Duck\Old\duckLocations.cs" />
      <Compile Include="Assets\Scripts\Duck\Old\duckLogic.cs" />
      <Compile Include="Assets\Scripts\Duck\PatrolDuck.cs" />
-     <Compile Include="Assets\Scripts\Environment\DoorClose.cs" />
-     <Compile Include="Assets\Scripts\Environment\DoorCloseMessage.cs" />
+     <Compile Include="Assets\Scripts\Environment\BBallRack.cs" />
+     <Compile Include="Assets\Scripts\Environment\Doors\DoorClose.cs" />
+     <Compile Include="Assets\Scripts\Environment\Doors\DoorCloseMessage.cs" />
+     <Compile Include="Assets\Scripts\Environment\Doors\GymDoorClose.cs" />
+     <Compile Include="Assets\Scripts\Environment\Doors\GymDoorCloseMessage.cs" />
      <Compile Include="Assets\Scripts\Environment\LightFlicker.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Victory1.cs" />
      <Compile Include="Assets\Scripts\Locker\goInside.cs" />

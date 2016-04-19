@@ -55,6 +55,7 @@ public class DuckCharacterController : MonoBehaviour {
 
 	//GYM DUCK
 	public GameObject spot;
+	public GameObject stageduck;
 
 	//DEBUG SPEED CHECK
 	Vector3 lastPos;
@@ -81,7 +82,9 @@ public class DuckCharacterController : MonoBehaviour {
 		ducks = GameObject.FindGameObjectsWithTag("Duck");
 		FOV.SetActive(false);
 
-		if (isGymDuck == false){
+		if (isGymDuck){
+			LookAtTarget(stageduck);
+		} else {
 			spot = null;
 		}
 	}
@@ -137,7 +140,7 @@ public class DuckCharacterController : MonoBehaviour {
 		chasingPlayer = false;
 		float returnDist;
 
-		if (isBasicDuck){
+		if (isBasicDuck && !isGymDuck){
 			returnDist = Vector3.Distance(start.transform.position, transform.position);
 			LookAtTarget(start);
 			if (returnDist > 0.5f){

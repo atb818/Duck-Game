@@ -50,10 +50,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// turn amount and forward amount required to head in the desired
 			// direction.
 			if (move.magnitude > 1f) move.Normalize();
-			move = transform.InverseTransformDirection(move);
+			//move = transform.InverseTransformDirection(move);
 			CheckGroundStatus();
 			move = Vector3.ProjectOnPlane(move, m_GroundNormal);
-			m_TurnAmount = Mathf.Atan2(move.x, move.z);
+			m_TurnAmount = Mathf.Atan2(move.x, /*move.z*/0);
 			m_ForwardAmount = move.z;
 
 			ApplyExtraTurnRotation();
@@ -143,8 +143,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// which affects the movement speed because of the root motion.
 			if (m_IsGrounded && move.magnitude > 0)
 			{
-				m_Animator.speed = m_AnimSpeedMultiplier;
-			}
+                
+                if(Input.GetKey(KeyCode.S))m_Animator.speed = -m_Animator.speed;
+                else m_Animator.speed = m_AnimSpeedMultiplier;
+            }
 			else
 			{
 				// don't use that while airborne

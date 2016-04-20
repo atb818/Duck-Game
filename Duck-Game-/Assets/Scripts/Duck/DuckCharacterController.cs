@@ -9,6 +9,8 @@ public class DuckCharacterController : MonoBehaviour {
 	public GameObject DB;
 
 	public float speed;
+	public float normalSpeed;
+	public float chasingSpeed;
 	Quaternion smoothRotate;
 	Quaternion startRot;
 
@@ -101,6 +103,12 @@ public class DuckCharacterController : MonoBehaviour {
 		RayCheck();
 
 		bool isPatrolling = false;
+
+		if (chasingPlayer) {
+			speed = chasingSpeed;
+		} else {
+			speed = normalSpeed;
+		}
 
 		if (isBasicDuck && !getBread){
 			GetPlayer();

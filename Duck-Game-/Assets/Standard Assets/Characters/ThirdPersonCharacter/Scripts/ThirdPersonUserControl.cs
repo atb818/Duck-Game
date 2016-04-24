@@ -21,7 +21,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             // get the transform of the main camera
             if (Camera.main != null)
             {
-                m_Cam = Camera.main.transform;
+               // m_Cam = Camera.main.transform;
             }
             else
             {

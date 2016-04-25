@@ -3,7 +3,7 @@ using System.Collections;
 
 public class checkpoint : MonoBehaviour {
 
-    public static int check;
+    public static int check = 5;
     public int numberCheck = 0;
 
     public GameObject check0;
@@ -23,9 +23,37 @@ public class checkpoint : MonoBehaviour {
     int ammoCheck;
 
     void Update() {
+
+        print(check);
+
         if (Input.GetKeyDown(KeyCode.L))
         {
             Application.LoadLevel(0);
+        }
+
+        if (check == 0)
+        {
+            Penta0.SetActive(true);
+        }
+
+        if (check == 1)
+        {
+            Penta1.SetActive(true);
+        }
+
+        if (check == 2)
+        {
+            Penta2.SetActive(true);
+        }
+
+        if (check == 3)
+        {
+            Penta3.SetActive(true);
+        }
+
+        if (check == 4)
+        {
+            Penta4.SetActive(true);
         }
     }
 
@@ -104,34 +132,6 @@ public class checkpoint : MonoBehaviour {
             {
                 check = numberCheck;
                 ammoCheck = shootBullet.ammo;
-
-                if (check == 0)
-                {
-                    Penta0.SetActive(true);
-                }
-
-                if (check == 1)
-                {
-                    Penta1.SetActive(true);
-                }
-
-                if (check == 2)
-                {
-                    Penta2.SetActive(true);
-                }
-
-                if (check == 3)
-                {
-                    Penta3.SetActive(true);
-                }
-
-                if (check == 4)
-                {
-                    Penta4.SetActive(true);
-                }
-
-                
-
 
             }
             

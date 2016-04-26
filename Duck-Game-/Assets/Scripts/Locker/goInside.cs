@@ -27,7 +27,8 @@ public class goInside : MonoBehaviour {
         //print(insideLockerGlobal);
 	
         if (insideLocker == true ) {
-            if (Input.GetKeyDown(KeyCode.E)){
+            //if (Input.GetKeyDown(KeyCode.E)){
+            if (Input.GetButtonDown("Interact")){
                 script.changeDoor();
                 //hinge.GetComponent<lockerDoor>().changeDoor();
 

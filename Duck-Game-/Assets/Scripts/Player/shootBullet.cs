@@ -34,7 +34,8 @@ public class shootBullet : MonoBehaviour {
 
         if(goInside.canShoot == true)
         {
-            if (Input.GetKey(KeyCode.Space))
+            //if (Input.GetKey(KeyCode.Space))
+            if (Input.GetButton("Shoot"))
             {
                 counter += .025f;
 
@@ -46,7 +47,8 @@ public class shootBullet : MonoBehaviour {
                 power = Mathf.PingPong(counter, 1f);
             }
 
-            if (Input.GetKeyUp(KeyCode.Space))
+            //if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetButtonUp("Shoot"))
             {
                 
 

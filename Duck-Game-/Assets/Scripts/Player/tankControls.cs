@@ -7,12 +7,15 @@ public class tankControls : MonoBehaviour
     public float speed;
     public float turnSpeed;
 
+    public Animator m_Animator;
+
     Rigidbody rb;
     Vector3 moveDir;
 
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        //m_Animator = GetComponent<Animator>();
     }
     void Update()
     {
@@ -23,10 +26,20 @@ public class tankControls : MonoBehaviour
         }
         if (Input.GetAxisRaw("Vertical") < 0)
         {
-            rb.AddRelativeForce(Vector3.forward * -speed);
+            rb.AddRelativeForce(Vector3.forward * -speed/2f);
         }
 
         transform.Rotate(0, Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime, 0);
+
+        UpdateAnimation();
+    }
+
+    void UpdateAnimation()
+    {
+
+        m_Animator.SetFloat("Forward", Input.GetAxisRaw("Vertical"), 0.1f, Time.deltaTime);
+        m_Animator.SetFloat("Turn", Input.GetAxis("Horizontal"), 0.1f, Time.deltaTime);
+        m_Animator.SetBool("OnGround", true);
 
     }
 }

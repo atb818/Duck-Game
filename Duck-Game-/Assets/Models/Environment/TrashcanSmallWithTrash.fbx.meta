@@ -23,6 +23,12 @@ ModelImporter:
     100030: pPlane5
     100032: pPlane6
     100034: //RootNode
+    100036: group
+    100038: pasted__pCube1
+    100040: pCube12
+    100042: pCube13
+    100044: pCube14
+    100046: pCube15
     400000: pCube1
     400002: pCube10
     400004: pCube11
@@ -41,6 +47,12 @@ ModelImporter:
     400030: pPlane5
     400032: pPlane6
     400034: //RootNode
+    400036: group
+    400038: pasted__pCube1
+    400040: pCube12
+    400042: pCube13
+    400044: pCube14
+    400046: pCube15
     2300000: pCube1
     2300002: pCube10
     2300004: pCube11
@@ -58,6 +70,11 @@ ModelImporter:
     2300028: pPlane4
     2300030: pPlane5
     2300032: pPlane6
+    2300034: pasted__pCube1
+    2300036: pCube12
+    2300038: pCube13
+    2300040: pCube14
+    2300042: pCube15
     3300000: pCube1
     3300002: pCube10
     3300004: pCube11
@@ -75,6 +92,11 @@ ModelImporter:
     3300028: pPlane4
     3300030: pPlane5
     3300032: pPlane6
+    3300034: pasted__pCube1
+    3300036: pCube12
+    3300038: pCube13
+    3300040: pCube14
+    3300042: pCube15
     4300000: pCube1
     4300002: pCube2
     4300004: pPlane1
@@ -92,6 +114,11 @@ ModelImporter:
     4300028: pCube11
     4300030: pPlane5
     4300032: pPlane6
+    4300034: pasted__pCube1
+    4300036: pCube12
+    4300038: pCube13
+    4300040: pCube14
+    4300042: pCube15
   materials:
     importMaterials: 1
     materialName: 0

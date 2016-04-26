@@ -136,7 +136,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 float crouchRayLength = m_CapsuleHeight - m_Capsule.radius * k_Half;
                 if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength, ~0, QueryTriggerInteraction.Ignore))
                 {
-                    m_Crouching = true;
+                    m_Crouching = false;
                 }
             }
         }

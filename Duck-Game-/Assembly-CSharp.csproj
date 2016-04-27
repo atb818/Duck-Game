@@ -70,6 +70,7 @@
      <Compile Include="Assets\Scripts\Duck\Old\duckLocations.cs" />
      <Compile Include="Assets\Scripts\Duck\Old\duckLogic.cs" />
      <Compile Include="Assets\Scripts\Duck\PatrolDuck.cs" />
+     <Compile Include="Assets\Scripts\Duck\ducksound.cs" />
      <Compile Include="Assets\Scripts\Environment\ActiveToggle.cs" />
      <Compile Include="Assets\Scripts\Environment\Doors\DoorClose.cs" />
      <Compile Include="Assets\Scripts\Environment\Doors\DoorCloseMessage.cs" />

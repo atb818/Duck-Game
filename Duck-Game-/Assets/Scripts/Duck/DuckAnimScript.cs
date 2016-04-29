@@ -13,7 +13,7 @@ public class DuckAnimScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+    	duckAnim.Play("Idle", 0, Random.Range(0f,1f));
     }
 
     // Update is called once per frame

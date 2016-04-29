@@ -10,6 +10,11 @@ public class goInside : MonoBehaviour {
     GameObject player;
     //public GameObject target;
 
+    //awkward directional debug booleans -___-
+    public bool movePosX;
+    public bool moveNegX;
+    public bool moveZ;
+
 
     void Start()
     {
@@ -38,7 +43,13 @@ public class goInside : MonoBehaviour {
                     insideLockerGlobal = false;
                     player.GetComponent<Rigidbody>().constraints &= ~RigidbodyConstraints.FreezePositionZ;
                     player.GetComponent<Rigidbody>().constraints &= ~RigidbodyConstraints.FreezePositionX;
-                    player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z + .9f);
+                    if (moveZ){
+                    	player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z + .9f);
+                	} else if (movePosX){
+                    	player.transform.position = new Vector3(player.transform.position.x + .9f, player.transform.position.y, player.transform.position.z);
+                	} else if (moveNegX){
+                    	player.transform.position = new Vector3(player.transform.position.x - .9f, player.transform.position.y, player.transform.position.z);
+                	}
                     player.transform.rotation = Quaternion.Lerp(player.transform.rotation, this.transform.rotation, 1);
 
                 } else {

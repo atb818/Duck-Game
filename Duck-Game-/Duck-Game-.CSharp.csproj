@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\Cameras\CameraController.cs" />
     <Compile Include="Assets\Scripts\Cameras\PreviousCam.cs" />
     <Compile Include="Assets\Scripts\Duck\Activate1stDuck.cs" />
+    <Compile Include="Assets\Scripts\Duck\DuckAnimScript.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckCharacterController.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckEat.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckFOV.cs" />
@@ -101,7 +102,6 @@
     <Compile Include="Assets\Scripts\Duck\Old\duckLogic.cs" />
     <Compile Include="Assets\Scripts\Duck\PatrolDuck.cs" />
     <Compile Include="Assets\Scripts\Duck\ducksound.cs" />
-    <Compile Include="Assets\Scripts\DuckAnimScript.cs" />
     <Compile Include="Assets\Scripts\Environment\ActiveToggle.cs" />
     <Compile Include="Assets\Scripts\Environment\Bush\InBush.cs" />
     <Compile Include="Assets\Scripts\Environment\Doors\DoorClose.cs" />

@@ -6,6 +6,7 @@ public class lockerDoor : MonoBehaviour {
     bool doorOpen = false;
     bool opened = true;
     Quaternion newRotation;
+    public GameObject player;
 
     Vector3 startRot;
 
@@ -20,14 +21,20 @@ public class lockerDoor : MonoBehaviour {
 
         if(doorOpen == true)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetButtonDown("Interact"))
             {
+                
                 if (!opened) {
+
                     opened = true;
+                    //player.GetComponent<Rigidbody>().constraints &= ~RigidbodyConstraints.FreezePositionZ | ~RigidbodyConstraints.FreezePositionX;
+
                 } 
                 else if (opened)
                 {
                     opened = false;
+                    
+
                 }
                     
             }
@@ -53,7 +60,7 @@ public class lockerDoor : MonoBehaviour {
         if(other.gameObject.tag == "Player")
         {
             doorOpen = true;
-            print("open");
+            //print("open");
         }
     }
 
@@ -62,7 +69,7 @@ public class lockerDoor : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             doorOpen = false;
-            print("close");
+            //print("close");
         }
     }
 

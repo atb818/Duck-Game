@@ -50,6 +50,7 @@ public class DuckCharacterController : MonoBehaviour {
 	public bool isBasicDuck;
 	public bool isPatrolDuck;
 	public bool isGymDuck;
+	public bool isOutsideDuck;
 
 	//PATROL DUCK
 	int currentNode;
@@ -122,7 +123,8 @@ public class DuckCharacterController : MonoBehaviour {
 			} 
 		}
 
-		if (target != null && target.CompareTag("Bread")){
+		//Soggy Moldy Toasty
+		if (target != null && (target.CompareTag("Bread") || target.CompareTag("Soggy") || target.CompareTag("Toasty") || target.CompareTag("Moldy"))){
 			EatBread2();
 		} else if (target == null && !isResting && !playerInDist && !chasingPlayer && !isPatrolling){
 			ReturnToPost();

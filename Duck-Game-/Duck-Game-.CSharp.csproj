@@ -61,12 +61,6 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Duck-Game-.CSharp.Plugins.csproj">
@@ -103,6 +97,7 @@
     <Compile Include="Assets\Scripts\Duck\ducksound.cs" />
     <Compile Include="Assets\Scripts\DuckAnimScript.cs" />
     <Compile Include="Assets\Scripts\Environment\ActiveToggle.cs" />
+    <Compile Include="Assets\Scripts\Environment\Bush\InBush.cs" />
     <Compile Include="Assets\Scripts\Environment\Doors\DoorClose.cs" />
     <Compile Include="Assets\Scripts\Environment\Doors\DoorCloseMessage.cs" />
     <Compile Include="Assets\Scripts\Environment\Doors\GymDoorClose.cs" />
@@ -112,9 +107,9 @@
     <Compile Include="Assets\Scripts\Environment\Gym\GymSpotOff.cs" />
     <Compile Include="Assets\Scripts\Environment\Gym\GymSpotOn.cs" />
     <Compile Include="Assets\Scripts\Environment\LightFlicker.cs" />
+    <Compile Include="Assets\Scripts\Environment\Locker\goInside.cs" />
+    <Compile Include="Assets\Scripts\Environment\Locker\lockerDoor.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Victory1.cs" />
-    <Compile Include="Assets\Scripts\Locker\goInside.cs" />
-    <Compile Include="Assets\Scripts\Locker\lockerDoor.cs" />
     <Compile Include="Assets\Scripts\Old\Timer.cs" />
     <Compile Include="Assets\Scripts\Old\waitAndDestroy.cs" />
     <Compile Include="Assets\Scripts\Player\Camera\CamSwap.cs" />

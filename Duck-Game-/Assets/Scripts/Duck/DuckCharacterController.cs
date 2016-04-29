@@ -51,6 +51,7 @@ public class DuckCharacterController : MonoBehaviour {
 	public bool isPatrolDuck;
 	public bool isGymDuck;
 	public bool isOutsideDuck;
+	public bool isDemonDuck;
 
 	//PATROL DUCK
 	int currentNode;
@@ -238,6 +239,10 @@ public class DuckCharacterController : MonoBehaviour {
 					//Get player
 					if ((playerInDist && playerInAngle && targetIsPlayer) || playerDetected){
 						//transform.LookAt(DB.transform);
+						chasingPlayer = true;
+					}
+					//Demon Duck Get Player
+					if ((playerInDist && playerInAngle && isDemonDuck)){
 						chasingPlayer = true;
 					}
 					if (chasingPlayer){

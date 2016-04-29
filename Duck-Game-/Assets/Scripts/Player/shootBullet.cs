@@ -11,6 +11,7 @@ public class shootBullet : MonoBehaviour {
     public static float power = 0f;
     float torquePower;
     public static int ammo = 0;
+    public static bool display;
 
     float counter = 0;
 
@@ -18,7 +19,7 @@ public class shootBullet : MonoBehaviour {
     void Start() {
 
         power = 0;
-
+        display = false;
         ammo = 0;
         //Below is for testing purposes:
         //ammo = 10;
@@ -28,6 +29,17 @@ public class shootBullet : MonoBehaviour {
 
     {
       
+        if(ammo == 0)
+        {
+            display = false;
+        }
+
+        if (ammo == 1)
+        {
+            display = true;
+        }
+
+
         power = Mathf.Clamp(power, 0f, 1f);
 
         torquePower = Random.Range(50, 500);
@@ -50,7 +62,7 @@ public class shootBullet : MonoBehaviour {
             //if (Input.GetKeyUp(KeyCode.Space))
             if (Input.GetButtonUp("Shoot"))
             {
-                
+                display = false;
 
                 if (ammo > 0)
                 {

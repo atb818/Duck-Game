@@ -5,14 +5,25 @@ using UnityEngine.UI;
 public class testHealth : MonoBehaviour {
 
     Image health;
+    GameObject breadUI;
 
-	
-	void Start () {
+
+    void Start () {
         health = GetComponent<Image>();
-	}
+        breadUI = GameObject.FindWithTag("BreadUI");
+    }
 	
 	
 	void Update () {
+        
+        if(shootBullet.display == true && lockerDoor.dist > 7)
+        {
+            breadUI.SetActive(true);
+        }
+        else
+        {
+            breadUI.SetActive(false);
+        }
 
 
         if(shootBullet.ammo == 0)

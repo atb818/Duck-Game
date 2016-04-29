@@ -7,15 +7,28 @@ public class lockerDoor : MonoBehaviour {
     bool opened = true;
     Quaternion newRotation;
     public GameObject player;
-
+    public static float dist;
     Vector3 startRot;
+    GameObject lockerUI;
 
 
     void Start() {
         startRot = transform.eulerAngles;
+        lockerUI = GameObject.FindWithTag("LockerUI");
     }
 
 	void Update () {
+
+        dist = Vector3.Distance(transform.position, player.transform.position);
+        if(dist < 7)
+        {
+            lockerUI.SetActive(true);
+        }
+        else
+        {
+            lockerUI.SetActive(false);
+        }
+
 
         transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, .05f);
 

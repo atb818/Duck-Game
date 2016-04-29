@@ -24,7 +24,7 @@ public class checkpoint : MonoBehaviour {
 
     void Update() {
 
-        print(check);
+        //print(check);
 
         if (Input.GetKeyDown(KeyCode.L))
         {

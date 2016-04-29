@@ -332,7 +332,11 @@ public class DuckCharacterController : MonoBehaviour {
     		cc.Move(transform.forward * Time.deltaTime * speed);
 		}
 		if (breadDist <= eatDist){
-			StartCoroutine("Resting");				
+			if (target.CompareTag("Moldy")){
+					print ("dead duck");
+				} else {
+					StartCoroutine("Resting");
+				}
 		}
 	}
 
@@ -414,7 +418,6 @@ public class DuckCharacterController : MonoBehaviour {
         if (body != null){
         	Rigidbody rb = hit.gameObject.GetComponent<Rigidbody>();
         	rb.AddForce(transform.forward * 200);
-        	print ("pushing dumpster");
         }
     }
 

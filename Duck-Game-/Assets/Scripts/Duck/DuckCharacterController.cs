@@ -397,7 +397,21 @@ public class DuckCharacterController : MonoBehaviour {
 				}
 			}
 		}
+		/*
+		if (other.gameObject.CompareTag("Dumpster")){
+			other.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 100);
+			print("pushing dumpster");
+		}*/
 	}
+
+	void OnControllerColliderHit(ControllerColliderHit hit) {
+		Rigidbody body = hit.collider.attachedRigidbody;
+        if (body != null){
+        	Rigidbody rb = hit.gameObject.GetComponent<Rigidbody>();
+        	rb.AddForce(transform.forward * 200);
+        	print ("pushing dumpster");
+        }
+    }
 
 	public void PlayerInGym (){
 		playerDetected = true;

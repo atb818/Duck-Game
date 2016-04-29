@@ -60,6 +60,9 @@ public class DuckCharacterController : MonoBehaviour {
 	public GameObject spot;
 	public GameObject stageduck;
 
+	//OUTSIDE DUCK
+	bool ODSeesPlayer = false;
+
 	//DEBUG SPEED CHECK
 	Vector3 lastPos;
 
@@ -174,44 +177,124 @@ public class DuckCharacterController : MonoBehaviour {
 	}
 
 	public void GetPlayer () {
-		if (goInside.insideLockerGlobal == false){
-			if (isResting == false){
-				//Get distance to player
-				if (playerDist <= fovDist){
-					playerInDist = true;
-					//print ("duck sees player");
+		if (isOutsideDuck == false){
+			if (goInside.insideLockerGlobal == false){
+				if (isResting == false){
+					//Get distance to player
+					if (playerDist <= fovDist){
+						playerInDist = true;
+						//print ("duck sees player");
+					}
+					if (playerDist <= detectDist){
+						playerDetected = true;
+					}
+					//Get angle to player
+					if (playerAngle <= fovAngle){
+						playerInAngle = true;
+					}
+					//Get player
+					if ((playerInDist && playerInAngle && targetIsPlayer) || playerDetected){
+						//transform.LookAt(DB.transform);
+						chasingPlayer = true;
+					}
+					if (chasingPlayer){
+						LookAtTarget(DB);
+						//cc.Move(transform.forward * Time.deltaTime * speed);
+						Vector3 moveVector = DB.transform.position - transform.position;
+						moveVector.y = 0;
+						moveVector = Vector3.Normalize(moveVector); //Normalizing a vector always standardizes it back to a length of 1
+						cc.Move(moveVector * Time.deltaTime * speed); 
+					} 
+					//Eat player
+					if (playerDist <= eatDist && chasingPlayer){
+	                    HealthBar.hitPoints -= .005f;
+					}
 				}
-				if (playerDist <= detectDist){
-					playerDetected = true;
-				}
-				//Get angle to player
-				if (playerAngle <= fovAngle){
-					playerInAngle = true;
-				}
-				//Get player
-				if ((playerInDist && playerInAngle && targetIsPlayer) || playerDetected){
-					//transform.LookAt(DB.transform);
-					chasingPlayer = true;
-				}
-				if (chasingPlayer){
-					LookAtTarget(DB);
-					//cc.Move(transform.forward * Time.deltaTime * speed);
-					Vector3 moveVector = DB.transform.position - transform.position;
-					moveVector.y = 0;
-					moveVector = Vector3.Normalize(moveVector); //Normalizing a vector always standardizes it back to a length of 1
-					cc.Move(moveVector * Time.deltaTime * speed); 
-				} 
-				//Eat player
-				if (playerDist <= eatDist && chasingPlayer){
-                    HealthBar.hitPoints -= .005f;
-				}
+			} else {
+				chasingPlayer = false;
+				playerInDist = false;
+				playerInAngle = false;
+				playerDetected = false;
+				targetIsPlayer = false;
 			}
-		} else {
-			chasingPlayer = false;
-			playerInDist = false;
-			playerInAngle = false;
-			playerDetected = false;
-			targetIsPlayer = false;
+		} else if (isOutsideDuck){
+			if (chasingPlayer){
+				ODSeesPlayer = true;
+			}
+			if (goInside.insideLockerGlobal == false && (ODSeesPlayer == false || ODSeesPlayer)){
+				if (isResting == false){
+					//Get distance to player
+					if (playerDist <= fovDist){
+						playerInDist = true;
+						//print ("duck sees player");
+					}
+					if (playerDist <= detectDist){
+						playerDetected = true;
+					}
+					//Get angle to player
+					if (playerAngle <= fovAngle){
+						playerInAngle = true;
+					}
+					//Get player
+					if ((playerInDist && playerInAngle && targetIsPlayer) || playerDetected){
+						//transform.LookAt(DB.transform);
+						chasingPlayer = true;
+					}
+					if (chasingPlayer){
+						ODSeesPlayer = true;
+						LookAtTarget(DB);
+						//cc.Move(transform.forward * Time.deltaTime * speed);
+						Vector3 moveVector = DB.transform.position - transform.position;
+						moveVector.y = 0;
+						moveVector = Vector3.Normalize(moveVector); //Normalizing a vector always standardizes it back to a length of 1
+						cc.Move(moveVector * Time.deltaTime * speed); 
+					} 
+					//Eat player
+					if (playerDist <= eatDist && chasingPlayer){
+	                    HealthBar.hitPoints -= .005f;
+					}
+				}
+			} else if (goInside.insideLockerGlobal == true && ODSeesPlayer == false) {
+				chasingPlayer = false;
+				playerInDist = false;
+				playerInAngle = false;
+				playerDetected = false;
+				targetIsPlayer = false;
+
+			} else if (goInside.insideLockerGlobal == true && ODSeesPlayer){
+				if (isResting == false){
+					//Get distance to player
+					if (playerDist <= fovDist){
+						playerInDist = true;
+						//print ("duck sees player");
+					}
+					if (playerDist <= detectDist){
+						playerDetected = true;
+					}
+					//Get angle to player
+					if (playerAngle <= fovAngle){
+						playerInAngle = true;
+					}
+					//Get player
+					if ((playerInDist && playerInAngle && targetIsPlayer) || playerDetected){
+						//transform.LookAt(DB.transform);
+						chasingPlayer = true;
+					}
+					if (chasingPlayer){
+						ODSeesPlayer = true;
+						LookAtTarget(DB);
+						//cc.Move(transform.forward * Time.deltaTime * speed);
+						Vector3 moveVector = DB.transform.position - transform.position;
+						moveVector.y = 0;
+						moveVector = Vector3.Normalize(moveVector); //Normalizing a vector always standardizes it back to a length of 1
+						cc.Move(moveVector * Time.deltaTime * speed); 
+					} 
+					//Eat player
+					if (playerDist <= eatDist && chasingPlayer){
+	                    HealthBar.hitPoints -= .005f;
+					}
+				}
+			} 
 		}
 	}
 

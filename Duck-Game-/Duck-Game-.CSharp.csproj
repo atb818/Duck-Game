@@ -78,6 +78,7 @@
     <Compile Include="Assets\Asset Store\MoltenMetalStudios\LightFlickerPulse\LightFlickerPulse.cs" />
     <Compile Include="Assets\Asset Store\MoltenMetalStudios\LightFlickerPulse\_Demo\SceneScripts\BenchLighting.cs" />
     <Compile Include="Assets\Asset Store\MoltenMetalStudios\LightFlickerPulse\_Demo\SceneScripts\CameraAngles.cs" />
+    <Compile Include="Assets\Asset Store\PorglezompPyroclastics\ExplosionMat.cs" />
     <Compile Include="Assets\Scripts\Bread\AttractDuck2.cs" />
     <Compile Include="Assets\Scripts\Bread\BreadStatus.cs" />
     <Compile Include="Assets\Scripts\Bread\BreadTrigger.cs" />
@@ -97,6 +98,8 @@
     <Compile Include="Assets\Scripts\Duck\DuckCharacterController.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckEat.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckFOV.cs" />
+    <Compile Include="Assets\Scripts\Duck\DuckSoul.cs" />
+    <Compile Include="Assets\Scripts\Duck\DuckSoulPatrol.cs" />
     <Compile Include="Assets\Scripts\Duck\Old\QuackBack.cs" />
     <Compile Include="Assets\Scripts\Duck\Old\duckCollide.cs" />
     <Compile Include="Assets\Scripts\Duck\Old\duckLocations.cs" />
@@ -110,6 +113,7 @@
     <Compile Include="Assets\Scripts\Environment\Doors\DoorCloseMessage.cs" />
     <Compile Include="Assets\Scripts\Environment\Doors\GymDoorClose.cs" />
     <Compile Include="Assets\Scripts\Environment\Doors\GymDoorCloseMessage.cs" />
+    <Compile Include="Assets\Scripts\Environment\Doors\SoulTriggers.cs" />
     <Compile Include="Assets\Scripts\Environment\Gym\BBallRack.cs" />
     <Compile Include="Assets\Scripts\Environment\Gym\GymSpot.cs" />
     <Compile Include="Assets\Scripts\Environment\Gym\GymSpotOff.cs" />
@@ -149,6 +153,8 @@
     <Compile Include="Assets\Scripts\secondsRotate.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Asset Store\PorglezompPyroclastics\Explosion.shader" />
+    <None Include="Assets\Asset Store\PorglezompPyroclastics\README.txt" />
     <None Include="Assets\Asset Store\TSF\Shaders\TSF.shader" />
     <None Include="Assets\Asset Store\TSF\Shaders\TSFOutline.shader" />
     <None Include="Assets\Asset Store\Urban_Props\readme.txt" />

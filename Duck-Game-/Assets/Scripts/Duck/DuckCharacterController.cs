@@ -8,6 +8,10 @@ public class DuckCharacterController : MonoBehaviour {
 	float yPos;
 	public GameObject DB;
 
+    //added by O--------------------
+    public Animator deadDemonAnim;
+    //------------------------------
+
 	public float speed;
 	public float normalSpeed;
 	public float chasingSpeed;
@@ -334,7 +338,10 @@ public class DuckCharacterController : MonoBehaviour {
 		if (breadDist <= eatDist){
 			if (target.CompareTag("Moldy")){
 					print ("dead duck");
-				} else {
+                // calling the animator to trigger the death scene
+                deadDemonAnim.SetBool("Dead", true);
+            }
+            else {
 					StartCoroutine("Resting");
 				}
 		}

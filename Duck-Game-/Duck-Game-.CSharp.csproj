@@ -61,6 +61,12 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Duck-Game-.CSharp.Plugins.csproj">
@@ -86,6 +92,7 @@
     <Compile Include="Assets\Scripts\Cameras\CameraController.cs" />
     <Compile Include="Assets\Scripts\Cameras\PreviousCam.cs" />
     <Compile Include="Assets\Scripts\Duck\Activate1stDuck.cs" />
+    <Compile Include="Assets\Scripts\Duck\DemonDuckAnimScript.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckAnimScript.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckCharacterController.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckEat.cs" />

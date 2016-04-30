@@ -49,7 +49,6 @@
      <Compile Include="Assets\Asset Store\MoltenMetalStudios\LightFlickerPulse\_Demo\SceneScripts\BenchLighting.cs" />
      <Compile Include="Assets\Asset Store\MoltenMetalStudios\LightFlickerPulse\_Demo\SceneScripts\CameraAngles.cs" />
      <Compile Include="Assets\Asset Store\PorglezompPyroclastics\ExplosionMat.cs" />
-     <Compile Include="Assets\Blink.cs" />
      <Compile Include="Assets\Scripts\Bread\AttractDuck2.cs" />
      <Compile Include="Assets\Scripts\Bread\BreadStatus.cs" />
      <Compile Include="Assets\Scripts\Bread\BreadTrigger.cs" />
@@ -69,6 +68,7 @@
      <Compile Include="Assets\Scripts\Duck\DuckEat.cs" />
      <Compile Include="Assets\Scripts\Duck\DuckFOV.cs" />
      <Compile Include="Assets\Scripts\Duck\DuckSoul.cs" />
+     <Compile Include="Assets\Scripts\Duck\DuckSoulPatrol.cs" />
      <Compile Include="Assets\Scripts\Duck\Old\QuackBack.cs" />
      <Compile Include="Assets\Scripts\Duck\Old\duckCollide.cs" />
      <Compile Include="Assets\Scripts\Duck\Old\duckLocations.cs" />
@@ -76,6 +76,7 @@
      <Compile Include="Assets\Scripts\Duck\PatrolDuck.cs" />
      <Compile Include="Assets\Scripts\Duck\ducksound.cs" />
      <Compile Include="Assets\Scripts\Environment\ActiveToggle.cs" />
+     <Compile Include="Assets\Scripts\Environment\Blink.cs" />
      <Compile Include="Assets\Scripts\Environment\Bush\InBush.cs" />
      <Compile Include="Assets\Scripts\Environment\Doors\DoorClose.cs" />
      <Compile Include="Assets\Scripts\Environment\Doors\DoorCloseMessage.cs" />

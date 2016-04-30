@@ -103,51 +103,54 @@ public class DuckCharacterController : MonoBehaviour {
 	void Update () {
 
 		if (dying){
+			cc.detectCollisions = false;
+			chasingPlayer = false;
 			transform.position = new Vector3 (transform.position.x, transform.position.y - 0.05f, transform.position.z);
 		} else if (!dying) {
 			transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
-		}
+		
 
-		playerDist = Vector3.Distance(DB.transform.position, transform.position);
-		Vector3 playerDir = DB.transform.position - transform.position;
-		Vector3 duckDir = transform.forward;
-		playerAngle = Vector3.Angle(playerDir, duckDir);
+			playerDist = Vector3.Distance(DB.transform.position, transform.position);
+			Vector3 playerDir = DB.transform.position - transform.position;
+			Vector3 duckDir = transform.forward;
+			playerAngle = Vector3.Angle(playerDir, duckDir);
 
-		RayCheck();
+			RayCheck();
 
-		bool isPatrolling = false;
+			bool isPatrolling = false;
 
-		if (chasingPlayer) {
-			speed = chasingSpeed;
-		} else {
-			speed = normalSpeed;
-		}
-
-		if (isBasicDuck && !getBread){
-			GetPlayer();
-		} else if (isPatrolDuck){
-			if (!getBread){
-				GetPlayer();
+			if (chasingPlayer) {
+				speed = chasingSpeed;
+			} else {
+				speed = normalSpeed;
 			}
-			if (!chasingPlayer && !getBread){
-				Patrolling();
-				isPatrolling = true;
-			} 
-		}
 
-		//Soggy Moldy Toasty
-		if (target != null && (target.CompareTag("Bread") || target.CompareTag("Soggy") || target.CompareTag("Toasty") || target.CompareTag("Moldy"))){
-			EatBread2();
-		} else if (target == null && !isResting && !playerInDist && !chasingPlayer && !isPatrolling){
-			ReturnToPost();
-		}
+			if (isBasicDuck && !getBread){
+				GetPlayer();
+			} else if (isPatrolDuck){
+				if (!getBread){
+					GetPlayer();
+				}
+				if (!chasingPlayer && !getBread){
+					Patrolling();
+					isPatrolling = true;
+				} 
+			}
 
-		//DEBUG measure speed
-		/*
-		float velocity = Vector3.Distance(lastPos, transform.position) / Time.deltaTime;
-		print(velocity);
-		lastPos = transform.position;
-		*/
+			//Soggy Moldy Toasty
+			if (target != null && (target.CompareTag("Bread") || target.CompareTag("Soggy") || target.CompareTag("Toasty") || target.CompareTag("Moldy"))){
+				EatBread2();
+			} else if (target == null && !isResting && !playerInDist && !chasingPlayer && !isPatrolling){
+				ReturnToPost();
+			}
+
+			//DEBUG measure speed
+			/*
+			float velocity = Vector3.Distance(lastPos, transform.position) / Time.deltaTime;
+			print(velocity);
+			lastPos = transform.position;
+			*/
+		}
 
 	}
 
@@ -345,7 +348,7 @@ public class DuckCharacterController : MonoBehaviour {
 					Destroy(target.gameObject);
 					//Instantiate(soul, transform.position, transform.rotation);
 					soul.SetActive(true);
-					soul.transform.position = new Vector3 (transform.position.x, soul.transform.position.y, transform.position.z);
+					//soul.transform.position = new Vector3 (transform.position.x, soul.transform.position.y, transform.position.z);
 					playerInDist = false;
 					playerInAngle = false;
 					playerDetected = false;

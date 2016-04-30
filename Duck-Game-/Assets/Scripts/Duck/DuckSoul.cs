@@ -29,6 +29,7 @@ public class DuckSoul : MonoBehaviour {
 		if (nodeDist <= .5f) {
 			if (currentNode < Nodes.Length){
 				currentNode++;
+				//print("at node");
 			}
 			if (currentNode == Nodes.Length){
 				Destroy(gameObject);
@@ -38,7 +39,7 @@ public class DuckSoul : MonoBehaviour {
 		LookAtTarget(target);
 		transform.position += Vector3.forward * Time.deltaTime * speed;
 
-		print (currentNode);
+		//print (currentNode);
 	}
 
 	public void LookAtTarget(GameObject t){

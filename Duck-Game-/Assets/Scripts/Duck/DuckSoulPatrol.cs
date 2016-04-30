@@ -10,7 +10,7 @@ public class DuckSoulPatrol : MonoBehaviour {
 	float speed;
 	public float normalSpeed;
 	Quaternion smoothRotate;
-	Quaternion startRot;
+	//Quaternion startRot;
 
 	public GameObject[] Nodes;
 
@@ -18,7 +18,7 @@ public class DuckSoulPatrol : MonoBehaviour {
 	public GameObject DB;
 
 	//DUCKS RETURN
-	Vector3 startPos;
+	//Vector3 startPos;
 	//GameObject start;
 
 	//PATROL DUCK
@@ -32,9 +32,9 @@ public class DuckSoulPatrol : MonoBehaviour {
 
 		transform.position = new Vector3 (DemonDuck.transform.position.x, 1.83f, DemonDuck.transform.position.z);
 
-		startPos = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
-		transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
-		startRot.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z);
+		//startPos = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
+		//transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
+		//startRot.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z);
 
 		cc = GetComponent<CharacterController>();
 		cc.detectCollisions = true;
@@ -66,24 +66,43 @@ public class DuckSoulPatrol : MonoBehaviour {
 		float nodeDist = Vector3.Distance(target.transform.position, transform.position);
 
 		if (nodeDist <= 1f) {
-			if (currentNode < Nodes.Length){
+			if (currentNode != Nodes.Length-1){
 				currentNode++;
-			}
-			if (currentNode == Nodes.Length){
+				print ("at node");
+			} else {
+				//this.SetActive(false);
+				//cc.detectCollisions = false;
+				//DB.SetActive(false);
+				//DB.SetActive(true);
+				//Invoke ("DestroyMe", 5f);
 				Destroy(gameObject);
-				DB.SetActive(false);
-				DB.SetActive(true);
+
 			}
 		}
 
+		/*
 		//LookAtTarget(target);
 		smoothRotate.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
 		var newRotation = Quaternion.LookRotation(target.transform.position - transform.position);
 		transform.rotation = Quaternion.Slerp(smoothRotate, newRotation, .85f);
 		transform.eulerAngles = new Vector3 (0, transform.eulerAngles.y, 0);
+		*/
+
+		transform.LookAt(target.transform);
 
 		cc.Move(transform.forward * Time.deltaTime * speed);
 
+	}
+
+	/*
+	void DestroyMe(){
+		Destroy(gameObject);
+	}
+	*/
+
+	void OnDisable () {
+		DB.SetActive(false);
+		DB.SetActive(true);
 	}
 
 }

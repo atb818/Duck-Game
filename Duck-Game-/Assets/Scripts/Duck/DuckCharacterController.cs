@@ -64,6 +64,10 @@ public class DuckCharacterController : MonoBehaviour {
 	//OUTSIDE DUCK
 	bool ODSeesPlayer = false;
 
+	//DEMON DUCK
+	public GameObject soul;
+	bool dying = false;
+
 	//DEBUG SPEED CHECK
 	Vector3 lastPos;
 
@@ -98,7 +102,11 @@ public class DuckCharacterController : MonoBehaviour {
 	
 	void Update () {
 
-		transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
+		if (dying){
+			transform.position = new Vector3 (transform.position.x, transform.position.y - 0.05f, transform.position.z);
+		} else if (!dying) {
+			transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
+		}
 
 		playerDist = Vector3.Distance(DB.transform.position, transform.position);
 		Vector3 playerDir = DB.transform.position - transform.position;
@@ -334,6 +342,20 @@ public class DuckCharacterController : MonoBehaviour {
 		if (breadDist <= eatDist){
 			if (target.CompareTag("Moldy")){
 					print ("dead duck");
+					Destroy(target.gameObject);
+					//Instantiate(soul, transform.position, transform.rotation);
+					soul.SetActive(true);
+					soul.transform.position = new Vector3 (transform.position.x, soul.transform.position.y, transform.position.z);
+					playerInDist = false;
+					playerInAngle = false;
+					playerDetected = false;
+					//isResting = true;
+					//transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
+					target = null;
+					dying = true;				
+				} else if (target.CompareTag("Soggy")){
+					Destroy(target.gameObject);
+					StartCoroutine("Resting");
 				} else {
 					StartCoroutine("Resting");
 				}
@@ -347,7 +369,9 @@ public class DuckCharacterController : MonoBehaviour {
 	}
 
 	IEnumerator Resting () {
-		Destroy (target.gameObject);
+		if (target != null){
+			Destroy (target.gameObject);
+		}
 
 		playerInDist = false;
 		playerInAngle = false;
@@ -406,11 +430,6 @@ public class DuckCharacterController : MonoBehaviour {
 				}
 			}
 		}
-		/*
-		if (other.gameObject.CompareTag("Dumpster")){
-			other.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 100);
-			print("pushing dumpster");
-		}*/
 	}
 
 	void OnControllerColliderHit(ControllerColliderHit hit) {

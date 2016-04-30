@@ -48,6 +48,8 @@
      <Compile Include="Assets\Asset Store\MoltenMetalStudios\LightFlickerPulse\LightFlickerPulse.cs" />
      <Compile Include="Assets\Asset Store\MoltenMetalStudios\LightFlickerPulse\_Demo\SceneScripts\BenchLighting.cs" />
      <Compile Include="Assets\Asset Store\MoltenMetalStudios\LightFlickerPulse\_Demo\SceneScripts\CameraAngles.cs" />
+     <Compile Include="Assets\Asset Store\PorglezompPyroclastics\ExplosionMat.cs" />
+     <Compile Include="Assets\Blink.cs" />
      <Compile Include="Assets\Scripts\Bread\AttractDuck2.cs" />
      <Compile Include="Assets\Scripts\Bread\BreadStatus.cs" />
      <Compile Include="Assets\Scripts\Bread\BreadTrigger.cs" />
@@ -66,6 +68,7 @@
      <Compile Include="Assets\Scripts\Duck\DuckCharacterController.cs" />
      <Compile Include="Assets\Scripts\Duck\DuckEat.cs" />
      <Compile Include="Assets\Scripts\Duck\DuckFOV.cs" />
+     <Compile Include="Assets\Scripts\Duck\DuckSoul.cs" />
      <Compile Include="Assets\Scripts\Duck\Old\QuackBack.cs" />
      <Compile Include="Assets\Scripts\Duck\Old\duckCollide.cs" />
      <Compile Include="Assets\Scripts\Duck\Old\duckLocations.cs" />
@@ -133,6 +136,7 @@
      <None Include="Assets\Standard Assets\Effects\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\MotionBlur.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
+     <None Include="Assets\Asset Store\PorglezompPyroclastics\Explosion.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\MinMaxReduction.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\SSAA.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\RadialBlur.shader" />
@@ -193,6 +197,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
      <None Include="Assets\Asset Store\Urban_Props\readme.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
+     <None Include="Assets\Asset Store\PorglezompPyroclastics\README.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\PrepareSunShaftsBlur.shader" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />

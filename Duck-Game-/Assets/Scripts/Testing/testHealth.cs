@@ -11,6 +11,7 @@ public class testHealth : MonoBehaviour {
     void Start () {
         health = GetComponent<Image>();
         breadUI = GameObject.FindWithTag("BreadUI");
+        breadUI.SetActive(false);
     }
 	
 	

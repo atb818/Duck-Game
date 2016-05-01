@@ -29,7 +29,7 @@ public class DuckAnimScript : MonoBehaviour
         else
         {
             duckAnim.SetBool("IsMoving", true);
-            if (duckVel.magnitude >= 2f && duckVel.magnitude < 3f)
+            if (duckVel.magnitude > 2f && duckVel.magnitude < 3f)
             {
                 duckAnim.SetFloat("AnimSpeed", 2.5f);
             }

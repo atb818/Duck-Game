@@ -37,7 +37,8 @@ public class SoulTriggers : MonoBehaviour {
         	//newRot1 = Quaternion.AngleAxis(startRot1.y + d2Rot, Vector3.up);
 			door1.transform.eulerAngles = new Vector3 (0,d1Rot,0);
         	if (twoDoors){
-        		newRot2 = Quaternion.AngleAxis(startRot2.y + d2Rot, Vector3.up);
+        		//newRot2 = Quaternion.AngleAxis(startRot2.y + d2Rot, Vector3.up);
+        		door2.transform.eulerAngles = new Vector3 (0,d2Rot,0);
         	}
         }      
 	}

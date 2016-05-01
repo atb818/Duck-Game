@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class DoorClose : MonoBehaviour {
@@ -16,7 +16,6 @@ public class DoorClose : MonoBehaviour {
         closeDoor = false;
         doorOpen = true;
 
-        startRot = new Vector3 (0,0,0);
     }
 
 	void Update () {

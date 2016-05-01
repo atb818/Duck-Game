@@ -8,8 +8,8 @@ public class DoorsStart : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-		hall1.transform.eulerAngles = new Vector3 (0,70,0);
-		hall2.transform.eulerAngles = new Vector3 (0,-70,0);
+		//hall1.transform.eulerAngles = new Vector3 (0,0,0);
+		//hall2.transform.eulerAngles = new Vector3 (0,0,0);
 		lroom.transform.eulerAngles = new Vector3 (0,95,0);
 		gym.transform.eulerAngles = new Vector3 (0,-180,0);
 

@@ -15,7 +15,7 @@ public class SoulTriggers : MonoBehaviour {
     Vector3 startRot1, startRot2;
 
 	void Start () {
-
+		/*
 		startRot1 = door1.transform.eulerAngles;
 
 		if (!twoDoors){
@@ -23,14 +23,14 @@ public class SoulTriggers : MonoBehaviour {
 		}  else {
 			startRot2 = door2.transform.eulerAngles;
 		}
-	
+		*/
 	}
 	
 	void Update () {
-        door1.transform.rotation = Quaternion.Slerp(transform.rotation, newRot1, .05f);
+        //door1.transform.rotation = Quaternion.Slerp(transform.rotation, newRot1, .05f);
 
         if (twoDoors){
-        	door2.transform.rotation = Quaternion.Slerp(transform.rotation, newRot2, .05f);
+        	//door2.transform.rotation = Quaternion.Slerp(transform.rotation, newRot2, .05f);
     	}
 
         if (open){

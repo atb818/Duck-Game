@@ -15,6 +15,8 @@ public class DoorClose : MonoBehaviour {
         startRot = transform.eulerAngles;
         closeDoor = false;
         doorOpen = true;
+
+        startRot = new Vector3 (0,0,0);
     }
 
 	void Update () {

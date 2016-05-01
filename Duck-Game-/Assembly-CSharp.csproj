@@ -80,6 +80,7 @@
      <Compile Include="Assets\Scripts\Environment\Bush\InBush.cs" />
      <Compile Include="Assets\Scripts\Environment\Doors\DoorClose.cs" />
      <Compile Include="Assets\Scripts\Environment\Doors\DoorCloseMessage.cs" />
+     <Compile Include="Assets\Scripts\Environment\Doors\DoorsStart.cs" />
      <Compile Include="Assets\Scripts\Environment\Doors\GymDoorClose.cs" />
      <Compile Include="Assets\Scripts\Environment\Doors\GymDoorCloseMessage.cs" />
      <Compile Include="Assets\Scripts\Environment\Doors\SoulTriggers.cs" />

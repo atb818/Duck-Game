@@ -15,6 +15,7 @@ public class SoulTriggers : MonoBehaviour {
     Vector3 startRot1, startRot2;
 
 	void Start () {
+
 		startRot1 = door1.transform.eulerAngles;
 
 		if (!twoDoors){
@@ -33,7 +34,8 @@ public class SoulTriggers : MonoBehaviour {
     	}
 
         if (open){
-        	newRot1 = Quaternion.AngleAxis(startRot1.y + d2Rot, Vector3.up);
+        	//newRot1 = Quaternion.AngleAxis(startRot1.y + d2Rot, Vector3.up);
+			door1.transform.eulerAngles = new Vector3 (0,d1Rot,0);
         	if (twoDoors){
         		newRot2 = Quaternion.AngleAxis(startRot2.y + d2Rot, Vector3.up);
         	}
@@ -41,7 +43,7 @@ public class SoulTriggers : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider soul){
-		if (soul.CompareTag("Soul")){
+		if (soul.CompareTag("Player")){
 			open = true;
 			if (isCollider){
 				collider.SetActive(false);

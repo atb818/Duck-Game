@@ -43,6 +43,7 @@ public class DuckSoulPatrol : MonoBehaviour {
 	}
 	
 	void Update () {
+
 		speed = normalSpeed;
 
 		Patrolling();
@@ -75,7 +76,7 @@ public class DuckSoulPatrol : MonoBehaviour {
 				//DB.SetActive(false);
 				//DB.SetActive(true);
 				//Invoke ("DestroyMe", 5f);
-				Destroy(gameObject);
+				//Destroy(gameObject);
 
 			}
 		}

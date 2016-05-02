@@ -85,6 +85,9 @@
      <Compile Include="Assets\Scripts\Environment\Doors\GymDoorClose.cs" />
      <Compile Include="Assets\Scripts\Environment\Doors\GymDoorCloseMessage.cs" />
      <Compile Include="Assets\Scripts\Environment\Doors\SoulTriggers.cs" />
+     <Compile Include="Assets\Scripts\Environment\Doors\State Checks\CloseGym.cs" />
+     <Compile Include="Assets\Scripts\Environment\Doors\State Checks\CloseHall.cs" />
+     <Compile Include="Assets\Scripts\Environment\Doors\State Checks\CloseLobby.cs" />
      <Compile Include="Assets\Scripts\Environment\Gym\BBallRack.cs" />
      <Compile Include="Assets\Scripts\Environment\Gym\GymSpot.cs" />
      <Compile Include="Assets\Scripts\Environment\Gym\GymSpotOff.cs" />

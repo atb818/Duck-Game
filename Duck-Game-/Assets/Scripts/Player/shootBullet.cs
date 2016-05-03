@@ -13,6 +13,8 @@ public class shootBullet : MonoBehaviour {
     public static int ammo = 0;
     public static bool display;
 
+    bool UIcheck;
+
     float counter = 0;
 
 
@@ -28,16 +30,27 @@ public class shootBullet : MonoBehaviour {
     void Update()
 
     {
-      
-        if(ammo == 0)
+        
+        if (ammo != 0 && ammo != 1)
         {
+            UIcheck = false;
+        }
+
+        if (ammo == 0)
+        {
+            UIcheck = true;
             display = false;
         }
 
         if (ammo == 1)
         {
-            display = true;
+            if(UIcheck == true)
+            {
+                display = true;
+            }
         }
+        
+        
 
 
         power = Mathf.Clamp(power, 0f, 1f);

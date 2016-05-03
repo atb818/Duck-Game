@@ -9,7 +9,6 @@ public class DoorsStart : MonoBehaviour {
 
 	public static bool pastLobby, lobbyDoorsClosed, pastHall, pastGym;
 
-	// Use this for initialization
 	void Start () {
 		h1 = new Vector3 (hall1.transform.rotation.x, hall1.transform.rotation.y, hall1.transform.rotation.z);
 		h2 = new Vector3 (hall2.transform.rotation.x, hall2.transform.rotation.y, hall2.transform.rotation.z);
@@ -23,15 +22,16 @@ public class DoorsStart : MonoBehaviour {
 
 	}
 	
-	// Update is called once per frame
 	void Update () {
+		/*
 		if (pastLobby && lobbyDoorsClosed){
-			hall1.transform.eulerAngles = h1;
-			hall2.transform.eulerAngles = h2;
-		//} else {	
-			//hall1.transform.eulerAngles = new Vector3 (0,180,0);
-			//hall2.transform.eulerAngles = new Vector3 (0,0,0);
-		}
+
+			hall1.transform.eulerAngles = new Vector3 (0,hall1.transform.rotation.y + 70x,0);
+			hall2.transform.eulerAngles = new Vector3 (0,hall1.transform.rotation.y + 75,0);
+		} //else {	
+			//hall1.transform.eulerAngles = h1;
+			//hall2.transform.eulerAngles = h2;
+		//}  
 
 		if (pastHall){
 			lroom.transform.eulerAngles = lr;
@@ -44,6 +44,7 @@ public class DoorsStart : MonoBehaviour {
 		} else {
 			gym.transform.eulerAngles = new Vector3 (0,-180,0);
 		}
+		*/
 	}
 }
 

@@ -11,6 +11,8 @@ public class lockerDoor : MonoBehaviour {
     Vector3 startRot;
     GameObject lockerUI;
 
+    public float playerDist;
+
 
     void Start() {
         startRot = transform.eulerAngles;
@@ -20,13 +22,15 @@ public class lockerDoor : MonoBehaviour {
 	void Update () {
 
         dist = Vector3.Distance(transform.position, player.transform.position);
-        if(dist < 7)
-        {
-            lockerUI.SetActive(true);
-        }
-        else
-        {
-            lockerUI.SetActive(false);
+        if (lockerUI != null){
+            if(dist < playerDist)
+            {
+                lockerUI.SetActive(true);
+            }
+            else
+            {
+                lockerUI.SetActive(false);
+            }
         }
 
 

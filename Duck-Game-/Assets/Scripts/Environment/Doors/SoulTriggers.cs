@@ -9,6 +9,7 @@ public class SoulTriggers : MonoBehaviour {
 	public bool twoDoors;
 	bool open = false;
 	public bool isCollider = false;
+	public bool isLobbyDoor;
 
 
 	Quaternion newRot1, newRot2;
@@ -45,6 +46,17 @@ public class SoulTriggers : MonoBehaviour {
 
 	void OnTriggerEnter(Collider soul){
 		if (soul.CompareTag("Player")){
+
+			if (isLobbyDoor){
+				if (DoorCloseMessage.lobbyClosed) {
+					open = true;
+				} else {
+					open = false;
+				}
+			} else {
+				open = true;
+			}
+
 			open = true;
 			if (isCollider){
 				collider.SetActive(false);

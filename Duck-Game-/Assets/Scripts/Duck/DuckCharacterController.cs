@@ -166,7 +166,9 @@ public class DuckCharacterController : MonoBehaviour
             //Soggy Moldy Toasty
             if (target != null && (target.CompareTag("Bread") || target.CompareTag("Soggy") || target.CompareTag("Toasty") || target.CompareTag("Moldy")))
             {
-                EatBread2();
+                if (!dying){
+                    EatBread2();
+                }
             }
             else if (target == null && !isResting && !playerInDist && !chasingPlayer && !isPatrolling)
             {

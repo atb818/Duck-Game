@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class DoorClose : MonoBehaviour {
@@ -15,6 +15,7 @@ public class DoorClose : MonoBehaviour {
         startRot = transform.eulerAngles;
         closeDoor = false;
         doorOpen = true;
+
     }
 
 	void Update () {

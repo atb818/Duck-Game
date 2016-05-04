@@ -17,7 +17,7 @@ public class testHealth : MonoBehaviour {
 	
 	void Update () {
         
-        if(shootBullet.display == true && lockerDoor.dist > 7)
+        if(shootBullet.display == true && LockerUI.lockerUIon == false)
         {
             breadUI.SetActive(true);
         }

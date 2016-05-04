@@ -55,6 +55,7 @@ public class DuckCharacterController : MonoBehaviour
     public bool isBasicDuck;
     public bool isPatrolDuck;
     public bool isGymDuck;
+    public bool isStageDuck;
     public bool isOutsideDuck;
     public bool isDemonDuck;
 
@@ -103,7 +104,9 @@ public class DuckCharacterController : MonoBehaviour
 
         if (isGymDuck)
         {
-            LookAtTarget(stageduck);
+            if (!isStageDuck){
+            	LookAtTarget(stageduck);
+            }
         }
         else
         {
@@ -118,7 +121,7 @@ public class DuckCharacterController : MonoBehaviour
         {
             cc.detectCollisions = false;
             chasingPlayer = false;
-            transform.position = new Vector3(transform.position.x, transform.position.y - 0.05f, transform.position.z);
+            //transform.position = new Vector3(transform.position.x, transform.position.y - 0.05f, transform.position.z);
         }
         else if (!dying)
         {
@@ -432,14 +435,10 @@ public class DuckCharacterController : MonoBehaviour
                 deadDemonAnim.SetBool("Dead", true);
 
                 Destroy(target.gameObject);
-                //Instantiate(soul, transform.position, transform.rotation);
                 soul.SetActive(true);
-                //soul.transform.position = new Vector3 (transform.position.x, soul.transform.position.y, transform.position.z);
                 playerInDist = false;
                 playerInAngle = false;
                 playerDetected = false;
-                //isResting = true;
-                //transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, transform.eulerAngles.z);
                 target = null;
                 dying = true;
             }

@@ -19,6 +19,7 @@ public class tankControls : MonoBehaviour
     }
     void Update()
     {
+        transform.position = new Vector3 (transform.position.x, 1.67f, transform.position.z);
 
         if (Input.GetAxisRaw("Vertical") > 0)
         {

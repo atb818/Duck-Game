@@ -17,9 +17,8 @@ public class DuckSoulPatrol : MonoBehaviour {
 	public GameObject DemonDuck;
 	public GameObject DB;
 
-	//DUCKS RETURN
-	//Vector3 startPos;
-	//GameObject start;
+	//Hall Doors
+	//public GameObject hall1, hall2, hallCol;
 
 	//PATROL DUCK
 	int currentNode;
@@ -39,6 +38,16 @@ public class DuckSoulPatrol : MonoBehaviour {
 		cc = GetComponent<CharacterController>();
 		cc.detectCollisions = true;
 		yPos = transform.position.y + 0.1f;
+
+		/*
+		if (DoorCloseMessage.lobbyClosed == false) {
+			hall1.GetComponent<DoorClose>().ClosingTime();
+			hall2.GetComponent<DoorClose>().ClosingTime();
+			hallCol.SetActive(true);
+
+			print("closing hall doors");
+		}
+		*/
 
 	}
 	

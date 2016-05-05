@@ -21,12 +21,7 @@ public class DuckAnimScript : MonoBehaviour
     {
         duckVel = Dcontroller.velocity/Time.deltaTime;
 
-        if (duckVel.magnitude < 1f)
-        {
-            duckAnim.SetBool("IsMoving", false);
-            duckAnim.SetFloat("AnimSpeed", 1f);
-        }
-        else
+        if (duckVel.magnitude > 1f)
         {
             duckAnim.SetBool("IsMoving", true);
             if (duckVel.magnitude > 2f && duckVel.magnitude < 3f)
@@ -37,11 +32,12 @@ public class DuckAnimScript : MonoBehaviour
             {
                 duckAnim.SetFloat("AnimSpeed", 3.5f);
             }
-            else if (duckVel.magnitude < 1f)
-            {
-                duckAnim.SetBool("IsMoving", false);
-                duckAnim.SetFloat("AnimSpeed", 1f);
-            }
+        }
+        else
+        {
+           
+            duckAnim.SetBool("IsMoving", false);
+            duckAnim.SetFloat("AnimSpeed", 1f);
         }
     }
 }

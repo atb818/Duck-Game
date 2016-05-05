@@ -16,7 +16,7 @@ public class Blink : MonoBehaviour {
 
     void Update () {
 
-        UI.color = new Color(1, 1, 1, Mathf.Abs(Mathf.Sin(Time.time * 5)));
+        UI.color = new Color(1, 1, 1, Mathf.Abs(Mathf.Sin(Time.time * 3)));
 
     }
 }

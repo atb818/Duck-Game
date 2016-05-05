@@ -18,7 +18,7 @@ public class DoorCloseMessage : MonoBehaviour {
 			doorL.GetComponent<DoorClose>().ClosingTime();
 			doorR.GetComponent<DoorClose>().ClosingTime();
 			doorCollider.SetActive(true);
-			DoorsStart.lobbyDoorsClosed = true;
+			//DoorsStart.lobbyDoorsClosed = true;
         }
     }
 }

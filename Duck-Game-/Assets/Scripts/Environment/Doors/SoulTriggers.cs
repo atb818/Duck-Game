@@ -15,6 +15,8 @@ public class SoulTriggers : MonoBehaviour {
 	Quaternion newRot1, newRot2;
     Vector3 startRot1, startRot2;
 
+    //public GameObject hall1, hall2, hallCol;
+
 	void Start () {
 		/*
 		startRot1 = door1.transform.eulerAngles;
@@ -57,10 +59,21 @@ public class SoulTriggers : MonoBehaviour {
 				open = true;
 			}
 
-			open = true;
+			//open = true;
 			if (isCollider){
 				collider.SetActive(false);
 			}
+
+			/*
+			if (DoorCloseMessage.lobbyClosed == false) {
+				hall1.GetComponent<DoorClose>().ClosingTime();
+				hall2.GetComponent<DoorClose>().ClosingTime();
+				hallCol.SetActive(true);
+
+				print("closing hall doors");
+			}
+			*/
+
 		}
 	}
 }

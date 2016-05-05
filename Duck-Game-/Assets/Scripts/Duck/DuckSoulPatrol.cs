@@ -57,7 +57,7 @@ public class DuckSoulPatrol : MonoBehaviour {
 
 		Patrolling();
 
-		print (currentNode);
+		//print (currentNode);
 
 		transform.position = new Vector3 (transform.position.x, 1.83f, transform.position.z);
 

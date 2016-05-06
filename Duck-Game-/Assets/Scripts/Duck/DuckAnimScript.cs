@@ -6,20 +6,24 @@ public class DuckAnimScript : MonoBehaviour
 
     public CharacterController Dcontroller;
     public Animator duckAnim;
-    Vector3 duckVel;
+    Vector3 duckVel, lastPos;
 
 
 
     // Use this for initialization
     void Start()
     {
-    	duckAnim.Play("Idle", 0, Random.Range(0f,1f));
+        //duckAnim.Play("Idle", 0, Random.Range(0f,1f));
+        duckAnim.SetBool("IsMoving", false);
+        lastPos = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        duckVel = Dcontroller.velocity/Time.deltaTime;
+        duckVel = (transform.position - lastPos) / Time.deltaTime;
+        lastPos = transform.position;
+        duckAnim.SetFloat("velocity", duckVel.magnitude);
 
         if (duckVel.magnitude > 1f)
         {

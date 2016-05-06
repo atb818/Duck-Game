@@ -9,19 +9,21 @@ public class lockerDoor : MonoBehaviour {
     public GameObject player;
     public static float dist;
     Vector3 startRot;
-    GameObject lockerUI; //Danny commented this out for some reason
+    GameObject lockerUI;
 
     public float playerDist;
 
 
     void Start() {
         startRot = transform.eulerAngles;
-        lockerUI = GameObject.FindWithTag("LockerUI"); //Danny commented this out for some reason
+        lockerUI = GameObject.FindWithTag("LockerUI");
     }
 
 	void Update () {
 
-        dist = Vector3.Distance(transform.position, player.transform.position); //Danny commented this out for some reason
+
+        //dist = Vector3.Distance(transform.position, player.transform.position);
+        /*
         if (lockerUI != null){
             if(dist < playerDist)
             {
@@ -32,6 +34,8 @@ public class lockerDoor : MonoBehaviour {
                 lockerUI.SetActive(false);
             }
         }
+        */
+
         //dist = Vector3.Distance(transform.position, player.transform.position);
        // if(dist < 7)
         //{
@@ -41,6 +45,7 @@ public class lockerDoor : MonoBehaviour {
         //{
            // lockerUI.SetActive(false);
         //}
+
 
 
         transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, .05f);

@@ -132,8 +132,8 @@ ModelImporter:
     - serializedVersion: 16
       name: DuckWalk
       takeName: Take 001
-      firstFrame: 151
-      lastFrame: 175
+      firstFrame: 153
+      lastFrame: 178
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

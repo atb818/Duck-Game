@@ -12,8 +12,8 @@ public class AttractDuck2 : MonoBehaviour {
     void OnTriggerEnter(Collider duck)
     {
 		if (duck.CompareTag("Duck")){
-            _bread = bread.GetComponent<Vector3>();
-            _duck = duck.GetComponent<Vector3>();
+            _bread = bread.transform.position;
+            _duck = duck.transform.position;
 			duck.GetComponent<DuckCharacterController>().EatBread(bread.gameObject);
 
 		}

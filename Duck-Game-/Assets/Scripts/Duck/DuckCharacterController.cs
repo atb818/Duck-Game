@@ -468,7 +468,7 @@ public class DuckCharacterController : MonoBehaviour
             }
             else if (target.CompareTag("Soggy"))
             {
-                Destroy(target.gameObject);
+                //Destroy(target.gameObject);
                 StartCoroutine("Resting");
             }
             else

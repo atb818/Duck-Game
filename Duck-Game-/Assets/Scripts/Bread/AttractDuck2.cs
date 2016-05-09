@@ -24,7 +24,7 @@ public class AttractDuck2 : MonoBehaviour {
     void FixedUpdate()
     {
         proximity = Vector3.Distance(_bread, _duck);
-        if (proximity < 1f)
+        if (proximity < 2f)
         {
             StartCoroutine("BreadLife", 8f * Time.deltaTime);
         }

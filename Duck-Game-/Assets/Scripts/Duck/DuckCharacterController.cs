@@ -82,6 +82,7 @@ public class DuckCharacterController : MonoBehaviour
     public AudioClip idle;
     public AudioClip aggro;
     public AudioClip eating;
+    int duckAudioCounter;
 
 
 
@@ -585,26 +586,36 @@ public class DuckCharacterController : MonoBehaviour
     }
 
     void DuckAudio() {
-     
-        if (chasingPlayer)
+        //print("playing audio");
+
+        if (!aud.isPlaying)
+        {
+            print("playing audio");
+            aud.Play();
+            
+        }
+
+
+        if (chasingPlayer && aud.clip != aggro)
         {
             aud.clip = aggro;
             aud.loop = true;
-            if (!aud.isPlaying)
-                aud.Play();
+            
         }
-        else if (isResting)
+        else if (isResting && aud.clip != eating)
         {
             aud.clip = eating;
             aud.loop = true;
-            if (!aud.isPlaying)
-                aud.Play();
+            
         }
         else
         {
-            aud.clip = idle;
-            aud.loop = true;
-            aud.PlayDelayed(3);
+            if(aud.clip != idle)
+            {
+                aud.clip = idle;
+                aud.loop = false;
+            }
+            
 
         }
     }

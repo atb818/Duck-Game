@@ -96,6 +96,7 @@
      <Compile Include="Assets\Scripts\Environment\LightFlicker.cs" />
      <Compile Include="Assets\Scripts\Environment\Locker\goInside.cs" />
      <Compile Include="Assets\Scripts\Environment\Locker\lockerDoor.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\EndGame.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Victory1.cs" />
      <Compile Include="Assets\Scripts\LockerUI.cs" />
      <Compile Include="Assets\Scripts\Old\Timer.cs" />

@@ -61,6 +61,12 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Duck-Game-.CSharp.Plugins.csproj">
@@ -121,6 +127,7 @@
     <Compile Include="Assets\Scripts\Environment\LightFlicker.cs" />
     <Compile Include="Assets\Scripts\Environment\Locker\goInside.cs" />
     <Compile Include="Assets\Scripts\Environment\Locker\lockerDoor.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\EndGame.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Victory1.cs" />
     <Compile Include="Assets\Scripts\LockerUI.cs" />
     <Compile Include="Assets\Scripts\Old\Timer.cs" />

@@ -17,6 +17,8 @@ public class DuckSoulPatrol : MonoBehaviour {
 	public GameObject DemonDuck;
 	public GameObject DB;
 
+	bool lastNode = false;
+
 	//Hall Doors
 	//public GameObject hall1, hall2, hallCol;
 
@@ -55,7 +57,11 @@ public class DuckSoulPatrol : MonoBehaviour {
 
 		speed = normalSpeed;
 
-		Patrolling();
+		if (!lastNode){
+			Patrolling();
+		} else {
+			Destroy(gameObject);
+		}
 
 		//print (currentNode);
 
@@ -86,6 +92,8 @@ public class DuckSoulPatrol : MonoBehaviour {
 				//DB.SetActive(true);
 				//Invoke ("DestroyMe", 5f);
 				//Destroy(gameObject);
+				print ("reached last note");
+				lastNode = true;
 
 			}
 		}

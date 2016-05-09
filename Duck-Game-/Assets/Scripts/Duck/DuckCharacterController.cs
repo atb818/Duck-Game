@@ -587,36 +587,41 @@ public class DuckCharacterController : MonoBehaviour
 
     void DuckAudio() {
         //print("playing audio");
-
-        if (!aud.isPlaying)
-        {
-            print("playing audio");
-            aud.Play();
-            
-        }
-
-
-        if (chasingPlayer && aud.clip != aggro)
-        {
-            aud.clip = aggro;
-            aud.loop = true;
-            
-        }
-        else if (isResting && aud.clip != eating)
-        {
-            aud.clip = eating;
-            aud.loop = true;
-            
-        }
-        else
-        {
-            if(aud.clip != idle)
+        if (!isGymDuck || !isDemonDuck){
+            if (!aud.isPlaying)
             {
-                aud.clip = idle;
-                aud.loop = false;
+                print("playing audio");
+                aud.Play();
+                
             }
-            
 
+
+            if (chasingPlayer && aud.clip != aggro)
+            {
+                aud.clip = aggro;
+                aud.loop = true;
+                
+            }
+            else if (isResting && aud.clip != eating)
+            {
+                aud.clip = eating;
+                aud.loop = true;
+                
+            }
+            else
+            {
+                if(aud.clip != idle)
+                {
+                    aud.clip = idle;
+                    aud.loop = false;
+                }
+                
+
+            }
+        } else if (isGymDuck){
+            //Play gym audio
+        } else if (isDemonDuck){
+            //Play Demon Duck audio
         }
     }
 

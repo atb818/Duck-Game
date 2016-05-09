@@ -587,7 +587,7 @@ public class DuckCharacterController : MonoBehaviour
 
     void DuckAudio() {
         //print("playing audio");
-        if (!isGymDuck){
+        if (!isGymDuck || !isDemonDuck){
             if (!aud.isPlaying)
             {
                 print("playing audio");
@@ -620,6 +620,8 @@ public class DuckCharacterController : MonoBehaviour
             }
         } else if (isGymDuck){
             //Play gym audio
+        } else if (isDemonDuck){
+            //Play Demon Duck audio
         }
     }
 

@@ -15,14 +15,19 @@ public class goInside : MonoBehaviour {
     public bool moveNegX;
     public bool moveZ;
 
+    public GameObject lockerUI;
+    public static bool lockerUIon;
+
 
     void Start()
     {
        player = GameObject.FindGameObjectWithTag("Player");
-       //hinge = GameObject.Find("DoorHingeJoint");
+       lockerUI.SetActive(false);
+       lockerUIon = false;
+        //hinge = GameObject.Find("DoorHingeJoint");
 
-        
-    
+
+
     }
 
 	void Update () {
@@ -68,6 +73,8 @@ public class goInside : MonoBehaviour {
                 insideLocker = true;
             // insideLockerGlobal = true;
             canShoot = false;
+            lockerUI.SetActive(true);
+            lockerUIon = true;
         }
  
     }
@@ -79,7 +86,9 @@ public class goInside : MonoBehaviour {
             insideLocker = false;
             // insideLockerGlobal = false;
             canShoot = true;
-            
+            lockerUI.SetActive(false);
+            lockerUIon = false;
+
 
         }
 

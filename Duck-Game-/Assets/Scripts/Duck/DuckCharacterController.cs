@@ -585,39 +585,6 @@ public class DuckCharacterController : MonoBehaviour
         playerDetected = true;
     }
 
-    void DuckAudio() {
-        //print("playing audio");
-
-        if (!aud.isPlaying)
-        {
-            print("playing audio");
-            aud.Play();
-            
-        }
-
-
-        if (chasingPlayer && aud.clip != aggro)
-        {
-            aud.clip = aggro;
-            aud.loop = true;
-            
-        }
-        else if (isResting && aud.clip != eating)
-        {
-            aud.clip = eating;
-            aud.loop = true;
-            
-        }
-        else
-        {
-            if(aud.clip != idle)
-            {
-                aud.clip = idle;
-                aud.loop = false;
-            }
-            
-
-        }
-    }
+    
 
 }

@@ -3,10 +3,11 @@ using System.Collections;
 
 public class ducksound : MonoBehaviour {
 
-    public AudioSource audio;
+    AudioSource audio;
     int repeat;
 
 	void Start () {
+        audio = GetComponent<AudioSource>();
         PlaySound();
 	}
 	

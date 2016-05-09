@@ -131,7 +131,7 @@ public class DuckCharacterController : MonoBehaviour
     void Update()
     {
 
-        DuckAudio();
+        //DuckAudio();
 
         if (dying)
         {
@@ -621,7 +621,7 @@ public class DuckCharacterController : MonoBehaviour
         } else if (isGymDuck){
             //Play gym audio
         } else if (isDemonDuck){
-            //Play Demon Duck audio
+            //Play Demon Duck
         }
     }
 

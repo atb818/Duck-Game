@@ -33,6 +33,6 @@ public class AttractDuck2 : MonoBehaviour {
     IEnumerator BreadLife(float eatTime)
     {
         yield return new WaitForSeconds(eatTime);
-        DestroyObject(this);
+        DestroyObject(bread);
     }
 }

@@ -10,7 +10,7 @@ public class DuckCharacterController : MonoBehaviour
     public GameObject DB;
 
     //added by O--------------------
-    public Animator deadDemonAnim;
+    public Animator deadDemonAnim, duckAnimator;
     //------------------------------
 
     public float speed;
@@ -112,6 +112,7 @@ public class DuckCharacterController : MonoBehaviour
         {
             spot = null;
         }
+        duckAnimator = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -166,7 +167,9 @@ public class DuckCharacterController : MonoBehaviour
             //Soggy Moldy Toasty
             if (target != null && (target.CompareTag("Bread") || target.CompareTag("Soggy") || target.CompareTag("Toasty") || target.CompareTag("Moldy")))
             {
-                EatBread2();
+                if (!dying){
+                    EatBread2();
+                }
             }
             else if (target == null && !isResting && !playerInDist && !chasingPlayer && !isPatrolling)
             {
@@ -408,6 +411,12 @@ public class DuckCharacterController : MonoBehaviour
         }
     }
 
+    void EatAnim()
+    {
+         
+        if (isResting) { duckAnimator.SetBool("Eating", true); }
+    }
+
     public void EatBread(GameObject bread)
     {
         target = bread.gameObject;
@@ -463,11 +472,9 @@ public class DuckCharacterController : MonoBehaviour
 
     IEnumerator Resting()
     {
-        if (target != null)
-        {
-            Destroy(target.gameObject);
-        }
-
+        //EatAnim();
+        duckAnimator.SetBool("Eating", true);
+        GameObject tempTarget = target;
         playerInDist = false;
         playerInAngle = false;
         playerDetected = false;
@@ -486,6 +493,11 @@ public class DuckCharacterController : MonoBehaviour
         targetIsPlayer = false;
         isResting = false;
         getBread = false;
+        if (tempTarget != null)
+        {
+            Destroy(tempTarget.gameObject);
+        }
+        duckAnimator.SetBool("Eating", false);
     }
 
     void Patrolling()

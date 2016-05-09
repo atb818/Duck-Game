@@ -22,7 +22,8 @@ public class lockerDoor : MonoBehaviour {
 	void Update () {
 
 
-        dist = Vector3.Distance(transform.position, player.transform.position);
+        //dist = Vector3.Distance(transform.position, player.transform.position);
+        /*
         if (lockerUI != null){
             if(dist < playerDist)
             {
@@ -33,6 +34,7 @@ public class lockerDoor : MonoBehaviour {
                 lockerUI.SetActive(false);
             }
         }
+        */
 
         //dist = Vector3.Distance(transform.position, player.transform.position);
        // if(dist < 7)

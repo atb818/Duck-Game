@@ -77,6 +77,14 @@ public class DuckCharacterController : MonoBehaviour
     //DEBUG SPEED CHECK
     Vector3 lastPos;
 
+    //DUCK AUDIO
+    AudioSource aud;
+    public AudioClip idle;
+    public AudioClip aggro;
+    public AudioClip eating;
+
+
+
 
     void Start()
     {
@@ -113,10 +121,16 @@ public class DuckCharacterController : MonoBehaviour
             spot = null;
         }
         duckAnimator = GetComponentInChildren<Animator>();
-    }
+
+        //Set duck audio source
+        aud = GetComponent<AudioSource>();
+
+}
 
     void Update()
     {
+
+        DuckAudio();
 
         if (dying)
         {
@@ -568,6 +582,31 @@ public class DuckCharacterController : MonoBehaviour
     public void PlayerInGym()
     {
         playerDetected = true;
+    }
+
+    void DuckAudio() {
+     
+        if (chasingPlayer)
+        {
+            aud.clip = aggro;
+            aud.loop = true;
+            if (!aud.isPlaying)
+                aud.Play();
+        }
+        else if (isResting)
+        {
+            aud.clip = eating;
+            aud.loop = true;
+            if (!aud.isPlaying)
+                aud.Play();
+        }
+        else
+        {
+            aud.clip = idle;
+            aud.loop = true;
+            aud.PlayDelayed(3);
+
+        }
     }
 
 }

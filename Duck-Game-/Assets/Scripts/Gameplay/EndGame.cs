@@ -13,9 +13,10 @@ public class EndGame : MonoBehaviour {
 	
 	}
 
-	void OnTriggerExit (Collider player) {
+	void OnTriggerEnter (Collider player) {
 		if (player.CompareTag("Player")){
 			print ("DuckBoy escaped!");
+			//fade to white
 		}
 	}
 }

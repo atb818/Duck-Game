@@ -131,7 +131,7 @@ public class DuckCharacterController : MonoBehaviour
     void Update()
     {
 
-        //DuckAudio();
+        DuckAudio();
 
         if (dying)
         {
@@ -595,28 +595,23 @@ public class DuckCharacterController : MonoBehaviour
                 aud.Play();
                 
             }
-
-
-            if (chasingPlayer && aud.clip != aggro)
+            if (chasingPlayer && aud.clip != aggro && !isResting)
             {
                 aud.clip = aggro;
                 aud.loop = true;
                 
             }
-            else if (isResting && aud.clip != eating)
+            else if (isResting && aud.clip != eating && !playerDetected)
             {
                 aud.clip = eating;
                 aud.loop = true;
                 
             }
-            else
+            else if(aud.clip != idle && !isResting && !chasingPlayer)
             {
-                if(aud.clip != idle)
-                {
+
                     aud.clip = idle;
                     aud.loop = false;
-                }
-                
 
             }
         } else if (isGymDuck){

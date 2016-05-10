@@ -13,7 +13,7 @@ public class DuckAnimScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //duckAnim.Play("Idle", 0, Random.Range(0f,1f));
+        duckAnim.Play("Idle", 0, Random.Range(0f,1f));
         duckAnim.SetBool("IsMoving", false);
         lastPos = transform.position;
     }

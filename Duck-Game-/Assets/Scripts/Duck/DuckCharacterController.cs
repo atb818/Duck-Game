@@ -587,38 +587,59 @@ public class DuckCharacterController : MonoBehaviour
     }
 
     void DuckAudio() {
-        //print("playing audio");
-        if (!isGymDuck || !isDemonDuck){
+
+
+        if (!isGymDuck)
+        {
             if (!aud.isPlaying)
             {
-                print("playing audio");
-                aud.Play();
-                
+
+                PlaySound();
+
             }
             if (chasingPlayer && aud.clip != aggro && !isResting)
             {
                 aud.clip = aggro;
-                aud.loop = true;
-                
+
             }
             else if (isResting && aud.clip != eating && !playerDetected)
             {
                 aud.clip = eating;
-                aud.loop = true;
-                
+
             }
-            else if(aud.clip != idle && !isResting && !chasingPlayer)
+            else if (aud.clip != idle && !isResting && !chasingPlayer)
             {
-
-                    aud.clip = idle;
-                    aud.loop = false;
-
+                aud.clip = idle;
             }
-        } else if (isGymDuck){
+        }
+        else if (isGymDuck)
+        {
             //Play gym audio
-        } else if (isDemonDuck){
-            //Play Demon Duck
         }
     }
+
+    void PlaySound()
+    {
+        int quackTimerIdle;
+        quackTimerIdle = Random.Range(3, 7);
+
+        int quackTimerAttack;
+        quackTimerAttack = Random.Range(0, 2);
+
+
+
+        if (aud.clip == idle && !isResting && !chasingPlayer)
+        {
+            
+            aud.PlayDelayed(quackTimerIdle);
+            //Invoke("PlaySound", Random.Range(3, 7));
+        }
+        else
+        {
+            aud.PlayDelayed(quackTimerAttack);
+        }
+        
+    }
+
 
 }

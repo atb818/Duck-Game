@@ -1,0 +1,360 @@
+fileFormatVersion: 2
+guid: b2cbd62179843ad46b566a25c15b26a1
+timeCreated: 1462841293
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bill
+    100002: Ducky2
+    100004: head
+    100006: hips
+    100008: joint7
+    100010: joint9
+    100012: kaw
+    100014: leftFoot
+    100016: leftLeg
+    100018: leftWing
+    100020: //RootNode
+    100022: rightFoot
+    100024: rightLeg
+    100026: rightWing
+    100028: Spine
+    100030: useless
+    100032: vestigal
+    400000: bill
+    400002: Ducky2
+    400004: head
+    400006: hips
+    400008: joint7
+    400010: joint9
+    400012: kaw
+    400014: leftFoot
+    400016: leftLeg
+    400018: leftWing
+    400020: //RootNode
+    400022: rightFoot
+    400024: rightLeg
+    400026: rightWing
+    400028: Spine
+    400030: useless
+    400032: vestigal
+    4300000: Ducky2
+    7400000: DuckIdle
+    7400002: DuckWalk
+    7400004: Eating
+    7400006: ChaseSpeed
+    9500000: //RootNode
+    13700000: Ducky2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: DuckIdle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Ducky2
+        weight: 1
+      - path: hips
+        weight: 1
+      - path: hips/leftLeg
+        weight: 1
+      - path: hips/leftLeg/leftFoot
+        weight: 1
+      - path: hips/rightLeg
+        weight: 1
+      - path: hips/rightLeg/rightFoot
+        weight: 1
+      - path: hips/Spine
+        weight: 1
+      - path: hips/Spine/head
+        weight: 1
+      - path: hips/Spine/head/kaw
+        weight: 1
+      - path: hips/Spine/head/kaw/bill
+        weight: 1
+      - path: hips/Spine/leftWing
+        weight: 1
+      - path: hips/Spine/leftWing/joint7
+        weight: 1
+      - path: hips/Spine/rightWing
+        weight: 1
+      - path: hips/Spine/rightWing/joint9
+        weight: 1
+      - path: hips/useless
+        weight: 1
+      - path: hips/useless/vestigal
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: DuckWalk
+      takeName: Take 001
+      firstFrame: 153
+      lastFrame: 178
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Ducky2
+        weight: 1
+      - path: hips
+        weight: 1
+      - path: hips/leftLeg
+        weight: 1
+      - path: hips/leftLeg/leftFoot
+        weight: 1
+      - path: hips/rightLeg
+        weight: 1
+      - path: hips/rightLeg/rightFoot
+        weight: 1
+      - path: hips/Spine
+        weight: 1
+      - path: hips/Spine/head
+        weight: 1
+      - path: hips/Spine/head/kaw
+        weight: 1
+      - path: hips/Spine/head/kaw/bill
+        weight: 1
+      - path: hips/Spine/leftWing
+        weight: 1
+      - path: hips/Spine/leftWing/joint7
+        weight: 1
+      - path: hips/Spine/rightWing
+        weight: 1
+      - path: hips/Spine/rightWing/joint9
+        weight: 1
+      - path: hips/useless
+        weight: 1
+      - path: hips/useless/vestigal
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Eating
+      takeName: Take 001
+      firstFrame: 212
+      lastFrame: 221
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Ducky2
+        weight: 1
+      - path: hips
+        weight: 1
+      - path: hips/leftLeg
+        weight: 1
+      - path: hips/leftLeg/leftFoot
+        weight: 1
+      - path: hips/rightLeg
+        weight: 1
+      - path: hips/rightLeg/rightFoot
+        weight: 1
+      - path: hips/Spine
+        weight: 1
+      - path: hips/Spine/head
+        weight: 1
+      - path: hips/Spine/head/kaw
+        weight: 1
+      - path: hips/Spine/head/kaw/bill
+        weight: 1
+      - path: hips/Spine/leftWing
+        weight: 1
+      - path: hips/Spine/leftWing/joint7
+        weight: 1
+      - path: hips/Spine/rightWing
+        weight: 1
+      - path: hips/Spine/rightWing/joint9
+        weight: 1
+      - path: hips/useless
+        weight: 1
+      - path: hips/useless/vestigal
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: ChaseSpeed
+      takeName: Take 001
+      firstFrame: 251
+      lastFrame: 276
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Ducky2
+        weight: 1
+      - path: hips
+        weight: 1
+      - path: hips/leftLeg
+        weight: 1
+      - path: hips/leftLeg/leftFoot
+        weight: 1
+      - path: hips/rightLeg
+        weight: 1
+      - path: hips/rightLeg/rightFoot
+        weight: 1
+      - path: hips/Spine
+        weight: 1
+      - path: hips/Spine/head
+        weight: 1
+      - path: hips/Spine/head/kaw
+        weight: 1
+      - path: hips/Spine/head/kaw/bill
+        weight: 1
+      - path: hips/Spine/leftWing
+        weight: 1
+      - path: hips/Spine/leftWing/joint7
+        weight: 1
+      - path: hips/Spine/rightWing
+        weight: 1
+      - path: hips/Spine/rightWing/joint9
+        weight: 1
+      - path: hips/useless
+        weight: 1
+      - path: hips/useless/vestigal
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 80
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

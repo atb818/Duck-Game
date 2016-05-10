@@ -488,6 +488,7 @@ public class DuckCharacterController : MonoBehaviour
     IEnumerator Resting()
     {
         //EatAnim();
+        
         duckAnimator.SetBool("Eating", true);
         GameObject tempTarget = target;
         playerInDist = false;

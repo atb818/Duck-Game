@@ -12,27 +12,33 @@ public class AttractDuck2 : MonoBehaviour {
     void OnTriggerEnter(Collider duck)
     {
 		if (duck.CompareTag("Duck")){
-            _bread = bread.transform.position;
-            _duck = duck.transform.position;
-			duck.GetComponent<DuckCharacterController>().EatBread(bread.gameObject);
 
-		}
+			duck.GetComponent<DuckCharacterController>().EatBread(bread.gameObject);
+            
+        }
 	}
 
 
 
-    void FixedUpdate()
+    void OnTriggerStay(Collider duck)
     {
-        proximity = Vector3.Distance(_bread, _duck);
-        if (proximity < 2f)
+        if (duck.CompareTag("Duck"))
         {
-            StartCoroutine("BreadLife", 8f * Time.deltaTime);
+            _bread = bread.transform.position;
+            _duck = duck.transform.position;
+            duck.GetComponent<DuckCharacterController>().EatBread(bread.gameObject);
+            proximity = Vector3.Distance(_bread, _duck);
+            if (proximity < 2f)
+            {
+                StartCoroutine("BreadLife");
+            }
+
         }
     }
 
-    IEnumerator BreadLife(float eatTime)
+    IEnumerator BreadLife()
     {
-        yield return new WaitForSeconds(eatTime);
+        yield return new WaitForSeconds(10);
         DestroyObject(bread);
     }
 }

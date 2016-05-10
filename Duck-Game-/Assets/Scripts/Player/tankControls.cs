@@ -12,6 +12,8 @@ public class tankControls : MonoBehaviour
     Rigidbody rb;
     Vector3 moveDir;
 
+    public GameObject footsteps, backsteps;
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
@@ -24,10 +26,16 @@ public class tankControls : MonoBehaviour
         if (Input.GetAxisRaw("Vertical") > 0)
         {
             rb.AddRelativeForce(Vector3.forward * speed);
+            footsteps.SetActive(true);
+        } else {
+            footsteps.SetActive(false);
         }
         if (Input.GetAxisRaw("Vertical") < 0)
         {
             rb.AddRelativeForce(Vector3.forward * -speed/2f);
+            backsteps.SetActive(true);
+        } else {
+            backsteps.SetActive(false);
         }
 
         transform.Rotate(0, Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime, 0);

@@ -587,33 +587,34 @@ public class DuckCharacterController : MonoBehaviour
     }
 
     void DuckAudio() {
-        
 
-        if (!isGymDuck || !isDemonDuck){
+
+        if (!isGymDuck)
+        {
             if (!aud.isPlaying)
             {
 
                 PlaySound();
-                
+
             }
             if (chasingPlayer && aud.clip != aggro && !isResting)
             {
                 aud.clip = aggro;
-                
+
             }
             else if (isResting && aud.clip != eating && !playerDetected)
             {
                 aud.clip = eating;
 
             }
-            else if(aud.clip != idle && !isResting && !chasingPlayer)
+            else if (aud.clip != idle && !isResting && !chasingPlayer)
             {
-                    aud.clip = idle;
+                aud.clip = idle;
             }
-        } else if (isGymDuck){
+        }
+        else if (isGymDuck)
+        {
             //Play gym audio
-        } else if (isDemonDuck){
-            //Play Demon Duck
         }
     }
 

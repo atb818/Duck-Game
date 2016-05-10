@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\Duck\DemonDuckAnimScript.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckAnimScript.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckCharacterController.cs" />
+    <Compile Include="Assets\Scripts\Duck\DuckCrowdAudio.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckEat.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckFOV.cs" />
     <Compile Include="Assets\Scripts\Duck\DuckSoul.cs" />

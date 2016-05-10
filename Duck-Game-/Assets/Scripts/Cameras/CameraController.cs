@@ -7,7 +7,6 @@ public class CameraController : MonoBehaviour {
 	GameObject PreviousCam;
 	GameObject[] cameras;
 
-
 	void Start () {
 		//Camera.SetActive(false);
 		cameras = GameObject.FindGameObjectsWithTag("MainCamera");
@@ -22,6 +21,7 @@ public class CameraController : MonoBehaviour {
 	
 	void OnTriggerEnter (Collider player) {
 		if (player.CompareTag("Player")){
+			GetComponent<AudioSource>().Play();
 			foreach (GameObject cam in cameras) {
 				cam.SetActive(false);
         	}

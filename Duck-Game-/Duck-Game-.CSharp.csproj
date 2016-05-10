@@ -73,6 +73,7 @@
     <Compile Include="Assets\Asset Store\MoltenMetalStudios\LightFlickerPulse\_Demo\SceneScripts\BenchLighting.cs" />
     <Compile Include="Assets\Asset Store\MoltenMetalStudios\LightFlickerPulse\_Demo\SceneScripts\CameraAngles.cs" />
     <Compile Include="Assets\Asset Store\PorglezompPyroclastics\ExplosionMat.cs" />
+    <Compile Include="Assets\Randuck.cs" />
     <Compile Include="Assets\ResetButtons.cs" />
     <Compile Include="Assets\Scripts\Bread\AttractDuck2.cs" />
     <Compile Include="Assets\Scripts\Bread\BreadStatus.cs" />

@@ -11,6 +11,7 @@ public class checkpoint : MonoBehaviour {
     public GameObject check2;
     public GameObject check3;
     public GameObject check4;
+    public GameObject check5;
 
     public GameObject player;
 
@@ -19,6 +20,7 @@ public class checkpoint : MonoBehaviour {
     public GameObject Penta2;
     public GameObject Penta3;
     public GameObject Penta4;
+    public GameObject Penta5;
 
     int ammoCheck;
 
@@ -55,6 +57,12 @@ public class checkpoint : MonoBehaviour {
         {
             Penta4.SetActive(true);
         }
+
+        if (check == 5)
+        {
+            Penta5.SetActive(true);
+        }
+
     }
 
     void OnLevelWasLoaded(int level)
@@ -68,6 +76,7 @@ public class checkpoint : MonoBehaviour {
             Penta2.SetActive(false);
             Penta3.SetActive(false);
             Penta4.SetActive(false);
+            Penta5.SetActive(false);
 
 
         }
@@ -81,6 +90,7 @@ public class checkpoint : MonoBehaviour {
             Penta2.SetActive(false);
             Penta3.SetActive(false);
             Penta4.SetActive(false);
+            Penta5.SetActive(false);
 
         }
 
@@ -93,6 +103,7 @@ public class checkpoint : MonoBehaviour {
             Penta2.SetActive(true);
             Penta3.SetActive(false);
             Penta4.SetActive(false);
+            Penta5.SetActive(false);
 
         }
 
@@ -105,6 +116,7 @@ public class checkpoint : MonoBehaviour {
             Penta2.SetActive(false);
             Penta3.SetActive(true);
             Penta4.SetActive(false);
+            Penta5.SetActive(false);
 
         }
         if (check == 4)
@@ -116,6 +128,20 @@ public class checkpoint : MonoBehaviour {
             Penta2.SetActive(false);
             Penta3.SetActive(false);
             Penta4.SetActive(true);
+            Penta5.SetActive(false);
+
+        }
+
+        if (check == 5)
+        {
+            player.transform.position = check4.transform.position;
+            shootBullet.ammo = ammoCheck;
+            Penta0.SetActive(false);
+            Penta1.SetActive(false);
+            Penta2.SetActive(false);
+            Penta3.SetActive(false);
+            Penta4.SetActive(false);
+            Penta5.SetActive(true);
 
         }
 

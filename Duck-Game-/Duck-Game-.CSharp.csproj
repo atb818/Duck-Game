@@ -61,12 +61,6 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Duck-Game-.CSharp.Plugins.csproj">
@@ -79,7 +73,7 @@
     <Compile Include="Assets\Asset Store\MoltenMetalStudios\LightFlickerPulse\_Demo\SceneScripts\BenchLighting.cs" />
     <Compile Include="Assets\Asset Store\MoltenMetalStudios\LightFlickerPulse\_Demo\SceneScripts\CameraAngles.cs" />
     <Compile Include="Assets\Asset Store\PorglezompPyroclastics\ExplosionMat.cs" />
-    <Compile Include="Assets\BreadZero.cs" />
+    <Compile Include="Assets\ResetButtons.cs" />
     <Compile Include="Assets\Scripts\Bread\AttractDuck2.cs" />
     <Compile Include="Assets\Scripts\Bread\BreadStatus.cs" />
     <Compile Include="Assets\Scripts\Bread\BreadTrigger.cs" />
@@ -90,6 +84,7 @@
     <Compile Include="Assets\Scripts\Bread\ammoCheck.cs" />
     <Compile Include="Assets\Scripts\Bread\projector.cs" />
     <Compile Include="Assets\Scripts\Bread\refillBread.cs" />
+    <Compile Include="Assets\Scripts\BreadZero.cs" />
     <Compile Include="Assets\Scripts\Cameras\CamFollow.cs" />
     <Compile Include="Assets\Scripts\Cameras\CameraController.cs" />
     <Compile Include="Assets\Scripts\Cameras\PreviousCam.cs" />

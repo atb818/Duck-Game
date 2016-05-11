@@ -4,6 +4,11 @@ using System.Collections;
 public class ResetButtons : MonoBehaviour
 {
 
+    void Start ()
+    {
+        Cursor.visible = false;
+    }
+
     void Awake()
     {
         DontDestroyOnLoad(transform.gameObject);

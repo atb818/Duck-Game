@@ -41,6 +41,12 @@ public class checkpoint : MonoBehaviour {
             Application.LoadLevel(0);
         }
 
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            check++;
+            numberCheck++;
+        }
+
         if (check == 0)
         {
             Penta0.SetActive(true);

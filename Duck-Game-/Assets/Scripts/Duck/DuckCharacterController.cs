@@ -288,6 +288,7 @@ public class DuckCharacterController : MonoBehaviour
                     if (playerDist <= eatDist && chasingPlayer)
                     {
                         HealthBar.hitPoints -= .005f;
+                        
                     }
                 }
             }

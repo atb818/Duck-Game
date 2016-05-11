@@ -109,6 +109,7 @@
     <Compile Include="Assets\Editor\ImageEffects\CameraMotionBlurEditor.cs" />
     <Compile Include="Assets\Editor\ImageEffects\ColorCorrectionCurvesEditor.cs" />
     <Compile Include="Assets\Editor\ImageEffects\ColorCorrectionLookupEditor.cs" />
+    <Compile Include="Assets\Editor\ImageEffects\CreaseShadingEditor.cs" />
     <Compile Include="Assets\Editor\ImageEffects\DepthOfFieldDeprecatedEditor.cs" />
     <Compile Include="Assets\Editor\ImageEffects\DepthOfFieldEditor.cs" />
     <Compile Include="Assets\Editor\ImageEffects\EdgeDetectionEditor.cs" />
@@ -117,6 +118,11 @@
     <Compile Include="Assets\Editor\ImageEffects\TonemappingEditor.cs" />
     <Compile Include="Assets\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
     <Compile Include="Assets\Editor\ObjExporter.cs" />
+    <Compile Include="Assets\Shaders\KinoGlitch-master\Assets\Editor\PackageTool.cs" />
+    <Compile Include="Assets\Shaders\KinoGlitch-master\Assets\Kino\Glitch\Editor\AnalogGlitchEditor.cs" />
+    <Compile Include="Assets\Shaders\KinoGlitch-master\Assets\Kino\Glitch\Editor\DigitalGlitchEditor.cs" />
+    <Compile Include="Assets\Shaders\KinoGlitch-master\Assets\Reaktion\Editor\Utility\ConstantMotionEditor.cs" />
+    <Compile Include="Assets\Shaders\KinoGlitch-master\Assets\Reaktion\Editor\Utility\JitterMotionEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Asset Store\PorglezompPyroclastics\Explosion.shader" />
@@ -124,6 +130,9 @@
     <None Include="Assets\Asset Store\TSF\Shaders\TSF.shader" />
     <None Include="Assets\Asset Store\TSF\Shaders\TSFOutline.shader" />
     <None Include="Assets\Asset Store\Urban_Props\readme.txt" />
+    <None Include="Assets\Shaders\KinoGlitch-master\Assets\Kino\Glitch\Shader\AnalogGlitch.shader" />
+    <None Include="Assets\Shaders\KinoGlitch-master\Assets\Kino\Glitch\Shader\DigitalGlitch.shader" />
+    <None Include="Assets\Shaders\KinoGlitch-master\ProjectSettings\ProjectVersion.txt" />
     <None Include="Assets\Shaders\test1.shader" />
     <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />

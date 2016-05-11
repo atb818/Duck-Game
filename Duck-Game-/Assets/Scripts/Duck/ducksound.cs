@@ -4,7 +4,7 @@ using System.Collections;
 public class ducksound : MonoBehaviour {
 
     AudioSource audio;
-    int repeat;
+    float repeat;
 
 	void Start () {
         audio = GetComponent<AudioSource>();
@@ -19,6 +19,6 @@ public class ducksound : MonoBehaviour {
 
         audio.Play();
 
-        Invoke("PlaySound", Random.Range(3,7));
+        Invoke("PlaySound", Random.Range(3.0f ,7.0f));
     }
 }

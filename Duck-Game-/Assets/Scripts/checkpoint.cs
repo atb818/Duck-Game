@@ -3,8 +3,8 @@ using System.Collections;
 
 public class checkpoint : MonoBehaviour {
 
-    public static int check = 5;
-    public int numberCheck = 0;
+    public static int check = 6;
+    public int numberCheck = 6;
 
     public GameObject check0;
     public GameObject check1;
@@ -12,6 +12,7 @@ public class checkpoint : MonoBehaviour {
     public GameObject check3;
     public GameObject check4;
     public GameObject check5;
+    public GameObject check6;
 
     public GameObject player;
 
@@ -21,10 +22,17 @@ public class checkpoint : MonoBehaviour {
     public GameObject Penta3;
     public GameObject Penta4;
     public GameObject Penta5;
+    public GameObject Penta6;
 
     int ammoCheck;
 
-    void Update() {
+
+    void Start()
+    {
+       
+    }
+
+        void Update() {
 
         //print(check);
 
@@ -63,6 +71,11 @@ public class checkpoint : MonoBehaviour {
             Penta5.SetActive(true);
         }
 
+        if (check == 6)
+        {
+            Penta6.SetActive(true);
+        }
+
     }
 
     void OnLevelWasLoaded(int level)
@@ -77,6 +90,7 @@ public class checkpoint : MonoBehaviour {
             Penta3.SetActive(false);
             Penta4.SetActive(false);
             Penta5.SetActive(false);
+            Penta6.SetActive(false);
 
 
         }
@@ -91,6 +105,7 @@ public class checkpoint : MonoBehaviour {
             Penta3.SetActive(false);
             Penta4.SetActive(false);
             Penta5.SetActive(false);
+            Penta6.SetActive(false);
 
         }
 
@@ -104,6 +119,7 @@ public class checkpoint : MonoBehaviour {
             Penta3.SetActive(false);
             Penta4.SetActive(false);
             Penta5.SetActive(false);
+            Penta6.SetActive(false);
 
         }
 
@@ -117,6 +133,7 @@ public class checkpoint : MonoBehaviour {
             Penta3.SetActive(true);
             Penta4.SetActive(false);
             Penta5.SetActive(false);
+            Penta6.SetActive(false);
 
         }
         if (check == 4)
@@ -129,12 +146,13 @@ public class checkpoint : MonoBehaviour {
             Penta3.SetActive(false);
             Penta4.SetActive(true);
             Penta5.SetActive(false);
+            Penta6.SetActive(false);
 
         }
 
         if (check == 5)
         {
-            player.transform.position = check4.transform.position;
+            player.transform.position = check5.transform.position;
             shootBullet.ammo = ammoCheck;
             Penta0.SetActive(false);
             Penta1.SetActive(false);
@@ -142,6 +160,21 @@ public class checkpoint : MonoBehaviour {
             Penta3.SetActive(false);
             Penta4.SetActive(false);
             Penta5.SetActive(true);
+            Penta6.SetActive(false);
+
+        }
+
+        if (check == 6)
+        {
+            player.transform.position = check6.transform.position;
+            shootBullet.ammo = ammoCheck;
+            Penta0.SetActive(false);
+            Penta1.SetActive(false);
+            Penta2.SetActive(false);
+            Penta3.SetActive(false);
+            Penta4.SetActive(false);
+            Penta5.SetActive(false);
+            Penta6.SetActive(true);
 
         }
 

@@ -28,7 +28,7 @@ public class HealthBar : MonoBehaviour {
 
         if(hitPoints <= 0)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
 
         health.fillAmount = hitPoints;

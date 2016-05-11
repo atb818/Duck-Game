@@ -169,6 +169,9 @@
     <None Include="Assets\Asset Store\TSF\Shaders\TSF.shader" />
     <None Include="Assets\Asset Store\TSF\Shaders\TSFOutline.shader" />
     <None Include="Assets\Asset Store\Urban_Props\readme.txt" />
+    <None Include="Assets\Shaders\KinoGlitch-master\Assets\Kino\Glitch\Shader\AnalogGlitch.shader" />
+    <None Include="Assets\Shaders\KinoGlitch-master\Assets\Kino\Glitch\Shader\DigitalGlitch.shader" />
+    <None Include="Assets\Shaders\KinoGlitch-master\ProjectSettings\ProjectVersion.txt" />
     <None Include="Assets\Shaders\test1.shader" />
     <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />

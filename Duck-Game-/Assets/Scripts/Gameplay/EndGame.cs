@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class EndGame : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public Image screenFade;
+    public float alpha;
+    bool fading;
+
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
@@ -16,7 +21,23 @@ public class EndGame : MonoBehaviour {
 	void OnTriggerEnter (Collider player) {
 		if (player.CompareTag("Player")){
 			print ("DuckBoy escaped!");
-			//fade to white
-		}
+
+            screenFade.color = new Color(0, 0, 0, alpha);
+
+            if (alpha < 1)
+            {
+                alpha += .5f * Time.deltaTime;
+            }
+            else
+            {
+                if (Application.loadedLevel == 1)
+                {
+                    Application.LoadLevel(2);
+
+
+                }
+            }
+
+        }
 	}
 }

@@ -8,6 +8,7 @@ public class goInside : MonoBehaviour {
     bool insideLocker = false;
     public lockerDoor script;
     GameObject player;
+    AudioSource aud;
     //public GameObject target;
 
     //awkward directional debug booleans -___-
@@ -24,6 +25,7 @@ public class goInside : MonoBehaviour {
        player = GameObject.FindGameObjectWithTag("Player");
        lockerUI.SetActive(false);
        lockerUIon = false;
+        aud = GetComponent<AudioSource>();
         //hinge = GameObject.Find("DoorHingeJoint");
 
 
@@ -38,6 +40,7 @@ public class goInside : MonoBehaviour {
             //if (Input.GetKeyDown(KeyCode.E)){
             if (Input.GetButtonDown("Interact")){
                 script.changeDoor();
+                aud.Play();
                 //hinge.GetComponent<lockerDoor>().changeDoor();
 
                 player.transform.position = new Vector3 (this.transform.position.x, player.transform.position.y, this.transform.position.z);

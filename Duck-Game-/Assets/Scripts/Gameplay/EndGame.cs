@@ -18,10 +18,11 @@ public class EndGame : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter (Collider player) {
+	void OnTriggerExit (Collider player) {
 		if (player.CompareTag("Player")){
 			print ("DuckBoy escaped!");
 
+            /*
             screenFade.color = new Color(0, 0, 0, alpha);
 
             if (alpha < 1)
@@ -37,6 +38,8 @@ public class EndGame : MonoBehaviour {
 
                 }
             }
+            */
+            Application.LoadLevel(2);
 
         }
 	}

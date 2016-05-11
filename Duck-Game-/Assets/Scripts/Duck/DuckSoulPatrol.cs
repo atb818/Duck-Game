@@ -17,7 +17,11 @@ public class DuckSoulPatrol : MonoBehaviour {
 	public GameObject DemonDuck;
 	public GameObject DB;
 
-	bool lastNode = false;
+    public GameObject Offcam;
+    public GameObject OnCam;
+    public GameObject hallDoorTrigger;
+
+    bool lastNode = false;
 
 	//Hall Doors
 	//public GameObject hall1, hall2, hallCol;
@@ -60,7 +64,10 @@ public class DuckSoulPatrol : MonoBehaviour {
 		if (!lastNode){
 			Patrolling();
 		} else {
-			Destroy(gameObject);
+            Offcam.SetActive(false);
+            OnCam.SetActive(true);
+            hallDoorTrigger.GetComponent<Collider>().enabled = false;
+            Destroy(gameObject);
 		}
 
 		//print (currentNode);
